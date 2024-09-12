@@ -1,0 +1,29 @@
+{
+    "code": "mmx-card",
+    "type": "Z",
+    "is_global": false,
+    "active": true,
+    "attributes": [
+        {
+            "name": "type",
+            "value": "text/css"
+        },
+        {
+            "name": "media",
+            "value": "all"
+        },
+        {
+            "name": "rel",
+            "value": "stylesheet"
+        },
+        {
+            "name": "integrity",
+            "value": "sha256-U2atkYxYrxrU3NvsmHP3J5Lr2f/+pxPWHadhhdmw4G0= sha384-o5svyKBwkq5ieRVj5de5Tb9jwLikpVtLhtkDb3ql4BSDqlHZfwf9HwYf4Sg9VpU/ sha512-TR8NncaW6YsUt0sjpbg+nDbQ7KGI5Uiibr7u8OMAyTMxIFsmFsF9Yvwi862fClyQOnwUd/AtvlDwClnF/g1kTQ=="
+        },
+        {
+            "name": "crossorigin",
+            "value": "anonymous"
+        }
+    ],
+    "linked_pages": []
+}

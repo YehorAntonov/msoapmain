@@ -1,0 +1,21 @@
+{
+    "code": "mmx-icons",
+    "type": "Z",
+    "is_global": false,
+    "active": true,
+    "attributes": [
+        {
+            "name": "type",
+            "value": "text/javascript"
+        },
+        {
+            "name": "integrity",
+            "value": "sha256-rjHUi4tkbWMKOaMo1h47JT3savdqkmYrNSjOqf3iFl0= sha384-4LS/kSIHKa3cQxwtjyotlcupEl0JuzOx4N8mSeh4p3SfJ0Yfk1oOWycOnS65q0uM sha512-CZ+GVPqTlrz5G6XMqS+mbcJb1gsySrDi/JgVcDzCtbXHmpPD/hiXM11sgu2etTPWc7KTW6QRL/0Yi53aWY3hRQ=="
+        },
+        {
+            "name": "crossorigin",
+            "value": "anonymous"
+        }
+    ],
+    "linked_pages": []
+}

@@ -1,0 +1,29 @@
+{
+    "code": "mmx-forms",
+    "type": "Z",
+    "is_global": false,
+    "active": true,
+    "attributes": [
+        {
+            "name": "type",
+            "value": "text/css"
+        },
+        {
+            "name": "media",
+            "value": "all"
+        },
+        {
+            "name": "rel",
+            "value": "stylesheet"
+        },
+        {
+            "name": "integrity",
+            "value": "sha256-HQ3Vy2cyQPrQ9TCycYsulDQFpszOAQUkedFm9eXEkk8= sha384-Bj1g5LfpRqDcoTAGmJFpAir0ngjJtI9vm2dbAPH7VWIG0ZbuYqeM2uebUEGrogh0 sha512-wIoT9OYfDBOGVfTLKrfzzGxW/+svG56GydM21FhMJKJv4TvNFFq5GI1RP9ThoRDE0OKk5yrK60gPKUKDUybKpA=="
+        },
+        {
+            "name": "crossorigin",
+            "value": "anonymous"
+        }
+    ],
+    "linked_pages": []
+}

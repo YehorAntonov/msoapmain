@@ -1,0 +1,29 @@
+{
+    "code": "mmx-accordion",
+    "type": "Z",
+    "is_global": false,
+    "active": true,
+    "attributes": [
+        {
+            "name": "type",
+            "value": "text/css"
+        },
+        {
+            "name": "media",
+            "value": "all"
+        },
+        {
+            "name": "rel",
+            "value": "stylesheet"
+        },
+        {
+            "name": "integrity",
+            "value": "sha256-II8ZKfQGDodk6WOeQER408KealSUSkBF2zRBMUQvWu8= sha384-fv3V3QNnUDXZJs1hQV6taauL5BWf4Z9XoDFDdUd2Jg9XX6KFgc6FAHfnn4rAT3ho sha512-FXC9sjy2ZtFu8lwjxI03p68QELGdJELHN23/sR3A2lsRUHssrV0/WUF+AytdLiMgNkS/QHACIn9khdB/yApqTA=="
+        },
+        {
+            "name": "crossorigin",
+            "value": "anonymous"
+        }
+    ],
+    "linked_pages": []
+}

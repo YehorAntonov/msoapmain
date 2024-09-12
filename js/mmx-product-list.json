@@ -1,0 +1,21 @@
+{
+    "code": "mmx-product-list",
+    "type": "Z",
+    "is_global": false,
+    "active": true,
+    "attributes": [
+        {
+            "name": "type",
+            "value": "text/javascript"
+        },
+        {
+            "name": "integrity",
+            "value": "sha256-94+Ao8uBF/VKxl+GxK5nLuW6qutYUOksuxUxHJJgxOo= sha384-podjjRsbbb8gkKbmcPa5NoQ7qFQUPUePZrddLMplkhwdsYqUk4FknMi2HSfHKDGY sha512-gUxjFCvzApWknsUtIA0oEDNqMFOAtqLGUjwK8dcbjUMaGMsDpc53ldDUo+fPk9NOiZrC2OQxsl3uOeCWv6NT5A=="
+        },
+        {
+            "name": "crossorigin",
+            "value": "anonymous"
+        }
+    ],
+    "linked_pages": []
+}

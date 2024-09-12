@@ -1,0 +1,29 @@
+{
+    "code": "mmx-quick-order",
+    "type": "Z",
+    "is_global": false,
+    "active": true,
+    "attributes": [
+        {
+            "name": "type",
+            "value": "text/css"
+        },
+        {
+            "name": "media",
+            "value": "all"
+        },
+        {
+            "name": "rel",
+            "value": "stylesheet"
+        },
+        {
+            "name": "integrity",
+            "value": "sha256-w1e3t689KhZqdO7hZIJ/FmNb/nk1MHA6JHwGD3HR4rw= sha384-Q+GZuQRKbYvW2O+sYAB/c1yyYPI7Q3TA0Bh9/dp1bhHmiWaJ5HFNBkGfZuihXiGD sha512-ToSWw3kymrcEsRCIPlGxklMbF1YyG3YGom7EtZ6JSXaVITM0PtcicBcS63QPMCwhFy5H2BZNfPC2TR4W+/oVgg=="
+        },
+        {
+            "name": "crossorigin",
+            "value": "anonymous"
+        }
+    ],
+    "linked_pages": []
+}

@@ -1,0 +1,21 @@
+{
+    "code": "mmx-product-carousel",
+    "type": "Z",
+    "is_global": false,
+    "active": true,
+    "attributes": [
+        {
+            "name": "type",
+            "value": "text/javascript"
+        },
+        {
+            "name": "integrity",
+            "value": "sha256-g1hXRJ7CjMxSyMtcv2/mKxfwaCupJ5vdFYJHvy/zsFs= sha384-5TsRTDcVSSd59hzv/3hjKNMrbWtdHiiSuPoQgxWljznqmy2FHi4ylLmI0i9ZfLR2 sha512-NvSmPyCxYlI6+sCRtXfQnNI3N9iwxY+rRZurl2qNvYfTARciUSvKDxI8hpjzXgzegcsQVOtf0OgKRiXsUR/dIg=="
+        },
+        {
+            "name": "crossorigin",
+            "value": "anonymous"
+        }
+    ],
+    "linked_pages": []
+}

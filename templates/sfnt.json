@@ -8,6 +8,10 @@
             "component_code": "mmx-hero",
             "item_code": "hero",
             "settings": {
+                "_flex": {
+                    "flex_version": 10.1,
+                    "settings_version": "10.10.00"
+                },
                 "advanced": {
                     "content_theme": {
                         "value": "light"
@@ -124,6 +128,10 @@
             "component_code": "mmx-hero",
             "item_code": "hero-2",
             "settings": {
+                "_flex": {
+                    "flex_version": 10.1,
+                    "settings_version": "10.10.00"
+                },
                 "advanced": {
                     "content_theme": {
                         "value": "light"
@@ -206,10 +214,199 @@
                 }
             }
         },
+        "mmx_mainbannerslider": {
+            "component_code": "mmx-main-banner-slider",
+            "item_code": "mmx_mainbannerslider",
+            "settings": {
+                "_flex": {
+                    "flex_version": 10.1,
+                    "settings_version": "10.09.01"
+                },
+                "advanced": {
+                    "controls": {
+                        "autoplay": {
+                            "value": 1
+                        },
+                        "delay": {
+                            "value": 7
+                        },
+                        "infinite_sliding": {
+                            "value": 1
+                        },
+                        "pause_on_hover": {
+                            "value": 1
+                        },
+                        "show_arrows_on_desktop": {
+                            "value": 1
+                        },
+                        "show_arrows_on_mobile": {
+                            "value": 1
+                        },
+                        "show_dots_on_desktop": {
+                            "value": 1
+                        },
+                        "show_dots_on_mobile": {
+                            "value": 1
+                        },
+                        "speed": {
+                            "value": 0.3
+                        }
+                    }
+                },
+                "banner": {
+                    "banner_slides": {
+                        "children": [
+                            {
+                                "content": {
+                                    "body": {
+                                        "body_align": {
+                                            "value": "left"
+                                        },
+                                        "body_content": {
+                                            "value": "<p class=\"info-banner-main__p\" style=\"box-sizing: inherit; margin-top: 0px; margin-bottom: 40px; max-width: 635px; font-size: 14px; color: rgb(15, 60, 98); font-family: Nunito, sans-serif;\">Made from natural minerals, sea-salts, and cold pressed virgin oils. Miracle II products are all atural, non-toxic and biodegradable. We add no fragrances, colors, agents or perfumes.</p><div class=\"info-banner-main__annotation\" style=\"box-sizing: inherit; display: flex; justify-content: start; color: rgb(17, 17, 17); font-family: Nunito, sans-serif; font-size: 16px;\"><div style=\"box-sizing: inherit; width: 100%; max-width: 132px;\"><img alt=\"photo\" src=\"https://miraclesoap.mivatest.com/mm5/graphics/00000002/1/photo.png\" style=\"box-sizing: inherit; max-width: 100%; height: auto; vertical-align: middle;\"></div><div class=\"info-banner-main__annotation-info\" style=\"box-sizing: inherit; max-width: 503px; color: rgb(15, 60, 98); padding-top: 20px; width: 100%;\"><p class=\"info-banner-main__annotation-info-p\" style=\"box-sizing: inherit; margin-top: 0px; margin-bottom: 10px; padding-left: 15px; font-size: 14px; font-style: italic;\">\u201cThe formula for Miracle II was given to me in 1980. It was perfected then and has not changed since. You will never read \u201cNew and Improved\u201d on a bottle of Miracle II products.\u201d</p><p class=\"info-banner-main__annotation-info-p2\" style=\"box-sizing: inherit; margin-top: 0px; margin-bottom: var(--default-spacing-unit); padding-left: 15px; font-size: 13px;\">Clayton Tedeton, God\u2019s Faithful Servant</p></div></div>"
+                                        },
+                                        "settings": {
+                                            "enabled": 1
+                                        }
+                                    },
+                                    "buttons": {
+                                        "settings": {
+                                            "enabled": 0
+                                        }
+                                    },
+                                    "heading": {
+                                        "heading_align": {
+                                            "value": "left"
+                                        },
+                                        "heading_content": {
+                                            "value": "<h2 class=\"info-banner-main__h2\" style=\"box-sizing: inherit; margin-top: 0px; margin-bottom: 0px; font-size: 45px; color: var(--main-blue); font-family: var(--primary-font-family); line-height: 1;\"><span class=\"banner-first-color\" style=\"box-sizing: inherit; color: var(--submain-green);\">Miracle II</span>&nbsp;Family of Products</h2>"
+                                        },
+                                        "settings": {
+                                            "enabled": 1
+                                        }
+                                    },
+                                    "layout": {
+                                        "content_position_x": {
+                                            "value": "left"
+                                        },
+                                        "content_position_y": {
+                                            "value": "center"
+                                        },
+                                        "content_width": {
+                                            "value": 45
+                                        }
+                                    },
+                                    "settings": {
+                                        "enabled": 1
+                                    },
+                                    "subheading": {
+                                        "settings": {
+                                            "enabled": 1
+                                        },
+                                        "subheading_align": {
+                                            "value": "left"
+                                        },
+                                        "subheading_content": {
+                                            "value": "<h1 class=\"info-banner-main__h1\" style=\"font-size: 16px; margin-block-start: 0.67em; box-sizing: inherit; margin-top: 0px; margin-bottom: 0px; color: rgb(15, 60, 98); font-family: Nunito, sans-serif;\">EACH PRODUCT IS MIRACULOUS IN ITS OWN WAY</h1>"
+                                        }
+                                    }
+                                },
+                                "image": {
+                                    "img": {
+                                        "image": "graphics/00000002/1/Home-bck-desktop (2).png"
+                                    }
+                                },
+                                "link": {
+                                    "new_tab": 0,
+                                    "type": "page",
+                                    "value": "SFNT"
+                                },
+                                "name": {
+                                    "value": "Slide 1"
+                                }
+                            },
+                            {
+                                "content": {
+                                    "body": {
+                                        "body_align": {
+                                            "value": "center"
+                                        },
+                                        "body_content": {
+                                            "value": "<p class=\"info-banner-main__p\" style=\"box-sizing: inherit; margin-top: 0px; margin-bottom: 40px; max-width: 635px; font-size: 14px; color: rgb(15, 60, 98); font-family: Nunito, sans-serif;\">Made from natural minerals, sea-salts, and cold pressed virgin oils. Miracle II products are all atural, non-toxic and biodegradable. We add no fragrances, colors, agents or perfumes.</p><div class=\"info-banner-main__annotation\" style=\"box-sizing: inherit; display: flex; justify-content: start; color: rgb(17, 17, 17); font-family: Nunito, sans-serif; font-size: 16px;\"><div style=\"box-sizing: inherit; width: 100%; max-width: 132px;\"><img alt=\"photo\" src=\"https://miraclesoap.mivatest.com/mm5/graphics/00000002/1/photo.png\" style=\"box-sizing: inherit; max-width: 100%; height: auto; vertical-align: middle;\"></div><div class=\"info-banner-main__annotation-info\" style=\"box-sizing: inherit; max-width: 503px; color: rgb(15, 60, 98); padding-top: 20px; width: 100%;\"><p class=\"info-banner-main__annotation-info-p\" style=\"box-sizing: inherit; margin-top: 0px; margin-bottom: 10px; padding-left: 15px; font-size: 14px; font-style: italic;\">\u201cThe formula for Miracle II was given to me in 1980. It was perfected then and has not changed since. You will never read \u201cNew and Improved\u201d on a bottle of Miracle II products.\u201d</p><p class=\"info-banner-main__annotation-info-p2\" style=\"box-sizing: inherit; margin-top: 0px; margin-bottom: var(--default-spacing-unit); padding-left: 15px; font-size: 13px;\">Clayton Tedeton, God\u2019s Faithful Servant</p></div></div>"
+                                        },
+                                        "settings": {
+                                            "enabled": 1
+                                        }
+                                    },
+                                    "buttons": {
+                                        "settings": {
+                                            "enabled": 0
+                                        }
+                                    },
+                                    "heading": {
+                                        "heading_align": {
+                                            "value": "center"
+                                        },
+                                        "heading_content": {
+                                            "value": "<h2 class=\"info-banner-main__h2\" style=\"box-sizing: inherit; margin-top: 0px; margin-bottom: 0px; font-size: 45px; color: var(--main-blue); font-family: var(--primary-font-family); line-height: 1;\"><span class=\"banner-first-color\" style=\"box-sizing: inherit; color: var(--submain-green);\">Miracle II</span>&nbsp;Family of Products</h2>"
+                                        },
+                                        "settings": {
+                                            "enabled": 1
+                                        }
+                                    },
+                                    "layout": {
+                                        "content_position_x": {
+                                            "value": "center"
+                                        },
+                                        "content_position_y": {
+                                            "value": "center"
+                                        },
+                                        "content_width": {
+                                            "value": 45
+                                        }
+                                    },
+                                    "settings": {
+                                        "enabled": 1
+                                    },
+                                    "subheading": {
+                                        "settings": {
+                                            "enabled": 1
+                                        },
+                                        "subheading_align": {
+                                            "value": "center"
+                                        },
+                                        "subheading_content": {
+                                            "value": "<h1 class=\"info-banner-main__h1\" style=\"font-size: 16px; margin-block-start: 0.67em; box-sizing: inherit; margin-top: 0px; margin-bottom: 0px; color: rgb(15, 60, 98); font-family: Nunito, sans-serif;\">EACH PRODUCT IS MIRACULOUS IN ITS OWN WAY</h1>"
+                                        }
+                                    }
+                                },
+                                "image": {
+                                    "img": {
+                                        "image": "graphics/00000002/placeholder__1440x580.jpg"
+                                    }
+                                },
+                                "link": {
+                                    "new_tab": 0,
+                                    "type": "page",
+                                    "value": "SFNT"
+                                },
+                                "name": {
+                                    "value": "Slide 2"
+                                }
+                            }
+                        ]
+                    }
+                }
+            }
+        },
         "product-carousel": {
             "component_code": "mmx-product-carousel",
             "item_code": "product-carousel",
             "settings": {
+                "_flex": {
+                    "flex_version": 10.1,
+                    "settings_version": "10.10.00"
+                },
                 "advanced": {
                     "settings": {
                         "additional_price": {
@@ -299,6 +496,10 @@
             "component_code": "mmx-image-across",
             "item_code": "six-across",
             "settings": {
+                "_flex": {
+                    "flex_version": 10.1,
+                    "settings_version": "10.10.00"
+                },
                 "advanced": {
                     "content_theme": {
                         "value": "light"
@@ -472,6 +673,10 @@
             "component_code": "mmx-text-banner",
             "item_code": "text-banner",
             "settings": {
+                "_flex": {
+                    "flex_version": 10.1,
+                    "settings_version": "10.10.00"
+                },
                 "advanced": {
                     "content_theme": {
                         "value": "light"
@@ -540,6 +745,10 @@
             "component_code": "mmx-text-banner",
             "item_code": "text-banner-2",
             "settings": {
+                "_flex": {
+                    "flex_version": 10.1,
+                    "settings_version": "10.10.00"
+                },
                 "advanced": {
                     "content_theme": {
                         "value": "light"
@@ -615,6 +824,10 @@
             "component_code": "mmx-text-banner",
             "item_code": "text-banner-3",
             "settings": {
+                "_flex": {
+                    "flex_version": 10.1,
+                    "settings_version": "10.10.00"
+                },
                 "advanced": {
                     "content_theme": {
                         "value": "light"
@@ -690,6 +903,10 @@
             "component_code": "mmx-image-across",
             "item_code": "three-across",
             "settings": {
+                "_flex": {
+                    "flex_version": 10.1,
+                    "settings_version": "10.10.00"
+                },
                 "advanced": {
                     "content_theme": {
                         "value": "light"
@@ -835,6 +1052,10 @@
             "component_code": "mmx-image-across",
             "item_code": "two-across",
             "settings": {
+                "_flex": {
+                    "flex_version": 10.1,
+                    "settings_version": "10.10.00"
+                },
                 "advanced": {
                     "content_theme": {
                         "value": "light"
@@ -961,6 +1182,19 @@
             "template_id": 39
         }
     },
+    "header_sequence": {
+        "sequence": [
+            {
+                "dt_end": 0,
+                "dt_start": 0,
+                "enabled": 1,
+                "id": "8b73013f92f86a8d95219983736390ec",
+                "item": "flex",
+                "name": "Main Banner Slider",
+                "param": "mmx_mainbannerslider"
+            }
+        ]
+    },
     "paypalcp_credit": {
         "flex": {
             "color": "black",
@@ -991,6 +1225,89 @@
         "urlprefix": "http://miraclesoap.mivatest.com/"
     },
     "sequence": {
+        "sequence": [
+            {
+                "dt_end": 0,
+                "dt_start": 0,
+                "enabled": 1,
+                "id": "d6a273fe549df1056bde78f9332d0d9b",
+                "item": "flex",
+                "name": "Hero",
+                "param": "hero"
+            },
+            {
+                "dt_end": 0,
+                "dt_start": 0,
+                "enabled": 1,
+                "id": "bef1441aeecfd1c6de1da235841024d4",
+                "item": "flex",
+                "name": "Text Banner",
+                "param": "text-banner"
+            },
+            {
+                "dt_end": 0,
+                "dt_start": 0,
+                "enabled": 1,
+                "id": "c08ea2f16f69b2fec3f85e8222e17f2b",
+                "item": "flex",
+                "name": "Six Across",
+                "param": "six-across"
+            },
+            {
+                "dt_end": 0,
+                "dt_start": 0,
+                "enabled": 1,
+                "id": "d3524c78f9868e8cccee0e369e7c1adb",
+                "item": "flex",
+                "name": "Two Across",
+                "param": "two-across"
+            },
+            {
+                "dt_end": 0,
+                "dt_start": 0,
+                "enabled": 1,
+                "id": "bbd590f350288339deb3e76b4c431079",
+                "item": "flex",
+                "name": "Hero 2",
+                "param": "hero-2"
+            },
+            {
+                "dt_end": 0,
+                "dt_start": 0,
+                "enabled": 1,
+                "id": "650e1c27a41c481a4c398f10569d4ff2",
+                "item": "flex",
+                "name": "Product Carousel",
+                "param": "product-carousel"
+            },
+            {
+                "dt_end": 0,
+                "dt_start": 0,
+                "enabled": 1,
+                "id": "e268b1f01dfd82a1aa82648b398222b9",
+                "item": "flex",
+                "name": "Text Banner 2",
+                "param": "text-banner-2"
+            },
+            {
+                "dt_end": 0,
+                "dt_start": 0,
+                "enabled": 1,
+                "id": "c288f8a49ded8f6dabb4ae929449e14b",
+                "item": "flex",
+                "name": "Three Across",
+                "param": "three-across"
+            },
+            {
+                "dt_end": 0,
+                "dt_start": 0,
+                "enabled": 1,
+                "id": "a7114b392f36791afaa275cc2e6e3c32",
+                "item": "flex",
+                "name": "Text Banner 3",
+                "param": "text-banner-3"
+            }
+        ],
         "title": "Sequence"
     }
 }

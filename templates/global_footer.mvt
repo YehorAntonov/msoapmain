@@ -1,1 +1,3 @@
-<mvt:item name="sequence" />
+<div class="o-wrapper t-global-sequence t-fragment__global-footer">
+	<mvt:item name="sequence" />
+</div>

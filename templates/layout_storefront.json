@@ -4,6 +4,10 @@
             "component_code": "mmx-hero",
             "item_code": "hero",
             "settings": {
+                "_flex": {
+                    "flex_version": 10.1,
+                    "settings_version": "10.10.00"
+                },
                 "advanced": {
                     "content_theme": {
                         "value": "light"
@@ -42,15 +46,7 @@
                         "value": "left"
                     },
                     "body": {
-                        "textsettings": {
-                            "fields": {
-                                "normal": {
-                                    "body_style": {
-                                        "value": "paragraph-s"
-                                    }
-                                }
-                            }
-                        },
+                        "source": "markdown",
                         "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
                     },
                     "button": {
@@ -120,6 +116,10 @@
             "component_code": "mmx-hero",
             "item_code": "hero-2",
             "settings": {
+                "_flex": {
+                    "flex_version": 10.1,
+                    "settings_version": "10.10.00"
+                },
                 "advanced": {
                     "content_theme": {
                         "value": "light"
@@ -154,6 +154,9 @@
                     }
                 },
                 "content": {
+                    "body": {
+                        "source": "markdown"
+                    },
                     "button": {
                         "textsettings": {
                             "fields": {
@@ -206,6 +209,10 @@
             "component_code": "mmx-product-carousel",
             "item_code": "product-carousel",
             "settings": {
+                "_flex": {
+                    "flex_version": 10.1,
+                    "settings_version": "10.10.00"
+                },
                 "advanced": {
                     "settings": {
                         "additional_price": {
@@ -236,6 +243,9 @@
                         },
                         "displayed_price": {
                             "value": "sale"
+                        },
+                        "fragment_code": {
+                            "value": "product_list_additional_data"
                         },
                         "image_dimensions": {
                             "value": "300x300"
@@ -295,16 +305,30 @@
             "component_code": "mmx-image-across",
             "item_code": "six-across",
             "settings": {
+                "_flex": {
+                    "flex_version": 10.1,
+                    "settings_version": "10.10.00"
+                },
                 "advanced": {
                     "content_theme": {
                         "value": "light"
                     },
                     "desktop": {
+                        "background_color": {
+                            "settings": {
+                                "enabled": 0
+                            }
+                        },
                         "overlay_opacity": {
                             "value": 0
                         }
                     },
                     "mobile": {
+                        "background_color": {
+                            "settings": {
+                                "enabled": 0
+                            }
+                        },
                         "overflow_behavior": {
                             "value": "wrap"
                         }
@@ -356,6 +380,9 @@
                                     "value": "SFNT"
                                 },
                                 "text": {
+                                    "body": {
+                                        "source": "markdown"
+                                    },
                                     "heading": {
                                         "value": "Category #1"
                                     },
@@ -373,6 +400,9 @@
                                     "value": "SFNT"
                                 },
                                 "text": {
+                                    "body": {
+                                        "source": "markdown"
+                                    },
                                     "heading": {
                                         "value": "Category #2"
                                     },
@@ -390,6 +420,9 @@
                                     "value": "SFNT"
                                 },
                                 "text": {
+                                    "body": {
+                                        "source": "markdown"
+                                    },
                                     "heading": {
                                         "value": "Category #3"
                                     },
@@ -407,6 +440,9 @@
                                     "value": "SFNT"
                                 },
                                 "text": {
+                                    "body": {
+                                        "source": "markdown"
+                                    },
                                     "heading": {
                                         "value": "Category #4"
                                     },
@@ -424,6 +460,9 @@
                                     "value": "SFNT"
                                 },
                                 "text": {
+                                    "body": {
+                                        "source": "markdown"
+                                    },
                                     "heading": {
                                         "value": "Category #5"
                                     },
@@ -441,6 +480,9 @@
                                     "value": "SFNT"
                                 },
                                 "text": {
+                                    "body": {
+                                        "source": "markdown"
+                                    },
                                     "heading": {
                                         "value": "Category #6"
                                     },
@@ -458,6 +500,10 @@
             "component_code": "mmx-text-banner",
             "item_code": "text-banner",
             "settings": {
+                "_flex": {
+                    "flex_version": 10.1,
+                    "settings_version": "10.10.00"
+                },
                 "advanced": {
                     "content_theme": {
                         "value": "light"
@@ -481,6 +527,7 @@
                         "value": "center"
                     },
                     "body": {
+                        "source": "markdown",
                         "textsettings": {
                             "fields": {
                                 "normal": {
@@ -526,6 +573,10 @@
             "component_code": "mmx-text-banner",
             "item_code": "text-banner-2",
             "settings": {
+                "_flex": {
+                    "flex_version": 10.1,
+                    "settings_version": "10.10.00"
+                },
                 "advanced": {
                     "content_theme": {
                         "value": "light"
@@ -544,15 +595,7 @@
                         "value": "left"
                     },
                     "body": {
-                        "textsettings": {
-                            "fields": {
-                                "normal": {
-                                    "body_style": {
-                                        "value": "paragraph-s"
-                                    }
-                                }
-                            }
-                        },
+                        "source": "markdown",
                         "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam condimentum ex et nunc interdum, eu porttitor."
                     },
                     "button": {
@@ -601,6 +644,10 @@
             "component_code": "mmx-text-banner",
             "item_code": "text-banner-3",
             "settings": {
+                "_flex": {
+                    "flex_version": 10.1,
+                    "settings_version": "10.10.00"
+                },
                 "advanced": {
                     "content_theme": {
                         "value": "light"
@@ -619,15 +666,7 @@
                         "value": "center"
                     },
                     "body": {
-                        "textsettings": {
-                            "fields": {
-                                "normal": {
-                                    "body_style": {
-                                        "value": "paragraph-s"
-                                    }
-                                }
-                            }
-                        },
+                        "source": "markdown",
                         "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam condimentum ex et nunc interdum, eu porttitor ipsum facilisis. Proin pellentesque sapien a ultricies ultricies. Donec porta ante sed nulla consequat pharetra. Quisque malesuada facilisis turpis. Etiam volutpat, lectus nec rhoncus egestas, libero lectus egestas magna, sit amet eleifend nunc leo sit amet purus. Duis nec lectus maximus, posuere orci vel, dictum orci. Nullam id arcu nec neque placerat varius. Fusce aliquam magna et tellus blandit luctus."
                     },
                     "button": {
@@ -676,16 +715,30 @@
             "component_code": "mmx-image-across",
             "item_code": "three-across",
             "settings": {
+                "_flex": {
+                    "flex_version": 10.1,
+                    "settings_version": "10.10.00"
+                },
                 "advanced": {
                     "content_theme": {
                         "value": "light"
                     },
                     "desktop": {
+                        "background_color": {
+                            "settings": {
+                                "enabled": 0
+                            }
+                        },
                         "overlay_opacity": {
                             "value": 0
                         }
                     },
                     "mobile": {
+                        "background_color": {
+                            "settings": {
+                                "enabled": 0
+                            }
+                        },
                         "overflow_behavior": {
                             "value": "scroll"
                         }
@@ -694,11 +747,6 @@
                 "content_styles": {
                     "align": {
                         "value": "left"
-                    },
-                    "body_text_styles": {
-                        "body_style": {
-                            "value": "paragraph-s"
-                        }
                     },
                     "button_styles": {
                         "button_size": {
@@ -743,6 +791,7 @@
                                 },
                                 "text": {
                                     "body": {
+                                        "source": "markdown",
                                         "value": "Duis eiusmod aliqua minim sit in ut"
                                     },
                                     "button": {
@@ -766,6 +815,7 @@
                                 },
                                 "text": {
                                     "body": {
+                                        "source": "markdown",
                                         "value": "Lorem ipsum dolor sit amet, consectetur adipiscing"
                                     },
                                     "button": {
@@ -789,6 +839,7 @@
                                 },
                                 "text": {
                                     "body": {
+                                        "source": "markdown",
                                         "value": "Lorem ipsum dolor sit amet, consectetur adipiscing"
                                     },
                                     "button": {
@@ -811,11 +862,20 @@
             "component_code": "mmx-image-across",
             "item_code": "two-across",
             "settings": {
+                "_flex": {
+                    "flex_version": 10.1,
+                    "settings_version": "10.10.00"
+                },
                 "advanced": {
                     "content_theme": {
                         "value": "light"
                     },
                     "desktop": {
+                        "background_color": {
+                            "settings": {
+                                "enabled": 0
+                            }
+                        },
                         "column_count": {
                             "value": "auto"
                         },
@@ -824,6 +884,11 @@
                         }
                     },
                     "mobile": {
+                        "background_color": {
+                            "settings": {
+                                "enabled": 0
+                            }
+                        },
                         "overflow_behavior": {
                             "value": "scroll"
                         }
@@ -832,11 +897,6 @@
                 "content_styles": {
                     "align": {
                         "value": "left"
-                    },
-                    "body_text_styles": {
-                        "body_style": {
-                            "value": "paragraph-l"
-                        }
                     },
                     "button_styles": {
                         "button_size": {
@@ -880,6 +940,9 @@
                                     "value": "SFNT"
                                 },
                                 "text": {
+                                    "body": {
+                                        "source": "markdown"
+                                    },
                                     "button": {
                                         "value": "Shop Now"
                                     },
@@ -900,6 +963,9 @@
                                     "value": "SFNT"
                                 },
                                 "text": {
+                                    "body": {
+                                        "source": "markdown"
+                                    },
                                     "button": {
                                         "value": "Shop Now"
                                     },
@@ -947,7 +1013,7 @@
                 "dt_end": 0,
                 "dt_start": 0,
                 "enabled": 1,
-                "id": "7931b6082020baa3a3f27b7b3e96fcb9",
+                "id": "cf430d40c36de7df24940995dc8b401a",
                 "item": "flex",
                 "name": "Hero",
                 "param": "hero"
@@ -956,7 +1022,7 @@
                 "dt_end": 0,
                 "dt_start": 0,
                 "enabled": 1,
-                "id": "757d28f09d7891762c7d7fafeea59975",
+                "id": "0d7fa9f07c8b738b6c77a12a667412b4",
                 "item": "flex",
                 "name": "Text Banner",
                 "param": "text-banner"
@@ -965,7 +1031,7 @@
                 "dt_end": 0,
                 "dt_start": 0,
                 "enabled": 1,
-                "id": "12b98291e674d8acded9409d2853d8ed",
+                "id": "d200496734ac162bcf235b5ff95bbbf0",
                 "item": "flex",
                 "name": "Six Across",
                 "param": "six-across"
@@ -974,7 +1040,7 @@
                 "dt_end": 0,
                 "dt_start": 0,
                 "enabled": 1,
-                "id": "a75b04116c2b82d9a8e0760b12bda69d",
+                "id": "94da96507cc04283b540bd80212297bf",
                 "item": "flex",
                 "name": "Two Across",
                 "param": "two-across"
@@ -983,7 +1049,7 @@
                 "dt_end": 0,
                 "dt_start": 0,
                 "enabled": 1,
-                "id": "402b186c529c09a225019e03250c87de",
+                "id": "a602629285102c031b84f5bf01920ecc",
                 "item": "flex",
                 "name": "Hero 2",
                 "param": "hero-2"
@@ -992,7 +1058,7 @@
                 "dt_end": 0,
                 "dt_start": 0,
                 "enabled": 1,
-                "id": "6487aee79c3397199e078c691d64ca87",
+                "id": "588341cf5ff61652b4134c77b3ea8919",
                 "item": "flex",
                 "name": "Product Carousel",
                 "param": "product-carousel"
@@ -1001,7 +1067,7 @@
                 "dt_end": 0,
                 "dt_start": 0,
                 "enabled": 1,
-                "id": "f1e9d642831c37c16f518c342a505d64",
+                "id": "94f7018a4e0c0d5c91377df04c63cd39",
                 "item": "flex",
                 "name": "Text Banner 2",
                 "param": "text-banner-2"
@@ -1010,7 +1076,7 @@
                 "dt_end": 0,
                 "dt_start": 0,
                 "enabled": 1,
-                "id": "14656f50bec29fa7816a7b1c9c84c44e",
+                "id": "d722867a242472b2856abf3e3da53c50",
                 "item": "flex",
                 "name": "Three Across",
                 "param": "three-across"
@@ -1019,7 +1085,7 @@
                 "dt_end": 0,
                 "dt_start": 0,
                 "enabled": 1,
-                "id": "32adb8b188a1c7a2c8a85073839b798e",
+                "id": "5164af17c0f0beea72c3b4c6f1635448",
                 "item": "flex",
                 "name": "Text Banner 3",
                 "param": "text-banner-3"

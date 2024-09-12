@@ -2,17 +2,17 @@
     "items": [
         {
             "active": 1,
-            "id": "83815a59b51aa2fd4c1a50bbcb5a1479",
-            "link": "<a href=\"https://www.miraclesoap.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=deals\" target=\"_self\">Deals</a>",
+            "id": "95fdcd02e8b7d7cfc1bab4c424660975",
+            "link": "<a href=\"https://www.miraclesoap.com/deals.html\" target=\"_self\">Deals</a>",
             "link_dest": "deals",
             "link_targ": "_self",
             "link_type": "C",
             "name": "Deals",
-            "url": "https://www.miraclesoap.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=deals"
+            "url": "https://www.miraclesoap.com/deals.html"
         },
         {
             "active": 1,
-            "id": "faca032117b65bef141628c6ffc2e32a",
+            "id": "b841e6372c99c4dcac4863313950fb28",
             "link": "<a href=\"https://www.miraclesoap.com/contact-us.html\" target=\"_self\">Help</a>",
             "link_dest": "CTUS",
             "link_targ": "_self",
@@ -22,7 +22,7 @@
         },
         {
             "active": 1,
-            "id": "ca2c0c0d6309abb7af3d2157bf26d06d",
+            "id": "eb5a238d50a84dd4da07847789937cca",
             "link": "<a href=\"https://www.miraclesoap.com/order-history-list.html\" target=\"_self\">Orders</a>",
             "link_dest": "ORDH",
             "link_targ": "_self",
@@ -32,7 +32,7 @@
         },
         {
             "active": 1,
-            "id": "3268607fe1a710aceea85898ef0d9c97",
+            "id": "b0b2635719102ff907ea9e65869edefe",
             "link": "<a href=\"https://www.miraclesoap.com/\" target=\"_self\">Gift Cards</a>",
             "link_dest": "SFNT",
             "link_targ": "_self",

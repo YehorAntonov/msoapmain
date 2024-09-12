@@ -1,4 +1,235 @@
-<div id="navigation-bar"><mvt:item name="navbar" /></div>
-<div id="titleDiv" style="position: absolute; z-index: 2; width: 169; height: 39; top: 39px; left: 13px;"> 
-  <a href="https://&mvt:global:domain:name;/" onmouseover="window.status='Home'; return true;" onmouseout="window.status=''; return true;"><img src="/images/whitelogo.gif" alt="MIRACLE SOAP II" name="Miracle II" id="Miracle II" width="169" height="49" border="0"></a>
+<mvt:item name="readytheme" param="contentsection( 'mini_basket' )" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz@6..96&family=EB+Garamond&family=Lexend:wght@100;200;300;400;500;600;700;800;900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:wght@100&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/94513b47fb.js" crossorigin="anonymous" data-swup-reload-script></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js" defer></script>
+<script src="https://cdn.jsdelivr.net/gh/peterhry/CircleType@2.3.1/dist/circletype.min.js" defer></script>
+<mvt:if expr="l.settings:page:code NE 'ORDL' AND l.settings:page:code NE 'OCST' AND l.settings:page:code NE 'OUS1' AND l.settings:page:code NE 'OUSM' AND l.settings:page:code NE 'UATM' AND l.settings:page:code NE 'UATR' AND l.settings:page:code NE 'OSEL' AND l.settings:page:code NE 'OPAY' AND NOT ('AMAZONPAY' CIN l.settings:page:code)">
+	<header class="t-site-header background-header" data-hook="site-header">
+	
+<mvt:else>
+	<header class="t-site-header background-header secure-checkout" data-hook="site-header">
+</mvt:if>
+	<mvt:comment> <mvt:item name="readytheme" param="contentsection( 'fasten_header' )" /> </mvt:comment>
+	<mvt:comment> <mvt:item name="navbar" /> </mvt:comment>
+	<section class="o-wrapper o-wrapper--flush">
+		<div class="o-layout o-layout--align-center o-layout--flush t-site-header__masthead o-header-main">
+			<div class="o-layout__item o-layout--justify-between u-flex u-width-3 u-width-1--m u-hidden--l &mvte:global:Session:shadows:checkout_hidden;">
+				<button class="c-button c-button--flush c-button--full u-border-none u-color-black u-font-large u-menu" data-hook="open-main-menu" aria-label="Open Menu"><div><img style="filter: brightness(90%);" id="bubble6" src="graphics/00000002/1/Group 10142bubble6.png"></div></button>
+				<mvt:comment> <button class="c-button c-button--flush c-button--full u-bg-white u-border-none u-color-black u-font-large u-icon-search" data-hook="open-header-search" aria-label="Open Search Form"></button> </mvt:comment>
+			</div>
+
+			<div class="o-layout__item u-width-6 u-width-10--m u-width-6--l-logo u-width-7--xl-logo u-text-center u-text-left--l t-site-header__logo">
+				<a href="&mvte:urls:SFNT:auto;" title="&mvte:global:store:name;">
+					<mvt:comment> <mvt:if expr="l.settings:readytheme:logo_type EQ 'text'">
+						<div class="t-site-header__store-name">&mvt:readytheme:logo_name;</div>
+						<small class="t-site-header__store-tagline">&mvt:readytheme:logo_tagline;</small>
+					<mvt:elseif expr="l.settings:readytheme:logo_type EQ 'image'"> </mvt:comment>
+					<img class="main-logo" src="&mvte:readytheme:logo_image;" alt="logo" loading="lazy">
+					<mvt:comment> </mvt:if> </mvt:comment>
+				</a>
+			</div>
+
+			<div class="o-layout__item u-width-3 u-width-1--m u-flex--l mobile u-width-3--l-icons u-width-2--xl-icons mobile-icons t-site-header__masthead-links &mvte:global:Session:shadows:checkout_hidden;">
+        <a href="&mvte:urls:LOGN:secure;" aria-expanded="false" class="t-global-account-toggle">
+	        <i class="fa-solid fa-user" style="color: #0f4e7e;"></i>
+        </a>
+				<a class="t-site-header__basket-link icon-cart" data-hook="open-mini-basket" aria-label="Open Mini-Basket" href="&mvte:urls:BASK:auto;">
+					<mvt:if expr="l.settings:global_minibasket:basket_count GT 0">
+						<span class="u-icon-cart-full" aria-hidden="true"><i class="fa-solid fa-bag-shopping" style="color: #0f4e7e; font-size: 25px;"></i></span>
+					<mvt:else>
+						<span class="u-icon-cart-empty" aria-hidden="true"><i class="fa-solid fa-bag-shopping" style="color: #0f4e7e; font-size: 25px;"></i></span>
+					</mvt:if>
+					<span class="t-site-header__basket-link-quantity" data-hook="mini-basket-count">&mvte:global_minibasket:basket_count;</span>
+				</a>
+			</div>
+  
+			<div class="o-layout__item u-width-12-icons u-width-3--l-icons-search t-site-header__search &mvte:global:Session:shadows:checkout_hidden; search-block" data-hook="site-header__search">
+				<div class="links-header desktop"><a href="/about-us.html">About Us</a></div>
+        <div class="links-header desktop"><a href="/disclaimer.html">Disclaimer</a></div>
+        <div class="links-header phone-header desktop"><a href="tel:+18888957675">1-888-895-SOAP (7675)</a></div>
+        <form class="t-site-header__search-form" method="post" action="&mvte:urls:SRCH:rr;">
+					<fieldset>
+						<legend>Product Search</legend>
+						<div class="c-form-list">
+							<div class="c-form-list__item c-form-list__item--full c-control-group u-flex search-field">
+								<span class="u-bg-white u-color-gray-50 u-icon-search t-site-header__search-icon" aria-hidden="true"></span>
+								<input class="c-form-input c-control-group__field u-bg-transparent u-border-none t-site-header__search-field search-field-padding" data-mm_searchfield="Yes" data-mm_searchfield_id="x-search-preview" type="search" name="Search" value="&mvte:global:Search;" placeholder="Search" autocomplete="off" required aria-label="Product Search">
+								<mvt:comment> <button class="c-button c-control-group__button u-bg-transparent u-color-gray-50 u-border-none u-icon-search t-site-header__search-button" type="submit" aria-label="Search"></button> </mvt:comment>
+							</div>
+						</div>
+					</fieldset>
+
+					<ul class="x-search-preview result-of-search" data-mm_searchfield_menu="Yes" data-mm_searchfield_id="x-search-preview" role="listbox"></ul>
+				</form>
+			</div>
+
+			<div class="o-layout__item u-hidden u-flex--l u-width-3--l-icons u-width-2--xl-icons t-site-header__masthead-links &mvte:global:Session:shadows:checkout_hidden;">
+				<mvt:item name="customerlink" />
+				<mvt:item name="readytheme" param="contentsection( 'global_account' )" />
+				<a class="t-site-header__basket-link icon-cart" data-hook="open-mini-basket" aria-label="Open Mini-Basket" href="&mvte:urls:BASK:auto;">
+					<mvt:if expr="l.settings:global_minibasket:basket_count GT 0">
+						<span class="u-icon-cart-full" aria-hidden="true"><i class="fa-solid fa-bag-shopping" style="color: #0f4e7e; font-size: 25px;"></i></span>
+					<mvt:else>
+						<span class="u-icon-cart-empty" aria-hidden="true"><i class="fa-solid fa-bag-shopping" style="color: #0f4e7e; font-size: 25px;"></i></span>
+					</mvt:if>
+					<span class="t-site-header__basket-link-quantity" data-hook="mini-basket-count">&mvte:global_minibasket:basket_count;</span>
+				</a>
+			</div>
+
+			<div class="o-layout__item u-width-6 u-width-8--l u-width-5--w u-hidden u-text-right t-site-header__secure &mvte:global:Session:shadows:checkout_shown;">
+				<span class="u-color-gray-600 u-text-medium u-text-uppercase"><span class="c-heading--subheading--x-small u-icon-secure" aria-hidden="true"></span> <span class="secure-checkout-text">Secure Checkout</span></span>
+			</div>
+			<mvt:if expr="g.Session:shadows:checkout_shown EQ 'u-shown'">
+				<style>
+					@media screen and (min-width: 961px) {
+						.t-site-header__logo img {
+							margin-top: 90px;
+							max-height: 40px;
+							z-index: 1000;
+						}
+					}
+					@media screen and (min-width: 1090px) {
+						.t-site-header__logo img {
+							margin-top: 80px;
+							height: 60px;
+							max-height: none;
+						}
+					}
+					@media screen and (min-width: 1180px) {
+						.t-site-header__logo img {
+							margin-top: 80px;
+							height: 70px !important;
+							max-height: none;
+						}
+					}
+					@media screen and (min-width: 1240px) {
+						.t-site-header__logo img {
+							margin-top: 70px;
+							height: 80px !important;
+							max-height: none;
+						}
+					}
+				</style>
+			</mvt:if>
+		</div>
+
+		<div style="opacity: 0;" id="bubbles" class="bubbles desktop">
+			<mvt:item name="readytheme" param="navigationset( 'bubbles_navigation' )" />
+		</div>
+	</section>
+</header>
+<!-- end t-site-header -->
+
+<div class="o-wrapper o-wrapper--full mobile o-wrapper--flush u-bg-white t-site-navigation &mvte:global:Session:shadows:checkout_hidden;">
+	<div class="o-layout o-layout--align-center o-layout--flush o-layout--justify-center t-site-navigation__wrap">
+		<mvt:item name="readytheme" param="navigationset( 'primary_navigation' )" />
+	</div>
 </div>
+<!-- end t-site-navigation -->
+<mvt:comment> <mvt:if expr="(l.settings:page:code NE 'SFNT' AND l.settings:page:code NE 'ACLN' AND l.settings:page:code NE 'BASK' AND l.settings:page:code NE 'ORDL' AND l.settings:page:code NE 'OCST' AND l.settings:page:code NE 'OUS1' AND l.settings:page:code NE 'OUSM' AND l.settings:page:code NE 'UATM' AND l.settings:page:code NE 'UATR' AND l.settings:page:code NE 'OSEL' AND l.settings:page:code NE 'OPAY') AND (ISNULL g.Customer_Temporary_Password)">
+	<mvt:item name="breadcrumbs" />
+</mvt:if> </mvt:comment>
+<mvt:if expr="l.settings:page:code EQ 'SFNT'">
+  <main class="o-wrapper t-main-content-elements sfnt-body-container">
+	<mvt:if expr="g.Maintenance_Warning_Message">
+		<section class="o-layout">
+			<div class="o-layout__item">
+				<div class="x-messages x-messages--info">
+					<span class="u-icon-info"> </span>
+					&mvt:global:Maintenance_Warning_Message;
+				</div>
+			</div>
+		</section>
+  </mvt:if>
+<mvt:elseif expr="">
+  <main class="o-wrapper t-main-content-element ctgy-body-container">
+	  <mvt:if expr="g.Maintenance_Warning_Message">
+		  <section class="o-layout">
+			  <div class="o-layout__item">
+				  <div class="x-messages x-messages--info">
+					  <span class="u-icon-info"> </span>
+					  &mvt:global:Maintenance_Warning_Message;
+				  </div>
+			  </div>
+		  </section>
+    </mvt:if>
+<mvt:else>
+	<style>
+		.additional-wrap {
+			padding-top: 200px; 
+			padding-bottom: 50px; 
+			min-height: 1000px;
+		}
+		@media screen and (max-width: 960px) {
+			.additional-wrap {
+				padding-top: 0; 
+			}
+		}
+	</style>
+	<main style="" class="o-wrapper background-image additional-wrap">
+		<div style="max-width: 1600px" class="o-wrapper t-main-content-element">
+			<div class="bubbles-global o-wrapper t-main-content-element">
+				<mvt:if expr="g.Maintenance_Warning_Message">
+					<section class="o-layout">
+						<div class="o-layout__item">
+							<div class="x-messages x-messages--info">
+								<span class="u-icon-info"> </span>
+								&mvt:global:Maintenance_Warning_Message;
+							</div>
+						</div>
+					</section>
+				</mvt:if>
+			</mvt:if>
+			<script>
+					document.addEventListener('DOMContentLoaded', function () {
+						if (window.innerWidth <= 960) {
+							var bubbleBlock = document.getElementById('bubbles');
+							bubbleBlock.innerHTML =  '<div id="bubbles" class="bubbles desktop"><div id="bubble2"><a href="https://miraclesoap.mivatest.com/product-history.html" id="bubble2Link"><img style="transform: scale(1);" class="product__history" src="graphics/00000002/1/Group 2bubble2.png"></a><svg id="mini-bubble-1" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_1260_1410)"><rect width="25" height="25" rx="12.5" fill="url(#paint0_radial_1260_1410)"></rect><ellipse cx="8.5" cy="2.74268" rx="2.30018" ry="1.01262" transform="rotate(-17.884 8.5 2.74268)" fill="white"></ellipse></g><defs><radialGradient id="paint0_radial_1260_1410" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(12.5 12.5) rotate(90) scale(12.5)"><stop stop-color="#F2FFFF" stop-opacity="0.4"></stop><stop offset="0.755" stop-color="#E2F0F1" stop-opacity="0.4"></stop><stop offset="0.88" stop-color="#BADEE0" stop-opacity="0.7"></stop><stop offset="1" stop-color="#A4C8CA"></stop></radialGradient><clipPath id="clip0_1260_1410"><rect width="25" height="25" rx="12.5" fill="white"></rect></clipPath></defs></svg><a class="product__history" style="transform: scale(1);" id="product-history" href="https://miraclesoap.mivatest.com/product-history.html"><div aria-label="Product" style="position: relative; height: 1.69874em;"><span style="position: absolute; bottom: auto; left: 50%; transform: translateX(-0.259375em) rotate(-12.4345deg); transform-origin: center 7.35294em;">P</span><span style="position: absolute; bottom: auto; left: 50%; transform: translateX(-0.159007em) rotate(-8.33884deg); transform-origin: center 7.35294em;">r</span><span style="position: absolute; bottom: auto; left: 50%; transform: translateX(-0.237867em) rotate(-4.45374deg); transform-origin: center 7.35294em;">o</span><span style="position: absolute; bottom: auto; left: 50%; transform: translateX(-0.250551em) rotate(0.327502deg); transform-origin: center 7.35294em;">d</span><span style="position: absolute; bottom: auto; left: 50%; transform: translateX(-0.240993em) rotate(5.13934deg); transform-origin: center 7.35294em;">u</span><span style="position: absolute; bottom: auto; left: 50%; transform: translateX(-0.226838em) rotate(9.71904deg); transform-origin: center 7.35294em;">c</span><span style="position: absolute; bottom: auto; left: 50%; transform: translateX(-0.154964em) rotate(13.4566deg); transform-origin: center 7.35294em;">t</span></div></a><a class="product__history" style="transform: scale(1);" id="history" href="https://miraclesoap.mivatest.com/product-history.html"><div aria-label="History" style="position: relative; height: 1.66935em;"><span style="position: absolute; bottom: auto; left: 50%; transform: translateX(-0.303125em) rotate(-10.8491deg); transform-origin: center 7.35294em;">H</span><span style="position: absolute; bottom: auto; left: 50%; transform: translateX(-0.104779em) rotate(-6.85606deg); transform-origin: center 7.35294em;">i</span><span style="position: absolute; bottom: auto; left: 50%; transform: translateX(-0.215442em) rotate(-3.72134deg); transform-origin: center 7.35294em;">s</span><span style="position: absolute; bottom: auto; left: 50%; transform: translateX(-0.153493em) rotate(-0.109762deg); transform-origin: center 7.35294em;">t</span><span style="position: absolute; bottom: auto; left: 50%; transform: translateX(-0.237867em) rotate(3.72135deg); transform-origin: center 7.35294em;">o</span><span style="position: absolute; bottom: auto; left: 50%; transform: translateX(-0.167831em) rotate(7.69282deg); transform-origin: center 7.35294em;">r</span><span style="position: absolute; bottom: auto; left: 50%; transform: translateX(-0.22886em) rotate(11.5761deg); transform-origin: center 7.35294em;">y</span></div></a></div><div id="bubble3">	<a href="https://miraclesoap.mivatest.com/testimonials.html" id="bubble3Link"><img style="transform: scale(1);" class="testimonials" src="graphics/00000002/1/Group 3bubble3.png"></a><svg id="mini-bubble-2" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_1260_1410)"><rect width="25" height="25" rx="12.5" fill="url(#paint0_radial_1260_1410)"></rect><ellipse cx="8.5" cy="2.74268" rx="2.30018" ry="1.01262" transform="rotate(-17.884 8.5 2.74268)" fill="white"></ellipse></g><defs><radialGradient id="paint0_radial_1260_1410" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(12.5 12.5) rotate(90) scale(12.5)"><stop stop-color="#F2FFFF" stop-opacity="0.4"></stop><stop offset="0.755" stop-color="#E2F0F1" stop-opacity="0.4"></stop><stop offset="0.88" stop-color="#BADEE0" stop-opacity="0.7"></stop><stop offset="1" stop-color="#A4C8CA"></stop></radialGradient><clipPath id="clip0_1260_1410"><rect width="25" height="25" rx="12.5" fill="white"></rect></clipPath></defs></svg><a class="testimonials" style="transform: scale(1);" id="testimonials" href="https://miraclesoap.mivatest.com/testimonials.html"><div aria-label="Testimonials" style="position: relative; height: 1.94024em;"><span style="position: absolute; bottom: auto; left: 50%; transform: translateX(-0.220833em) rotate(-18.8273deg); transform-origin: center 8.33333em;">T</span><span style="position: absolute; bottom: auto; left: 50%; transform: translateX(-0.234375em) rotate(-15.0105deg); transform-origin: center 8.33333em;">e</span><span style="position: absolute; bottom: auto; left: 50%; transform: translateX(-0.219375em) rotate(-11.2059deg); transform-origin: center 8.33333em;">s</span><span style="position: absolute; bottom: auto; left: 50%; transform: translateX(-0.158959em) rotate(-8.03364deg); transform-origin: center 8.33333em;">t</span><span style="position: absolute; bottom: auto; left: 50%; transform: translateX(-0.108749em) rotate(-5.78898deg); transform-origin: center 8.33333em;">i</span><span style="position: absolute; bottom: auto; left: 50%; transform: translateX(-0.366667em) rotate(-1.80273deg); transform-origin: center 8.33333em;">m</span><span style="position: absolute; bottom: auto; left: 50%; transform: translateX(-0.241667em) rotate(3.29799deg); transform-origin: center 8.33333em;">o</span><span style="position: absolute; bottom: auto; left: 50%; transform: translateX(-0.244792em) rotate(7.37682deg); transform-origin: center 8.33333em;">n</span><span style="position: absolute; bottom: auto; left: 50%; transform: translateX(-0.108751em) rotate(10.3412deg); transform-origin: center 8.33333em;">i</span><span style="position: absolute; bottom: auto; left: 50%; transform: translateX(-0.229791em) rotate(13.1798deg); transform-origin: center 8.33333em;">a</span><span style="position: absolute; bottom: auto; left: 50%; transform: translateX(-0.111875em) rotate(16.0446deg); transform-origin: center 8.33333em;">l</span><span style="position: absolute; bottom: auto; left: 50%; transform: translateX(-0.220416em) rotate(18.8308deg); transform-origin: center 8.33333em;">s</span></div></a></div><div id="bubble1"><a href="https://miraclesoap.mivatest.com/category-display.html" id="bubble1Link"><img style="transform: scale(1);" class="products" src="graphics/00000002/1/Group 2bubble1.png"></a><svg id="mini-bubble-3" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_1260_1410)"><rect width="25" height="25" rx="12.5" fill="url(#paint0_radial_1260_1410)"></rect><ellipse cx="8.5" cy="2.74268" rx="2.30018" ry="1.01262" transform="rotate(-17.884 8.5 2.74268)" fill="white"></ellipse></g><defs><radialGradient id="paint0_radial_1260_1410" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(12.5 12.5) rotate(90) scale(12.5)"><stop stop-color="#F2FFFF" stop-opacity="0.4"></stop><stop offset="0.755" stop-color="#E2F0F1" stop-opacity="0.4"></stop><stop offset="0.88" stop-color="#BADEE0" stop-opacity="0.7"></stop><stop offset="1" stop-color="#A4C8CA"></stop></radialGradient><clipPath id="clip0_1260_1410"><rect width="25" height="25" rx="12.5" fill="white"></rect></clipPath></defs></svg><a class="products" style="transform: scale(1);" id="products" href="https://miraclesoap.mivatest.com/category-display.html"><div aria-label="Products" style="position: relative; height: 1.79315em;"><span style="position: absolute; bottom: auto; left: 50%; transform: translateX(-0.25806em) rotate(-16.6506deg); transform-origin: center 6.57895em;">P</span><span style="position: absolute; bottom: auto; left: 50%; transform: translateX(-0.157072em) rotate(-11.9675deg); transform-origin: center 6.57895em;">r</span><span style="position: absolute; bottom: auto; left: 50%; transform: translateX(-0.236842em) rotate(-7.52376deg); transform-origin: center 6.57895em;">o</span><span style="position: absolute; bottom: auto; left: 50%; transform: translateX(-0.249341em) rotate(-2.03911deg); transform-origin: center 6.57895em;">d</span><span style="position: absolute; bottom: auto; left: 50%; transform: translateX(-0.239802em) rotate(3.47894deg); transform-origin: center 6.57895em;">u</span><span style="position: absolute; bottom: auto; left: 50%; transform: translateX(-0.225822em) rotate(8.73166deg); transform-origin: center 6.57895em;">c</span><span style="position: absolute; bottom: auto; left: 50%; transform: translateX(-0.15181em) rotate(12.9917deg); transform-origin: center 6.57895em;">t</span><span style="position: absolute; bottom: auto; left: 50%; transform: translateX(-0.215295em) rotate(17.1331deg); transform-origin: center 6.57895em;">s</span></div></a></div><div id="bubble4"><a href="https://miraclesoap.mivatest.com/faqs.html" id="bubble4Link"><img style="transform: scale(1);" class="faqs" src="graphics/00000002/1/Group 3bubble4.png"></a><svg id="mini-bubble-4" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_1260_1410)"><rect width="25" height="25" rx="12.5" fill="url(#paint0_radial_1260_1410)"></rect><ellipse cx="8.5" cy="2.74268" rx="2.30018" ry="1.01262" transform="rotate(-17.884 8.5 2.74268)" fill="white"></ellipse></g><defs><radialGradient id="paint0_radial_1260_1410" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(12.5 12.5) rotate(90) scale(12.5)"><stop stop-color="#F2FFFF" stop-opacity="0.4"></stop><stop offset="0.755" stop-color="#E2F0F1" stop-opacity="0.4"></stop><stop offset="0.88" stop-color="#BADEE0" stop-opacity="0.7"></stop><stop offset="1" stop-color="#A4C8CA"></stop></radialGradient><clipPath id="clip0_1260_1410"><rect width="25" height="25" rx="12.5" fill="white"></rect></clipPath></defs></svg><a class="faqs" style="transform: scale(1);" id="faqs" href="https://miraclesoap.mivatest.com/faqs.html"><div aria-label="FAQs" style="position: relative; height: 1.58588em;"><span style="position: absolute; bottom: auto; left: 50%; transform: translateX(-0.213418em) rotate(-7.73781deg); transform-origin: center 7.35294em;">F</span><span style="position: absolute; bottom: auto; left: 50%; transform: translateX(-0.270221em) rotate(-3.00336deg); transform-origin: center 7.35294em;">A</span><span style="position: absolute; bottom: auto; left: 50%; transform: translateX(-0.303677em) rotate(2.61466deg); transform-origin: center 7.35294em;">Q</span><span style="position: absolute; bottom: auto; left: 50%; transform: translateX(-0.216544em) rotate(7.70721deg); transform-origin: center 7.35294em;">s</span></div></a></div><div id="bubble5">	<a href="https://miraclesoap.mivatest.com/contact-us.html" id="bubble5Link"><img style="transform: scale(1);" class="contact" src="graphics/00000002/1/Group 2bubble5.png"></a><svg id="mini-bubble-5" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_1260_1410)"><rect width="25" height="25" rx="12.5" fill="url(#paint0_radial_1260_1410)"></rect><ellipse cx="8.5" cy="2.74268" rx="2.30018" ry="1.01262" transform="rotate(-17.884 8.5 2.74268)" fill="white"></ellipse></g><defs><radialGradient id="paint0_radial_1260_1410" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(12.5 12.5) rotate(90) scale(12.5)"><stop stop-color="#F2FFFF" stop-opacity="0.4"></stop><stop offset="0.755" stop-color="#E2F0F1" stop-opacity="0.4"></stop><stop offset="0.88" stop-color="#BADEE0" stop-opacity="0.7"></stop><stop offset="1" stop-color="#A4C8CA"></stop></radialGradient><clipPath id="clip0_1260_1410"><rect width="25" height="25" rx="12.5" fill="white"></rect></clipPath></defs></svg><svg id="mini-bubble-6" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_1260_1410)"><rect width="25" height="25" rx="12.5" fill="url(#paint0_radial_1260_1410)"></rect><ellipse cx="8.5" cy="2.74268" rx="2.30018" ry="1.01262" transform="rotate(-17.884 8.5 2.74268)" fill="white"></ellipse></g><defs><radialGradient id="paint0_radial_1260_1410" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(12.5 12.5) rotate(90) scale(12.5)"><stop stop-color="#F2FFFF" stop-opacity="0.4"></stop><stop offset="0.755" stop-color="#E2F0F1" stop-opacity="0.4"></stop><stop offset="0.88" stop-color="#BADEE0" stop-opacity="0.7"></stop><stop offset="1" stop-color="#A4C8CA"></stop></radialGradient><clipPath id="clip0_1260_1410"><rect width="25" height="25" rx="12.5" fill="white"></rect></clipPath></defs></svg><a class="contact" style="transform: scale(1);" id="contact" href="https://miraclesoap.mivatest.com/contact-us.html"><div aria-label="Contact" style="position: relative; height: 1.67626em;"><span style="position: absolute; bottom: auto; left: 50%; transform: translateX(-0.290417em) rotate(-10.6067deg); transform-origin: center 8.33333em;">C</span><span style="position: absolute; bottom: auto; left: 50%; transform: translateX(-0.241667em) rotate(-6.1453deg); transform-origin: center 8.33333em;">o</span><span style="position: absolute; bottom: auto; left: 50%; transform: translateX(-0.244792em) rotate(-2.06647deg); transform-origin: center 8.33333em;">n</span><span style="position: absolute; bottom: auto; left: 50%; transform: translateX(-0.158958em) rotate(1.31887deg); transform-origin: center 8.33333em;">t</span><span style="position: absolute; bottom: auto; left: 50%; transform: translateX(-0.229791em) rotate(4.57843deg); transform-origin: center 8.33333em;">a</span><span style="position: absolute; bottom: auto; left: 50%; transform: translateX(-0.230833em) rotate(8.44065deg); transform-origin: center 8.33333em;">c</span><span style="position: absolute; bottom: auto; left: 50%; transform: translateX(-0.158958em) rotate(11.7089deg); transform-origin: center 8.33333em;">t</span></div></a></div></div>';
+						}
+						else {
+							
+						}
+					});
+			</script>
+
+			<mvt:if expr="l.settings:page:code EQ 'CTGY' OR l.settings:page:code EQ 'ABUS' OR l.settings:page:code EQ 'ALPM' OR l.settings:page:code EQ 'CTUS' OR l.settings:page:code EQ 'disclaimer-page' OR l.settings:page:code EQ 'FAQS' OR l.settings:page:code EQ 'partners' OR l.settings:page:code EQ 'product-history' OR l.settings:page:code EQ 'PRPO' OR l.settings:page:code EQ 'SARP' OR l.settings:page:code EQ 'SCPL' OR l.settings:page:code EQ 'testimonials' OR l.settings:page:code EQ 'SRCH'">
+				<style>
+					@media screen and (max-width: 1200px) {
+						#bubble1 {
+							position: relative;
+							left: 10%;
+						}
+						#bubble2 {
+							position: relative;
+							top: -5px;
+							left: calc(100px + 10%);
+						}
+						#bubble3 {
+							position: relative;
+							top: -35px;
+							left: calc(50px + 10%);
+						}
+						#bubble4 {
+							position: relative;
+							top: -15px;
+							left: calc(-45px + 10%);
+						}
+						#bubble5 {
+							position: relative;
+							top: 10px;
+							left: calc(-90px + 10%);
+						}
+					}
+				
+				</style>
+			</mvt:if>
+			<mvt:if expr="l.settings:page:code EQ 'BASK' OR l.settings:page:code EQ 'BSKE'">
+				<style>
+					main {
+						min-height: 800px;
+					}
+				</style>
+			</mvt:if>
+			<!-- end g.Maintenance_Warning_Message -->

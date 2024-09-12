@@ -4,11 +4,20 @@
             "component_code": "mmx-image-across",
             "item_code": "eight-across",
             "settings": {
+                "_flex": {
+                    "flex_version": 10.1,
+                    "settings_version": "10.10.00"
+                },
                 "advanced": {
                     "content_theme": {
                         "value": "light"
                     },
                     "desktop": {
+                        "background_color": {
+                            "settings": {
+                                "enabled": 0
+                            }
+                        },
                         "column_count": {
                             "value": "auto"
                         },
@@ -17,6 +26,11 @@
                         }
                     },
                     "mobile": {
+                        "background_color": {
+                            "settings": {
+                                "enabled": 0
+                            }
+                        },
                         "overflow_behavior": {
                             "value": "scroll"
                         }
@@ -25,11 +39,6 @@
                 "content_styles": {
                     "align": {
                         "value": "left"
-                    },
-                    "body_text_styles": {
-                        "body_style": {
-                            "value": "paragraph-s"
-                        }
                     },
                     "button_styles": {
                         "button_size": {
@@ -88,6 +97,9 @@
                                     "value": "SFNT"
                                 },
                                 "text": {
+                                    "body": {
+                                        "source": "markdown"
+                                    },
                                     "settings": {
                                         "enabled": 1
                                     }
@@ -101,6 +113,9 @@
                                     "type": "url"
                                 },
                                 "text": {
+                                    "body": {
+                                        "source": "markdown"
+                                    },
                                     "settings": {
                                         "enabled": 1
                                     }
@@ -114,6 +129,9 @@
                                     "type": "url"
                                 },
                                 "text": {
+                                    "body": {
+                                        "source": "markdown"
+                                    },
                                     "settings": {
                                         "enabled": 1
                                     }
@@ -127,6 +145,9 @@
                                     "type": "url"
                                 },
                                 "text": {
+                                    "body": {
+                                        "source": "markdown"
+                                    },
                                     "settings": {
                                         "enabled": 1
                                     }
@@ -140,6 +161,9 @@
                                     "type": "url"
                                 },
                                 "text": {
+                                    "body": {
+                                        "source": "markdown"
+                                    },
                                     "settings": {
                                         "enabled": 1
                                     }
@@ -153,6 +177,9 @@
                                     "type": "url"
                                 },
                                 "text": {
+                                    "body": {
+                                        "source": "markdown"
+                                    },
                                     "settings": {
                                         "enabled": 1
                                     }
@@ -166,6 +193,9 @@
                                     "type": "url"
                                 },
                                 "text": {
+                                    "body": {
+                                        "source": "markdown"
+                                    },
                                     "settings": {
                                         "enabled": 1
                                     }
@@ -179,6 +209,9 @@
                                     "type": "url"
                                 },
                                 "text": {
+                                    "body": {
+                                        "source": "markdown"
+                                    },
                                     "settings": {
                                         "enabled": 1
                                     }
@@ -193,11 +226,20 @@
             "component_code": "mmx-image-across",
             "item_code": "four-across",
             "settings": {
+                "_flex": {
+                    "flex_version": 10.1,
+                    "settings_version": "10.10.00"
+                },
                 "advanced": {
                     "content_theme": {
                         "value": "light"
                     },
                     "desktop": {
+                        "background_color": {
+                            "settings": {
+                                "enabled": 0
+                            }
+                        },
                         "column_count": {
                             "value": "auto"
                         },
@@ -206,6 +248,11 @@
                         }
                     },
                     "mobile": {
+                        "background_color": {
+                            "settings": {
+                                "enabled": 0
+                            }
+                        },
                         "overflow_behavior": {
                             "value": "scroll"
                         }
@@ -214,11 +261,6 @@
                 "content_styles": {
                     "align": {
                         "value": "center"
-                    },
-                    "body_text_styles": {
-                        "body_style": {
-                            "value": "paragraph-s"
-                        }
                     },
                     "button_styles": {
                         "button_size": {
@@ -262,6 +304,9 @@
                                     "value": "SFNT"
                                 },
                                 "text": {
+                                    "body": {
+                                        "source": "markdown"
+                                    },
                                     "button": {
                                         "value": "Shop Now"
                                     },
@@ -282,6 +327,9 @@
                                     "value": "SFNT"
                                 },
                                 "text": {
+                                    "body": {
+                                        "source": "markdown"
+                                    },
                                     "button": {
                                         "value": "Shop Now"
                                     },
@@ -302,6 +350,9 @@
                                     "value": "SFNT"
                                 },
                                 "text": {
+                                    "body": {
+                                        "source": "markdown"
+                                    },
                                     "button": {
                                         "value": "Shop Now"
                                     },
@@ -321,6 +372,9 @@
                                     "type": "url"
                                 },
                                 "text": {
+                                    "body": {
+                                        "source": "markdown"
+                                    },
                                     "button": {
                                         "value": "Shop Now"
                                     },
@@ -341,6 +395,10 @@
             "component_code": "mmx-hero",
             "item_code": "hero",
             "settings": {
+                "_flex": {
+                    "flex_version": 10.1,
+                    "settings_version": "10.10.00"
+                },
                 "advanced": {
                     "content_theme": {
                         "value": "light"
@@ -371,15 +429,7 @@
                         "value": "left"
                     },
                     "body": {
-                        "textsettings": {
-                            "fields": {
-                                "normal": {
-                                    "body_style": {
-                                        "value": "paragraph-s"
-                                    }
-                                }
-                            }
-                        },
+                        "source": "markdown",
                         "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam condimentum ex et nunc interdum."
                     },
                     "button": {
@@ -445,6 +495,10 @@
             "component_code": "mmx-hero",
             "item_code": "hero-2",
             "settings": {
+                "_flex": {
+                    "flex_version": 10.1,
+                    "settings_version": "10.10.00"
+                },
                 "advanced": {
                     "content_theme": {
                         "value": "light"
@@ -475,15 +529,7 @@
                         "value": "left"
                     },
                     "body": {
-                        "textsettings": {
-                            "fields": {
-                                "normal": {
-                                    "body_style": {
-                                        "value": "paragraph-s"
-                                    }
-                                }
-                            }
-                        }
+                        "source": "markdown"
                     },
                     "button": {
                         "textsettings": {
@@ -548,6 +594,10 @@
             "component_code": "mmx-image-and-text",
             "item_code": "image-and-text",
             "settings": {
+                "_flex": {
+                    "flex_version": 10.1,
+                    "settings_version": "10.10.00"
+                },
                 "advanced": {
                     "content_theme": {
                         "value": "light"
@@ -563,15 +613,7 @@
                         "value": "left"
                     },
                     "body": {
-                        "textsettings": {
-                            "fields": {
-                                "normal": {
-                                    "body_style": {
-                                        "value": "paragraph-s"
-                                    }
-                                }
-                            }
-                        },
+                        "source": "markdown",
                         "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam condimentum ex et nunc interdum, eu porttitor ipsum."
                     },
                     "button": {
@@ -647,6 +689,10 @@
             "component_code": "mmx-product-carousel",
             "item_code": "product-carousel",
             "settings": {
+                "_flex": {
+                    "flex_version": 10.1,
+                    "settings_version": "10.10.00"
+                },
                 "advanced": {
                     "settings": {
                         "additional_price": {
@@ -677,6 +723,9 @@
                         },
                         "displayed_price": {
                             "value": "sale"
+                        },
+                        "fragment_code": {
+                            "value": "product_list_additional_data"
                         },
                         "image_dimensions": {
                             "value": "300x300"
@@ -736,6 +785,10 @@
             "component_code": "mmx-product-carousel",
             "item_code": "product-carousel-2",
             "settings": {
+                "_flex": {
+                    "flex_version": 10.1,
+                    "settings_version": "10.10.00"
+                },
                 "advanced": {
                     "settings": {
                         "additional_price": {
@@ -766,6 +819,9 @@
                         },
                         "displayed_price": {
                             "value": "sale"
+                        },
+                        "fragment_code": {
+                            "value": "product_list_additional_data"
                         },
                         "image_dimensions": {
                             "value": "300x300"
@@ -825,6 +881,10 @@
             "component_code": "mmx-text-banner",
             "item_code": "text-banner",
             "settings": {
+                "_flex": {
+                    "flex_version": 10.1,
+                    "settings_version": "10.10.00"
+                },
                 "advanced": {
                     "content_theme": {
                         "value": "light"
@@ -843,15 +903,7 @@
                         "value": "center"
                     },
                     "body": {
-                        "textsettings": {
-                            "fields": {
-                                "normal": {
-                                    "body_style": {
-                                        "value": "paragraph-l"
-                                    }
-                                }
-                            }
-                        },
+                        "source": "markdown",
                         "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam condimentum."
                     },
                     "button": {
@@ -900,11 +952,20 @@
             "component_code": "mmx-image-across",
             "item_code": "two-across",
             "settings": {
+                "_flex": {
+                    "flex_version": 10.1,
+                    "settings_version": "10.10.00"
+                },
                 "advanced": {
                     "content_theme": {
                         "value": "light"
                     },
                     "desktop": {
+                        "background_color": {
+                            "settings": {
+                                "enabled": 0
+                            }
+                        },
                         "column_count": {
                             "value": "auto"
                         },
@@ -913,6 +974,11 @@
                         }
                     },
                     "mobile": {
+                        "background_color": {
+                            "settings": {
+                                "enabled": 0
+                            }
+                        },
                         "overflow_behavior": {
                             "value": "scroll"
                         }
@@ -921,11 +987,6 @@
                 "content_styles": {
                     "align": {
                         "value": "left"
-                    },
-                    "body_text_styles": {
-                        "body_style": {
-                            "value": "paragraph-s"
-                        }
                     },
                     "button_styles": {
                         "button_size": {
@@ -969,6 +1030,9 @@
                                     "value": "SFNT"
                                 },
                                 "text": {
+                                    "body": {
+                                        "source": "markdown"
+                                    },
                                     "button": {
                                         "value": "Shop Now"
                                     },
@@ -989,6 +1053,9 @@
                                     "value": "SFNT"
                                 },
                                 "text": {
+                                    "body": {
+                                        "source": "markdown"
+                                    },
                                     "button": {
                                         "value": "Shop Now"
                                     },
@@ -1036,7 +1103,7 @@
                 "dt_end": 0,
                 "dt_start": 0,
                 "enabled": 1,
-                "id": "32753e168c2bad972b96315eeacb76fc",
+                "id": "94b51e796d29edb6ef9abf86083e25a0",
                 "item": "flex",
                 "name": "Hero",
                 "param": "hero"
@@ -1045,7 +1112,7 @@
                 "dt_end": 0,
                 "dt_start": 0,
                 "enabled": 1,
-                "id": "966d2f470a8daf026e99ecbc1a556941",
+                "id": "7d67577f2cdd7d02749c068fdf5316c0",
                 "item": "flex",
                 "name": "Text Banner",
                 "param": "text-banner"
@@ -1054,7 +1121,7 @@
                 "dt_end": 0,
                 "dt_start": 0,
                 "enabled": 1,
-                "id": "8ee1b780795c5e52ec88d2fdd16d8173",
+                "id": "c6f6b1f72be5adc7082cb6e85d1c944a",
                 "item": "flex",
                 "name": "Four Across",
                 "param": "four-across"
@@ -1063,7 +1130,7 @@
                 "dt_end": 0,
                 "dt_start": 0,
                 "enabled": 1,
-                "id": "1300c44724ef99ac05d3ed3fc1471445",
+                "id": "2b69067f1bbb7110dcfdee92b1eff473",
                 "item": "flex",
                 "name": "Eight Across",
                 "param": "eight-across"
@@ -1072,7 +1139,7 @@
                 "dt_end": 0,
                 "dt_start": 0,
                 "enabled": 1,
-                "id": "3289be5529431da7e5b48ebe73d58eb3",
+                "id": "8fff9e5687b9072986a0637215871ab2",
                 "item": "flex",
                 "name": "Two Across",
                 "param": "two-across"
@@ -1081,7 +1148,7 @@
                 "dt_end": 0,
                 "dt_start": 0,
                 "enabled": 1,
-                "id": "f08ffebc8c46f90dd4926234d2c43567",
+                "id": "d5c336e47ccf0d70d381ac9db02868e5",
                 "item": "flex",
                 "name": "Product Carousel",
                 "param": "product-carousel"
@@ -1090,7 +1157,7 @@
                 "dt_end": 0,
                 "dt_start": 0,
                 "enabled": 1,
-                "id": "a3aa5d76b35e2c9ba89c12c6aa7185b9",
+                "id": "f7552d2573e5f177fa017d755c3d5150",
                 "item": "flex",
                 "name": "Hero 2",
                 "param": "hero-2"
@@ -1099,7 +1166,7 @@
                 "dt_end": 0,
                 "dt_start": 0,
                 "enabled": 1,
-                "id": "2113943a65e3f8f466d73fb385a6fc24",
+                "id": "1c72dbc5fbbfc76c4a1ad7577bd3e360",
                 "item": "flex",
                 "name": "Product Carousel 2",
                 "param": "product-carousel-2"
@@ -1108,7 +1175,7 @@
                 "dt_end": 0,
                 "dt_start": 0,
                 "enabled": 1,
-                "id": "88a2a46a712a1e464870ee1bf0b539f2",
+                "id": "978ff90a02bccca73b327680470c2d0f",
                 "item": "flex",
                 "name": "Image and Text",
                 "param": "image-and-text"

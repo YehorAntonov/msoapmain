@@ -9,12 +9,21 @@
             "template_id": 168
         }
     },
+    "http_headers": [
+        {
+            "name": "Cache-Control",
+            "value": "no-store"
+        }
+    ],
     "order_contents": {
         "advanced": 1,
-        "b_height": 75,
-        "b_width": 75,
+        "b_height": 128,
+        "b_width": 128,
         "constrain": "B",
         "groups": 1,
+        "imagetypes": [
+            "main"
+        ],
         "lineitemcoupons": 1,
         "lineitemdiscounts": 1,
         "lineitemprice": "base",
@@ -23,7 +32,7 @@
         "template_id": 171
     },
     "order_customer": {
-        "prevent_template_auto_update": 0,
+        "prevent_template_auto_update": 1,
         "template_filename": "invc-order_customer.mvc",
         "template_id": 170
     },

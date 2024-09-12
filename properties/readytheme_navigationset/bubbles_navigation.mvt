@@ -1,0 +1,269 @@
+<style>
+	.bubbles {
+ 		color: #006194 !important;
+	}
+	#bubble1 {
+		position: relative;
+		transform: scale(0.8);
+	}
+	#bubble2 {
+		position: relative;
+		top: -5px;
+		left: 100px;
+		transform: scale(0.8);
+	}
+	#bubble3 {
+		position: relative;
+		top: -35px;
+		left: 50px;
+		transform: scale(0.8);
+	}
+	#bubble4 {
+		position: relative;
+		top: -15px;
+		left: -45px;
+		transform: scale(0.8);
+	}
+	#bubble5 {
+		position: relative;
+		top: 10px;
+		left: -90px;
+		transform: scale(0.8);
+	}
+	#mini-bubble-1 {
+		left: -150px;
+		top: -55px;
+		position: relative;
+		transform: scale(1.3);
+	}
+	#mini-bubble-2 {
+		position: relative;
+		top: -40px;
+		left: -15px;
+	}
+	#mini-bubble-3 {
+		position: relative;
+		left: -200px;
+		top: 20px;
+		transform: scale(1.3);
+	}
+	#mini-bubble-4 {
+		position: relative;
+		transform: scale(1.3);
+		top: -55px;
+		left: -130px;
+	}
+	#mini-bubble-5 {
+		position: relative;
+		top: 45px;
+		left: -140px;
+	}
+	#mini-bubble-6 {
+		position: relative;
+		top: -30px;
+		left: -55px;
+	}
+
+	#products {
+		position: relative;
+		top: -102px;
+		left: -14px;
+		font-size: 26px;
+		transform: scale(0.85);
+	}
+	#product-history {
+		position: relative;
+		top: -100px;
+		left: -14px;
+		font-size: 25px;
+		transform: scale(0.85);
+	}
+	#history {
+		position: relative;
+		top: -115px;
+		left: -14px;
+		font-size: 25px;
+		transform: scale(0.85);
+	}
+	#testimonials {
+		position: relative;
+		top: -87px;
+		left: -14px;
+		font-size: 21px;
+		transform: scale(0.85);
+	}
+	#faqs {
+		position: relative;
+		top: -80px;
+		left: -11px;
+		font-size: 25px;
+		transform: scale(0.85);
+	}
+	#contact {
+		position: relative;
+		top: -77px;
+		left: -30px;
+		font-size: 25px;
+		transform: scale(0.85);
+	}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js" defer></script>
+<script src="https://cdn.jsdelivr.net/gh/peterhry/CircleType@2.3.1/dist/circletype.min.js" defer></script>				
+<script defer>
+	document.addEventListener('DOMContentLoaded', function() {
+		const circleType = new CircleType(document.getElementById('products'));
+		const circleType2 = new CircleType(document.getElementById('product-history'));
+		const circleType4 = new CircleType(document.getElementById('testimonials'));
+		const circleType5 = new CircleType(document.getElementById('faqs'));
+		const circleType6 = new CircleType(document.getElementById('contact'));
+		const circleType3 = new CircleType(document.getElementById('history'));
+		circleType.radius(125);
+		circleType2.radius(125);
+		circleType3.radius(125);
+		circleType4.radius(190);
+		circleType5.radius(125);
+		circleType6.radius(125);
+		var bubbles = document.getElementById('bubbles');
+		bubbles.style.opacity = '1';
+	})
+	
+</script>
+<mvt:foreach iterator="navigationitem" array="readytheme:navigationitems">
+	<mvt:if expr="POS1 EQ 1">
+		<div id="bubble2">
+			<a aria-label="product-history" href="&mvte:navigationitem:url;" id="bubble2Link"><img alt="bubble2" style="transform: scale(1);" class="product__history" src="graphics/00000002/1/Group 2bubble2.png"></a>
+			<svg id="mini-bubble-1" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<g clip-path="url(#clip0_1260_1410)">
+				<rect width="25" height="25" rx="12.5" fill="url(#paint0_radial_1260_1410)"/>
+				<ellipse cx="8.5" cy="2.74268" rx="2.30018" ry="1.01262" transform="rotate(-17.884 8.5 2.74268)" fill="white"/>
+				</g>
+				<defs>
+				<radialGradient id="paint0_radial_1260_1410" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(12.5 12.5) rotate(90) scale(12.5)">
+				<stop stop-color="#F2FFFF" stop-opacity="0.4"/>
+				<stop offset="0.755" stop-color="#E2F0F1" stop-opacity="0.4"/>
+				<stop offset="0.88" stop-color="#BADEE0" stop-opacity="0.7"/>
+				<stop offset="1" stop-color="#A4C8CA"/>
+				</radialGradient>
+				<clipPath id="clip0_1260_1410">
+				<rect width="25" height="25" rx="12.5" fill="white"/>
+				</clipPath>
+				</defs>
+			</svg>
+			<a aria-label="product-history" class="product__history" style="transform: scale(1);" id="product-history" href="&mvte:navigationitem:url;">&mvt:navigationitem:name;</a>
+
+			<mvt:foreach iterator="navigationitem2" array="navigationitem:items">
+				<a aria-label="product-history" class="product__history" style="transform: scale(1);" id="history" href="&mvte:navigationitem2:url;">&mvt:navigationitem2:name;</a>
+			</mvt:foreach>
+
+		</div>
+		
+	<mvt:elseif expr="POS1 EQ 2">
+		<div id="bubble3">	
+			<a aria-label="testimonials" href="&mvte:navigationitem:url;" id="bubble3Link"><img alt="bubble3" style="transform: scale(1);" class="testimonials" src="graphics/00000002/1/Group 3bubble3.png"></a>
+			<svg id="mini-bubble-2" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<g clip-path="url(#clip0_1260_1410)">
+				<rect width="25" height="25" rx="12.5" fill="url(#paint0_radial_1260_1410)"/>
+				<ellipse cx="8.5" cy="2.74268" rx="2.30018" ry="1.01262" transform="rotate(-17.884 8.5 2.74268)" fill="white"/>
+				</g>
+				<defs>
+				<radialGradient id="paint0_radial_1260_1410" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(12.5 12.5) rotate(90) scale(12.5)">
+				<stop stop-color="#F2FFFF" stop-opacity="0.4"/>
+				<stop offset="0.755" stop-color="#E2F0F1" stop-opacity="0.4"/>
+				<stop offset="0.88" stop-color="#BADEE0" stop-opacity="0.7"/>
+				<stop offset="1" stop-color="#A4C8CA"/>
+				</radialGradient>
+				<clipPath id="clip0_1260_1410">
+				<rect width="25" height="25" rx="12.5" fill="white"/>
+				</clipPath>
+				</defs>
+			</svg>
+			<a aria-label="testimonials" class="testimonials" style="transform: scale(1);" id="testimonials" href="&mvte:navigationitem:url;">&mvt:navigationitem:name;</a>
+		</div>
+		
+	<mvt:elseif expr="POS1 EQ 3">
+		<div id="bubble1">
+			<a aria-label="products" href="&mvte:navigationitem:url;" id="bubble1Link"><img alt="bubble1" style="transform: scale(1);" class="products" src="graphics/00000002/1/Group 2bubble1.png"></a>
+			<svg id="mini-bubble-3" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<g clip-path="url(#clip0_1260_1410)">
+				<rect width="25" height="25" rx="12.5" fill="url(#paint0_radial_1260_1410)"/>
+				<ellipse cx="8.5" cy="2.74268" rx="2.30018" ry="1.01262" transform="rotate(-17.884 8.5 2.74268)" fill="white"/>
+				</g>
+				<defs>
+				<radialGradient id="paint0_radial_1260_1410" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(12.5 12.5) rotate(90) scale(12.5)">
+				<stop stop-color="#F2FFFF" stop-opacity="0.4"/>
+				<stop offset="0.755" stop-color="#E2F0F1" stop-opacity="0.4"/>
+				<stop offset="0.88" stop-color="#BADEE0" stop-opacity="0.7"/>
+				<stop offset="1" stop-color="#A4C8CA"/>
+				</radialGradient>
+				<clipPath id="clip0_1260_1410">
+				<rect width="25" height="25" rx="12.5" fill="white"/>
+				</clipPath>
+				</defs>
+			</svg>
+			<a aria-label="products" class="products" style="transform: scale(1);" id="products" href="&mvte:navigationitem:url;">&mvt:navigationitem:name;</a>
+		</div>
+		
+	<mvt:elseif expr="POS1 EQ 4">
+		<div id="bubble4">
+			<a aria-label="faqs" href="&mvte:navigationitem:url;" id="bubble4Link"><img alt="bubble4" style="transform: scale(1);" class="faqs"  src="graphics/00000002/1/Group 3bubble4.png"></a>
+			<svg id="mini-bubble-4" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<g clip-path="url(#clip0_1260_1410)">
+				<rect width="25" height="25" rx="12.5" fill="url(#paint0_radial_1260_1410)"/>
+				<ellipse cx="8.5" cy="2.74268" rx="2.30018" ry="1.01262" transform="rotate(-17.884 8.5 2.74268)" fill="white"/>
+				</g>
+				<defs>
+				<radialGradient id="paint0_radial_1260_1410" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(12.5 12.5) rotate(90) scale(12.5)">
+				<stop stop-color="#F2FFFF" stop-opacity="0.4"/>
+				<stop offset="0.755" stop-color="#E2F0F1" stop-opacity="0.4"/>
+				<stop offset="0.88" stop-color="#BADEE0" stop-opacity="0.7"/>
+				<stop offset="1" stop-color="#A4C8CA"/>
+				</radialGradient>
+				<clipPath id="clip0_1260_1410">
+				<rect width="25" height="25" rx="12.5" fill="white"/>
+				</clipPath>
+				</defs>
+			</svg>
+			<a aria-label="faqs" class="faqs" style="transform: scale(1);" id="faqs" href="&mvte:navigationitem:url;">&mvt:navigationitem:name;</a>
+		</div>
+		
+	<mvt:elseif expr="POS1 EQ 5">
+		<div id="bubble5">	
+			<a aria-label="contact" href="&mvte:navigationitem:url;" id="bubble5Link"><img alt="bubble5" style="transform: scale(1);" class="contact" src="graphics/00000002/1/Group 2bubble5.png"></a>
+			<svg id="mini-bubble-5" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<g clip-path="url(#clip0_1260_1410)">
+				<rect width="25" height="25" rx="12.5" fill="url(#paint0_radial_1260_1410)"/>
+				<ellipse cx="8.5" cy="2.74268" rx="2.30018" ry="1.01262" transform="rotate(-17.884 8.5 2.74268)" fill="white"/>
+				</g>
+				<defs>
+				<radialGradient id="paint0_radial_1260_1410" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(12.5 12.5) rotate(90) scale(12.5)">
+				<stop stop-color="#F2FFFF" stop-opacity="0.4"/>
+				<stop offset="0.755" stop-color="#E2F0F1" stop-opacity="0.4"/>
+				<stop offset="0.88" stop-color="#BADEE0" stop-opacity="0.7"/>
+				<stop offset="1" stop-color="#A4C8CA"/>
+				</radialGradient>
+				<clipPath id="clip0_1260_1410">
+				<rect width="25" height="25" rx="12.5" fill="white"/>
+				</clipPath>
+				</defs>
+			</svg>
+			<svg id="mini-bubble-6" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<g clip-path="url(#clip0_1260_1410)">
+				<rect width="25" height="25" rx="12.5" fill="url(#paint0_radial_1260_1410)"/>
+				<ellipse cx="8.5" cy="2.74268" rx="2.30018" ry="1.01262" transform="rotate(-17.884 8.5 2.74268)" fill="white"/>
+				</g>
+				<defs>
+				<radialGradient id="paint0_radial_1260_1410" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(12.5 12.5) rotate(90) scale(12.5)">
+				<stop stop-color="#F2FFFF" stop-opacity="0.4"/>
+				<stop offset="0.755" stop-color="#E2F0F1" stop-opacity="0.4"/>
+				<stop offset="0.88" stop-color="#BADEE0" stop-opacity="0.7"/>
+				<stop offset="1" stop-color="#A4C8CA"/>
+				</radialGradient>
+				<clipPath id="clip0_1260_1410">
+				<rect width="25" height="25" rx="12.5" fill="white"/>
+				</clipPath>
+				</defs>
+			</svg>
+			<a aria-label="contact" class="contact" style="transform: scale(1);" id="contact" href="&mvte:navigationitem:url;">&mvt:navigationitem:name;</a>
+		</div>
+	</mvt:if>
+</mvt:foreach>

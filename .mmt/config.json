@@ -1,10 +1,10 @@
 {
     "version": 1,
-    "remote_key": "msoapmain.primary",
+    "remote_key": "msoapmain.test",
     "ignore_unsynced_templates": false,
     "ignore_unsynced_properties": false,
-    "branch_id": 1,
-    "branch_name": "Production",
-    "branch_key": "100078bbafff9cc6bc7a0ca2efd40205",
+    "branch_id": 12,
+    "branch_name": "Msoap Redeseign",
+    "branch_key": "dbfa3bdff28880d92580a0f72b368b5d",
     "branch_tags": []
 }

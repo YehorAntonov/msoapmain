@@ -1,5 +1,8 @@
 <mvt:item name="html_profile" />
 <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<base href="&mvte:global:basehref;">
 	<mvt:if expr="NOT ISNULL l.settings:category:page_title">
 		<title>&mvt:category:page_title;</title>
 	<mvt:elseif expr="NOT ISNULL l.settings:page:title">
@@ -7,76 +10,112 @@
 	<mvt:else>
 		<title>&mvt:store:name;: &mvt:category:name;</title>
 	</mvt:if>
-
-	<base href="&mvt:global:basehref;" />
-	<link rel="canonical" href="&mvte:category:link;" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js" defer></script>
+	<script src="https://cdn.jsdelivr.net/gh/peterhry/CircleType@2.3.1/dist/circletype.min.js" defer></script>
+	
 	<mvt:item name="head" param="css_list" />
 	<mvt:item name="head" param="head_tag" />
 </head>
-<body class="CTGY">
-	<div id="global-header"><mvt:item name="hdft" param="global_header" /></div>
-	<mvt:comment><div id="navigation-bar"><mvt:item name="navbar" /></div></mvt:comment>
-
-	<div id="content-container" class="clearfix">
-			<div id="page-header"><mvt:item name="hdft" param="header" /></div>
-			<div id="sidebar">
-				<mvt:item name="sidebar" />
-			</div>
-			<div id="main-content" class="column">
-				
-				<mvt:comment><div id="breadcrumbs"><mvt:item name="breadcrumbs" /></div></mvt:comment>
-				<div id="category-header"><mvt:item name="prod_ctgy_hdft" param="ctgy_header" />
-				
-				<mvt:item name="customfields" param="Read_Category_Code( l.settings:category:code, 'catTitle', l.settings:customfield:catTitle)" />
-				&mvt:customfield:catTitle;
-
-
-				</div>
-				<mvt:if expr="NOT ISNULL l.settings:category_title:image">
-					<mvt:if expr="l.settings:category:code NE 'paks' AND l.settings:category:code NE 'mprod' " >
-					  <img src="&mvte:category_title:image;" alt="&mvte:category:name;" />
-					</mvt:if>
-				</mvt:if>
-				<div class="clearfix">
-				
-				<mvt:if expr="l.settings:category:code NE 'mprod'" >
-					<mvt:item name="customfields" param="Read_Category_Code( l.settings:category:code, 'catImg', l.settings:customfield:catImg)" />
-					<div class="category-title">
-						<mvt:if expr="NOT ISNULL l.settings:customfield:catImg">
-							<img src="&mvte:customfield:catImg;" alt="&mvt:category:name;" />
-						</mvt:if>
-					</div>
-				</mvt:if>
-
-				<mvt:item name="customfields" param="Read_Category_Code( l.settings:category:code, 'long', l.settings:customfield:long)" />
-				<div class="category_long_description  &mvt:category:code">&mvt:customfield:long;</div>
-				</div>
-				
-
-				<div><mvt:item name="subcategory_listing" /></div>
-				<mvt:if expr="l.settings:page:code EQ 'CTGY'  AND l.settings:category:code ISNULL ">
-				<div><mvt:item name="subcat_listing" /></div>
-				</mvt:if>
-				
-				<div id="category-listing"><mvt:item name="category_listing" />
-				<div id="category-footer"><mvt:item name="prod_ctgy_hdft" param="ctgy_footer" /></div>
-				<div id="page-footer"><mvt:item name="hdft" param="footer" /></div>
-			</div>		
-	</div>
-	&mvt:shipment:shipment_count;
-	<div id="bottom-wrap"></div>
+</head>
+<body id="js-&mvte:page:code;" class="o-site-wrapper t-page-&mvte:global:pageClass;">
+	<mvt:item name="ry_toolbelt" param="category_children|l.all_settings:category:code" />
+  <mvt:foreach iterator="subcat" array="category_children">
+    <div>
+     &mvte:subcat:name;
+    </div>
+  </mvt:foreach>
+	<mvt:item name="hdft" param="global_header" />
 	
-	<div id="global-footer"><mvt:item name="hdft" param="global_footer" /></div>
+	<section class="o-layout">
+		<div class="o-layout__item">
+			<mvt:item name="header_sequence" />
+		</div>
+	</section>
+	
+	
 
-<mvt:if expr="s.Remote_Addr EQ '159.224.93.203'">
-    <mvt:item name="ry_toolbelt" param="eval|varlist('l', '', l.all_settings)" />
-    <mvt:item name="ry_toolbelt" param="eval|varlist('g', '', l.all_settings)" />
-</mvt:if>
-<mvt:if expr="s.Remote_Addr EQ '109.86.222.78'">
-    <mvt:item name="ry_toolbelt" param="eval|varlist('l', '', l.all_settings)" />
-    <mvt:item name="ry_toolbelt" param="eval|varlist('g', '', l.all_settings)" />
+	<section class="o-layout o-layout--column-reverse o-layout--row-reverse--l o-layout--wide">
+		<mvt:if expr="l.settings:subcategories GT 0">
+			<div class="o-layout__item u-width-12 u-width-10--l">
+		<mvt:else>
+			<div class="o-layout__item u-width-12 u-width-10--l product-list-container">
+		</mvt:if>
+			<mvt:comment> <mvt:if expr="NOT ISNULL l.settings:category_title:image">
+				<section class="o-layout u-hidden u-flex--l">
+					<div class="o-layout__item">
+						<div class="x-hero" title="&mvte:category:name;">
+							<img src="&mvte:category_title:image;" alt="&mvte:category:name;" loading="lazy">
+						</div>
+						<br>
+					</div>
+				</section>
+			</mvt:if> </mvt:comment>
 
-</mvt:if>
-</div>
+			<section class="o-layout">
+				<div class="o-layout__item">
+					<mvt:item name="hdft" param="header" />
+				</div>
+			</section>
+			
+			<section class="o-layout">
+				<div class="o-layout__item">
+					<mvt:item name="prod_ctgy_hdft" param="ctgy_header" />
+				</div>
+			</section>
+
+			<mvt:item name="category_listing" />
+			
+			<section class="o-layout">
+				<div class="o-layout__item">
+					<mvt:item name="prod_ctgy_hdft" param="ctgy_footer" />
+				</div>
+			</section>
+			
+			<section class="o-layout">
+				<div class="o-layout__item">
+					<mvt:item name="hdft" param="footer" />
+				</div>
+			</section>
+		</div>
+		<mvt:if expr="l.settings:subcategories GT 0">
+			<aside class="o-layout__item u-width-12 u-width-2--l aside-menu">
+		<mvt:else>
+			<aside class="o-layout__item u-width-12 u-width-2--l aside-menu">
+		</mvt:if>
+			<mvt:item name="category_tree" />
+			<mvt:item name="facets" />
+		</aside>
+	</section>
+
+	<section class="o-layout">
+		<div class="o-layout__item">
+			<mvt:item name="footer_sequence" />
+		</div>
+	</section>
+	<mvt:item name="hdft" param="global_footer" />
 </body>
 </html>
+<mvt:if expr="l.settings:category:code EQ 'valupack' OR l.settings:category:code EQ 'laundryball'">
+	<style>
+	.product-list-container {
+		margin-top: 0;
+		min-height: 700px;
+	}
+</style>
+</mvt:if>
+<style>
+	.x-pagination__list {
+		margin-bottom: 20px;
+	}
+	@media screen and (max-width: 960px) {
+		.aside-menu {
+			display: none;
+		}
+		.c-heading-charlie {
+			margin-top: 0;
+		}
+		.descrip-main {
+			margin-bottom: 0 !important;
+		}
+	}
+</style>

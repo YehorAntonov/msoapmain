@@ -1,85 +1,185 @@
 {
-    "descrip": "This is the top navigation for all account pages.",
+    "descrip": "This is the side navigation for all account pages.",
     "items": [
         {
             "active": 1,
-            "id": "3e3a09359e8116aaa821f3974421d2c2",
-            "link": "<a href=\"https://www.miraclesoap.com/customer-account.html\" target=\"_self\">Overview</a>",
-            "link_dest": "ACLN",
+            "id": "90a6bd7d194c313000c277c0d4807209",
+            "items": [
+                {
+                    "active": 1,
+                    "id": "81ef484ff6ee2b58f67d636b2562616d",
+                    "link": "<a href=\"https://www.miraclesoap.com/customer-edit.html\" target=\"_self\">Edit Information</a>",
+                    "link_dest": "ACED",
+                    "link_targ": "_self",
+                    "link_type": "G",
+                    "name": "Edit Information",
+                    "url": "https://www.miraclesoap.com/customer-edit.html"
+                },
+                {
+                    "active": 1,
+                    "id": "de7ffc93c15e6766f68d30106990a86f",
+                    "link": "<a href=\"https://www.miraclesoap.com/change-email-address.html\" target=\"_self\">Change Email</a>",
+                    "link_dest": "CEML",
+                    "link_targ": "_self",
+                    "link_type": "G",
+                    "name": "Change Email",
+                    "url": "https://www.miraclesoap.com/change-email-address.html"
+                },
+                {
+                    "active": 1,
+                    "id": "1f386929db052f896742629cb2ed8d45",
+                    "link": "<a href=\"https://www.miraclesoap.com/change-password.html\" target=\"_self\">Change Password</a>",
+                    "link_dest": "CPWD",
+                    "link_targ": "_self",
+                    "link_type": "G",
+                    "name": "Change Password",
+                    "url": "https://www.miraclesoap.com/change-password.html"
+                }
+            ],
+            "link": "Personal Information",
             "link_targ": "_self",
-            "link_type": "G",
-            "name": "Overview",
-            "url": "https://www.miraclesoap.com/customer-account.html"
+            "link_type": "N",
+            "name": "Personal Information"
         },
         {
             "active": 1,
-            "id": "dda5f1311ca0e707a1f5fd591027e28e",
-            "link": "<a href=\"https://www.miraclesoap.com/order-history-list.html\" target=\"_self\">Orders</a>",
-            "link_dest": "ORDH",
+            "id": "d435071db09516239917d3e4dc0f33a9",
+            "items": [
+                {
+                    "active": 1,
+                    "id": "90cdfa48d18256bffa3e2c88d6d0e95f",
+                    "link": "<a href=\"https://www.miraclesoap.com/customer-payment-cards.html\" target=\"_self\">Edit Cards</a>",
+                    "link_dest": "CPCD",
+                    "link_targ": "_self",
+                    "link_type": "G",
+                    "name": "Edit Cards",
+                    "url": "https://www.miraclesoap.com/customer-payment-cards.html"
+                },
+                {
+                    "active": 1,
+                    "id": "b4a6f096024e257241e91abb38748ce0",
+                    "link": "<a href=\"https://www.miraclesoap.com/customer-payment-card-add.html\" target=\"_self\">Add New Card</a>",
+                    "link_dest": "CPCA",
+                    "link_targ": "_self",
+                    "link_type": "G",
+                    "name": "Add New Card",
+                    "url": "https://www.miraclesoap.com/customer-payment-card-add.html"
+                }
+            ],
+            "link": "Payment Options",
             "link_targ": "_self",
-            "link_type": "G",
-            "name": "Orders",
-            "url": "https://www.miraclesoap.com/order-history-list.html"
+            "link_type": "N",
+            "name": "Payment Options"
         },
         {
             "active": 1,
-            "id": "86551b1cc58a6794d759d1159881ac10",
-            "link": "<a href=\"https://www.miraclesoap.com/customer-account-balance.html\" target=\"_self\">Customer Credit</a>",
-            "link_dest": "ABAL",
+            "id": "6d7b4fffddd0662be2b6496082dde971",
+            "items": [
+                {
+                    "active": 1,
+                    "id": "aef8b2a1c1a860394186d249448059fb",
+                    "link": "<a href=\"https://www.miraclesoap.com/order-history-list.html\" target=\"_self\">Order History</a>",
+                    "link_dest": "ORDH",
+                    "link_targ": "_self",
+                    "link_type": "G",
+                    "name": "Order History",
+                    "url": "https://www.miraclesoap.com/order-history-list.html"
+                },
+                {
+                    "active": 1,
+                    "id": "27ceef180ef73266becad4328f1bd6d5",
+                    "link": "<a href=\"https://www.miraclesoap.com/customer-subscriptions.html\" target=\"_self\">Manage Subscriptions</a>",
+                    "link_dest": "CSUB",
+                    "link_targ": "_self",
+                    "link_type": "G",
+                    "name": "Manage Subscriptions",
+                    "url": "https://www.miraclesoap.com/customer-subscriptions.html"
+                },
+                {
+                    "active": 1,
+                    "id": "7de9cff56dad8016f041d5fc0c42c72f",
+                    "link": "<a href=\"https://www.miraclesoap.com/wish-lists.html\" target=\"_self\">Wish Lists</a>",
+                    "link_dest": "WLST",
+                    "link_targ": "_self",
+                    "link_type": "G",
+                    "name": "Wish Lists",
+                    "url": "https://www.miraclesoap.com/wish-lists.html"
+                }
+            ],
+            "link": "My Orders",
             "link_targ": "_self",
-            "link_type": "G",
-            "name": "Customer Credit",
-            "url": "https://www.miraclesoap.com/customer-account-balance.html"
+            "link_type": "N",
+            "name": "My Orders"
         },
         {
             "active": 1,
-            "id": "656904fb55eec941298669bbcb261f90",
-            "link": "<a href=\"https://www.miraclesoap.com/customer-profile.html\" target=\"_self\">Password</a>",
-            "link_dest": "CPRO",
+            "id": "b41738fd1878d3135f111094bb17fec1",
+            "items": [
+                {
+                    "active": 1,
+                    "id": "b2d3cae472a4514c1af1cc26389fe02d",
+                    "link": "<a href=\"https://www.miraclesoap.com/customer-account-balance.html\" target=\"_self\">Check Your Balance</a>",
+                    "link_dest": "ABAL",
+                    "link_targ": "_self",
+                    "link_type": "G",
+                    "name": "Check Your Balance",
+                    "url": "https://www.miraclesoap.com/customer-account-balance.html"
+                },
+                {
+                    "active": 1,
+                    "id": "e476b2ea84198619f4ec9fed27f756d0",
+                    "link": "<a href=\"https://www.miraclesoap.com/redeem-gift-certificate.html\" target=\"_self\">Redeem Gift Certificate</a>",
+                    "link_dest": "RGFT",
+                    "link_targ": "_self",
+                    "link_type": "G",
+                    "name": "Redeem Gift Certificate",
+                    "url": "https://www.miraclesoap.com/redeem-gift-certificate.html"
+                }
+            ],
+            "link": "Customer Credit",
             "link_targ": "_self",
-            "link_type": "G",
-            "name": "Password",
-            "url": "https://www.miraclesoap.com/customer-profile.html"
+            "link_type": "N",
+            "name": "Customer Credit"
         },
         {
             "active": 1,
-            "id": "027e4b2447403c7b1c6acbbd70461be4",
-            "link": "<a href=\"https://www.miraclesoap.com/customer-payment-cards.html\" target=\"_self\">Payment</a>",
-            "link_dest": "CPCD",
+            "id": "839677aa97d703e519ce86a9f65f3966",
+            "items": [
+                {
+                    "active": 1,
+                    "id": "13c31e51ea30c9169312f6bedbc6c879",
+                    "link": "<a href=\"https://www.miraclesoap.com/customer-address-book.html\" target=\"_self\">Edit Addresses</a>",
+                    "link_dest": "CABK",
+                    "link_targ": "_self",
+                    "link_type": "G",
+                    "name": "Edit Addresses",
+                    "url": "https://www.miraclesoap.com/customer-address-book.html"
+                },
+                {
+                    "active": 1,
+                    "id": "4006e5093bd03914019b4ebaaf12dcef",
+                    "link": "<a href=\"https://www.miraclesoap.com/customer-address-add.html\" target=\"_self\">Add New Address</a>",
+                    "link_dest": "CADA",
+                    "link_targ": "_self",
+                    "link_type": "G",
+                    "name": "Add New Address",
+                    "url": "https://www.miraclesoap.com/customer-address-add.html"
+                }
+            ],
+            "link": "Address Book",
             "link_targ": "_self",
-            "link_type": "G",
-            "name": "Payment",
-            "url": "https://www.miraclesoap.com/customer-payment-cards.html"
+            "link_type": "N",
+            "name": "Address Book"
         },
         {
-            "active": 1,
-            "id": "32a67c044694683e82d592896d04644e",
-            "link": "<a href=\"https://www.miraclesoap.com/customer-address-book.html\" target=\"_self\">Address Book</a>",
-            "link_dest": "CABK",
+            "active": 0,
+            "id": "bd90c6ce0506dd29f7a65e27a7db1746",
+            "link": "<a href=\"https://www.miraclesoap.com/affiliate-edit.html\" target=\"_self\">Affiliate Information</a>",
+            "link_dest": "AFED",
             "link_targ": "_self",
             "link_type": "G",
-            "name": "Address Book",
-            "url": "https://www.miraclesoap.com/customer-address-book.html"
-        },
-        {
-            "active": 1,
-            "id": "56c251ae4591c766d42ca8b488a8a8f8",
-            "link": "<a href=\"https://www.miraclesoap.com/customer-subscriptions.html\" target=\"_self\">Subscriptions</a>",
-            "link_dest": "CSUB",
-            "link_targ": "_self",
-            "link_type": "G",
-            "name": "Subscriptions",
-            "url": "https://www.miraclesoap.com/customer-subscriptions.html"
-        },
-        {
-            "active": 1,
-            "id": "8325b1b9d3a46f4bbf51a785a45edccd",
-            "link": "<a href=\"https://www.miraclesoap.com/wish-lists.html\" target=\"_self\">Wish Lists</a>",
-            "link_dest": "WLST",
-            "link_targ": "_self",
-            "link_type": "G",
-            "name": "Wish Lists",
-            "url": "https://www.miraclesoap.com/wish-lists.html"
+            "name": "Affiliate Information",
+            "url": "https://www.miraclesoap.com/affiliate-edit.html"
         }
     ],
     "layout": "S",

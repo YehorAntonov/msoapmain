@@ -2,922 +2,1344 @@
  * Use this file to all in scripts and functions you would like to have globally or on specific
  * pages. You will use this to extend your theme instead of adding code to the core framework files.
  */
-
-var themeFunctionality = {
-	init: function () {
+function loadScript(url, callback) {
+	var script = document.createElement("script");
+	script.type = "text/javascript";
+	if (script.readyState) {
+		script.onreadystatechange = function() {
+			if (script.readyState === "loaded" || script.readyState === "complete") {
+				script.onreadystatechange = null;
+				callback();
+			}
+		};
+	} else {
+		script.onload = function() {
+			callback();
+		};
+	}
+	script.src = url;
+	document.getElementsByTagName("head")[0].appendChild(script);
+}
+const themeFunctionality = {
+	global() {
 		/**
-		 * Load and initialize the Fasten Header extension
+		 * Add `ID`, `CLASS`, and `aria-describedby` attributes to `INPUT` and `SELECT` elements
+		 * dynamically created by Miva, where needed.
 		 */
-		const fastenHeaderActive = document.querySelector('[data-hook="fasten-header"]');
+		let mvtInputWraps = document.querySelectorAll('[data-hook~="mvt-input"]');
+		let mvtSelectWraps = document.querySelectorAll('[data-hook~="mvt-select"]');
+		let styleMVT = function styleMVT(element, input) {
+			let mvtItems = element.querySelectorAll(input);
+			let attr = {
+				id: element.getAttribute('data-mvt-id'),
+				classes: element.getAttribute('data-mvt-classlist'),
+				description: element.getAttribute('data-mvt-describedby'),
+				autocomplete: element.getAttribute('data-mvt-autocomplete')
+			};
 
-		if (typeof fastenHeaderActive !== 'undefined') {
-			$.loadScript(theme_path + 'extensions/fasten-header/fasten-header.js');
-		}
+			mvtItems.forEach((mvtItem, i) => {
+				if (attr.id !== null) {
+					const uniqueId = i === 0 ? attr.id : `${attr.id}_${i + 1}`;
+					mvtItem.setAttribute('id', uniqueId);
+				}
+				if (attr.classes !== null) {
+					mvtItem.setAttribute('class', attr.classes);
+				}
+				if (attr.description !== null) {
+					mvtItem.setAttribute('aria-describedby', attr.description);
+				}
+				if (attr.autocomplete !== null) {
+					mvtItem.setAttribute('autocomplete', attr.autocomplete);
+				}
+			});
+		};
 
-
-		/**
-		 * Load and initialize the Show Related extension
-		 */
-		$.loadScript(theme_path + 'extensions/show-related/show-dont-tell.js');
-
-
-		/**
-		 * Load and initialize the Mini-Basket extension
-		 */
-		$.loadScript(theme_path + 'extensions/mini-basket/mini-basket.js', function () {
-			miniBasket.init();
+		mvtInputWraps.forEach(element => {
+			styleMVT(element, 'input');
 		});
 
-			/**
-			 * If clicking outside of the mini-basket, close the mini-basket.
-			 */
-			(function () {
-				let miniBasket = document.querySelector('[data-hook="mini-basket"]');
 
-				/**
-				 * Polyfill for browsers that do not support Element.matches() [IE 11]
-				 */
-				if (!Element.prototype.matches) {
-					Element.prototype.matches = Element.prototype.msMatchesSelector;
-				}
+		mvtSelectWraps.forEach(element => {
+			styleMVT(element, 'select');
+		});
 
-				/**
-				 * Polyfill for browsers that do not support Element.closest() [IE 11]
-				 */
-				if (!Element.prototype.closest) {
-					Element.prototype.closest = function (s) {
-						let el = this;
+		/**
+		 * Search form toggle for smaller screens
+		 */
+		(() => {
+			const header = document.querySelector('[data-hook="site-header"]');
+			const headerSearch = header.querySelector('[data-hook="site-header__search"]');
+			const headerSearchToggle = header.querySelector('[data-hook="open-header-search"]');
 
-						if (!document.documentElement.contains(el)) {
-							return null;
-						}
-						do {
-							if (el.matches(s)) {
-								return el;
-							}
-							el = el.parentElement || el.parentNode;
-						}
-						while (el !== null && el.nodeType === 1);
-						return null;
-					};
-				}
+			if (headerSearch && headerSearchToggle) {
+				const headerSearchInput = headerSearch.querySelector('input');
 
-				document.addEventListener('click', function (event) {
-					if (event.target.closest('[data-hook="mini-basket"]')) {
-						return;
+				headerSearchToggle.addEventListener('click', () => {
+					let isActive = header.classList.contains('search-is-active');
+
+					if (!isActive) {
+						header.classList.add('search-is-active');
+						headerSearchInput.focus();
 					}
-
-					if (event.target.closest('[data-hook~="open-mini-basket"]') && miniBasket.classList.contains('x-mini-basket--open')) {
-						event.preventDefault();
-						event.stopImmediatePropagation();
-						document.documentElement.classList.remove('u-overflow-hidden');
-						document.documentElement.classList.remove('x-mini-basket-is-active');
-						miniBasket.classList.remove('x-mini-basket--open');
-					}
-
-					if (miniBasket.classList.contains('x-mini-basket--open')) {
-						document.documentElement.classList.toggle('u-overflow-hidden');
-						document.documentElement.classList.toggle('x-mini-basket-is-active');
-						miniBasket.classList.toggle('x-mini-basket--open');
+					else {
+						header.classList.remove('search-is-active');
+						headerSearchToggle.focus();
 					}
 				});
-			})();
+			}
+		})();
+		loadScript("https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js", function() {
+			$('[data-hook="global-account"]').click(function() {
+			let ariaExpanded = $(this).attr('aria-expanded');
+			if (ariaExpanded === 'false') {
+				$('#global-account').attr('aria-hidden', 'false');
+				$(this).attr('aria-expanded', 'true');
+			}
+			else {
+				$('#global-account').attr('aria-hidden', 'true');
+				$(this).attr('aria-expanded', 'false');
+			}
+			})
+		});
+		$('body').on('click', '[data-hook="button-add-to-cart"]', function(e) {
+			var btnAddToCart = $(this);
+		
+			console.log(btnAddToCart);
+			var product_code = btnAddToCart.data('product-code');
+			console.log(product_code)
+			$('[data-hook="button-add-to-cart"]').prop("disabled", true);
+			btnAddToCart.text('Processing...');
+		
+			ajaxAddToCart(product_code, 1, function() {
+				$('[data-hook="button-add-to-cart"]').prop("disabled", false);
+				btnAddToCart.text('Add To Cart');
+			});
+		});
+		
+
+
+
+
+
+		function ajaxAddToCart(Product_Code, Quantity, callback) {
+			//create object with type of request and options, add product to cart
+			var data = {
+			Action: "ADPR",
+			Product_Code,
+			Quantity
+			};
+
+	
+			//create object with ajax request
+			var miniBasketRequest = $.ajax({
+			method: "POST",
+			data: data,
+			url: "https://miraclesoap.mivatest.com/basket-contents.html",
+			});
+	
+			//method done with function of response from server
+			miniBasketRequest.done(function (response) {
+				$('[data-hook="open-mini-basket"]').html($(response).find('[data-hook="open-mini-basket"]').first().html());
+				$('[data-hook="mini-basket"]').html($(response).find('[data-hook="mini-basket"]').first().html());
+				//open mini basket with click
+				// $('[data-hook="open-mini-basket"]')[0].click();
+				//callback
+	
+				callback && callback();
+			});
+			//output error
+			miniBasketRequest.fail(function (jqXHR, textStatus) {
+			//console.log( "Request failed: " + textStatus );
+			});
+		};
+	},
+	init() {
+		/**
+		 * Initialize the A11y-Toggle extension
+		 */
+		a11yToggle();
+		if (_hook('global-account') && _hook('global-account').length !== 0) {
+			a11yToggleClose(_hook('global-account')); // Close the global account box when clicking on a different target.
+		}
+		$(document).ready(function() {
+			$(".products").hover(function() {
+				$(".products").css('transform', 'scale(1.1)');
+			}, function() {
+				$(".products").css('transform', 'scale(1)');
+			})
+			$(".product__history").hover(function() {
+				$(".product__history").css('transform', 'scale(1.1)');
+			}, function() {
+				$(".product__history").css('transform', 'scale(1)');
+			})
+			$(".testimonials").hover(function() {
+				$(".testimonials").css('transform', 'scale(1.1)');
+			}, function() {
+				$(".testimonials").css('transform', 'scale(1)');
+			})
+			$(".faqs").hover(function() {
+				$(".faqs").css('transform', 'scale(1.1)');
+			}, function() {
+				$(".faqs").css('transform', 'scale(1)');
+			})
+			$(".contact").hover(function() {
+				$(".contact").css('transform', 'scale(1.1)');
+			}, function() {
+				$(".contact").css('transform', 'scale(1)');
+			})
+		})
+		/**
+		 * Initialize Quantify extension
+		 */
+		quantify.init(document);
+
+		/**
+		 * Initialize the Mini-Basket extension
+		 */
+		miniBasket?.init?.();
 
 
 		/**
-		 * Load and initialize the Omega Navigation extension
+		 * Initialize the Transfigure Navigation extension
 		 */
-		$.loadScript(theme_path + 'extensions/navigation/omega/omega-navigation.js');
+		$.hook('has-drop-down').transfigureNavigation();
 
-
+	},
+	stateDatalist() {
 		/**
-		 * Load and initialize the Collapsing Breadcrumbs extension
+		 * [1] This function is an enhancement to the `datalist` State/Province and Country replacement.
+		 * Since a customer can type a value in the input, this will check if the entered value
+		 * matches one of the output values or text entries. If so, it passes the value back to
+		 * ensure proper functionality with shipping modules, i.e. 2 letter abbreviations for
+		 * US and Canada. Otherwise, it the entry is used as typed.
+		 *
+		 * [2] This function will toggle the HTML "required" attribute on the state field depending on
+		 * which country the customer has selected. If you want to change the countries that require a
+		 * state or province, you can modify the `countriesRequiringSP` entry below. If you are using
+		 * the billing address as the primary, modify the `primaryAddress` variable below.
+		 *
+		 * @type {string[]}
 		 */
-		$.loadScript(theme_path + 'extensions/breadcrumbs/collapsing/collapsing-breadcrumbs.js');
 
+		const countriesRequiringSP = ['AR', 'AU', 'BR', 'CA', 'CN', 'IN', 'ID', 'IT', 'JP', 'MX', 'TH', 'US'];
+		const datalist = document.querySelectorAll('[data-datalist]');
+		const primaryAddress = 'shipping';
 
-		/**
-		 * This is a a minimal polyfill for <template> use in IE 9-11.
-		 * http://ironlasso.com/template-tag-polyfill-for-internet-explorer/
-		 */
-		Element.prototype.getTemplateContent = function () {
-			'use strict';
+		// [1]
+		function checkOption(entry, list) {
+            let datalist = document.querySelector(`#${list}`);
+			let datalistOptions = datalist.querySelectorAll('option');
+			let value = '';
 
-			return function (element) {
+            for (let option of datalistOptions) {
+				if (entry.toLowerCase() === option.value.toLowerCase() || entry.toLowerCase() === option.text.toLowerCase()) {
+					value = option.value;
+				}
+			}
 
-				if (element.content) {
-					return element.content;
+			return value;
+		}
+
+		// [2]
+		function updateRequiredStateAttributes(countrySelector, stateInput) {
+			countrySelector.addEventListener('change', () => {
+				let selectedCountry = countrySelector.options[countrySelector.selectedIndex].value;
+
+				if (countriesRequiringSP.includes(selectedCountry)) {
+					stateInput.setAttribute('required', '');
+					stateInput.setAttribute('aria-required', 'true');
+				}
+				else {
+					stateInput.removeAttribute('required');
+					stateInput.removeAttribute('aria-required');
+				}
+			});
+		}
+
+		if (datalist.length > 0) {
+			for (let list of datalist) {
+                list.addEventListener('blur', () => {
+					let thisDatalist = list.getAttribute('list');
+					let checkValue = checkOption(list.value, thisDatalist);
+
+					if (checkValue) {
+						list.value = checkValue;
+						list.previousElementSibling.value = checkValue;
+					}
+					else {
+						list.previousElementSibling.value = list.value;
+					}
+				});
+			}
+
+			const formElement = document.querySelector('[data-validate-address]');
+			const updateShippingState = document.querySelector('#shipping_selector');
+			const updateBillingState = document.querySelector('#billing_selector');
+			let billPrefix;
+			let shipPrefix;
+
+			if (formElement) {
+				if (formElement.elements.hasOwnProperty('Action') && (formElement.elements.Action.value === 'ORDR')) {
+					billPrefix = 'Bill';
+					shipPrefix = 'Ship';
+				}
+				else if (formElement.elements.hasOwnProperty('Action') && (formElement.elements.Action.value === 'ICST' || formElement.elements.Action.value === 'UCST')) {
+					billPrefix = 'Customer_Bill';
+					shipPrefix = 'Customer_Ship';
+				}
+				else if (formElement.elements.hasOwnProperty('Action') && (formElement.elements.Action.value === 'ICSA' || formElement.elements.Action.value === 'UCSA')) {
+					billPrefix = 'Address_';
+					shipPrefix = 'Address_';
 				}
 
-				var template = element,
-					templateContent,
-					documentContent;
+				const shippingState = document.querySelector(`input[name="${shipPrefix}State"]`);
+				const billingState = document.querySelector(`input[name="${billPrefix}State"]`);
 
-				templateContent = template.childNodes;
-				documentContent = document.createDocumentFragment();
-
-				while (templateContent[0]) {
-					documentContent.appendChild(templateContent[0]);
+				function updateState({nextElementSibling, value}) {
+					nextElementSibling.value = value;
+					nextElementSibling.blur();
 				}
 
-				template.content = documentContent;
-				return documentContent;
+				if (shippingState.value !== '') {
+					shippingState.nextElementSibling.value = shippingState.value;
+				}
+				shippingState.nextElementSibling.blur();
 
-			}(this);
+				if (billingState.value !== '') {
+					billingState.nextElementSibling.value = billingState.value;
+				}
+				billingState.nextElementSibling.blur();
+
+				if (updateShippingState !== null) {
+					updateShippingState.addEventListener('change', () => {
+						updateState(shippingState);
+					});
+				}
+
+				if (updateBillingState !== null) {
+					updateBillingState.addEventListener('change', () => {
+						updateState(billingState);
+					});
+				}
+
+				if (primaryAddress === 'shipping') {
+					const shippingCountrySelector = document.querySelector(`#${shipPrefix}Country`);
+					const shippingStateInput = document.querySelector(`#${shipPrefix}StateSelect`);
+
+					updateRequiredStateAttributes(shippingCountrySelector, shippingStateInput);
+				}
+				else {
+					const billingCountrySelector = document.querySelector(`#${billPrefix}Country`);
+					const billingStateInput = document.querySelector(`#${billPrefix}StateSelect`);
+
+					updateRequiredStateAttributes(billingCountrySelector, billingStateInput);
+				}
+
+				(() => {
+					document.querySelector(`#${shipPrefix}Country`).dispatchEvent(new Event('change', {'bubbles': true}));
+					document.querySelector(`#${billPrefix}Country`).dispatchEvent(new Event('change', {'bubbles': true}));
+				})();
+			}
+		}
+	},
+    jsSFNT() {
+		loadScript("https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js", function() {
+			function initializeSlick() {
+				$(".grid-products-container").slick({
+					lazyLoad: "ondemand",
+					autoplay: true,
+					autoplaySpeed: 3000,
+					slidesToShow: 5,
+					slidesToScroll: 1,
+					infinite: true,
+					
+					
+					
+					
+					responsive: [
+						{
+							breakpoint: 1350,
+							settings: {
+								slidesToShow: 4
+							}
+						},
+						{
+							breakpoint: 1150,
+							settings: {
+								slidesToShow: 4
+							}
+						},
+						{
+							breakpoint: 1020,
+							settings: {
+								slidesToShow: 3
+							}
+						},
+						{
+							breakpoint: 960,
+							settings: {
+								slidesToShow: 3,
+								arrows: false
+							}
+						},
+						{
+							breakpoint: 720,
+							settings: {
+								slidesToShow: 2,
+								arrows: false
+							}
+						},
+						{
+							breakpoint: 520,
+							settings: {
+								slidesToShow: 1,
+								centerPadding: '75px',
+								arrows: false
+							}
+						},
+						{
+							breakpoint: 485,
+							settings: {
+								slidesToShow: 1,
+								centerPadding: '90px',
+								arrows: false
+							}
+						},
+						{
+							breakpoint: 480,
+							settings: {
+								slidesToShow: 1,
+								centerPadding: '80px',
+								arrows: false
+							}
+						},
+						{
+							breakpoint: 450,
+							settings: {
+								slidesToShow: 1,
+								centerPadding: '70px',
+								arrows: false
+							}
+						},
+						{
+							breakpoint: 420,
+							settings: {
+								slidesToShow: 1,
+								centerPadding: '60px',
+								arrows: false
+							}
+						},
+						{
+							breakpoint: 390,
+							settings: {
+								slidesToShow: 1,
+								centerPadding: '50px',
+								arrows: false
+							}
+						}
+					]
+				});
+
+				$(".grid-products-container").show();
+			};
+			if (typeof jQuery !== 'undefined') {
+				if ($.fn.slick) {
+					initializeSlick();
+				} else {
+					$.getScript('https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', function () {
+						initializeSlick();
+					});
+				};
+			};
+		});
+		loadScript("https://cdnjs.cloudflare.com/ajax/libs/Readmore.js/2.2.0/readmore.js", function() {
+			$('.long-description').each(function() {
+				if ($(this).height() <= 63) {
+
+				}
+				else {
+					$(this).addClass('description-category-after');
+					$(this).readmore({
+						speed: 550,
+						collapsedHeight: 63,
+						moreLink: '<a class="more-link show-more" href="#">Read More</a>',
+						lessLink: '<a class="less-link show-less" href="#">Show Less</a>',
+						beforeToggle: function(trigger, element, expanded) {
+							if (expanded) {
+								$(element).addClass('description-category-after')
+							}
+							else {
+								$(element).removeClass('description-category-after')
+							}
+						}
+					});
+				}
+			})
+		});
+
+		$(document).ready(function() {
+			$(".products").hover(function() {
+				$(".products").css('transform', 'scale(1.1)');
+			}, function() {
+				$(".products").css('transform', 'scale(1)');
+			})
+			$(".product__history").hover(function() {
+				$(".product__history").css('transform', 'scale(1.1)');
+			}, function() {
+				$(".product__history").css('transform', 'scale(1)');
+			})
+			$(".testimonials").hover(function() {
+				$(".testimonials").css('transform', 'scale(1.1)');
+			}, function() {
+				$(".testimonials").css('transform', 'scale(1)');
+			})
+			$(".faqs").hover(function() {
+				$(".faqs").css('transform', 'scale(1.1)');
+			}, function() {
+				$(".faqs").css('transform', 'scale(1)');
+			})
+			$(".contact").hover(function() {
+				$(".contact").css('transform', 'scale(1.1)');
+			}, function() {
+				$(".contact").css('transform', 'scale(1)');
+			})
+		})
+	},
+	jsFAQS() {
+		loadScript("https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js", function() {
+			$(document).ready(function() {
+				$("#1-questions").click(function() {
+					$('html, body').animate({
+						scrollTop: $("#1-question").offset().top
+					}, 10)
+				})
+				$("#2-questions").click(function() {
+					$('html, body').animate({
+						scrollTop: $("#2-question").offset().top
+					}, 10)
+				})
+				$("#3-questions").click(function() {
+					$('html, body').animate({
+						scrollTop: $("#3-question").offset().top
+					}, 10)
+				})
+				$("#4-questions").click(function() {
+					$('html, body').animate({
+						scrollTop: $("#4-question").offset().top
+					}, 10)
+				})
+				$("#5-questions").click(function() {
+					$('html, body').animate({
+						scrollTop: $("#5-question").offset().top
+					}, 10)
+				})
+				$("#6-questions").click(function() {
+					$('html, body').animate({
+						scrollTop: $("#6-question").offset().top
+					}, 10)
+				})
+				$("#7-questions").click(function() {
+					$('html, body').animate({
+						scrollTop: $("#7-question").offset().top
+					}, 10)
+				})
+				$("#8-questions").click(function() {
+					$('html, body').animate({
+						scrollTop: $("#8-question").offset().top
+					}, 10)
+				})
+				$("#9-questions").click(function() {
+					$('html, body').animate({
+						scrollTop: $("#9-question").offset().top
+					}, 10)
+				})
+				$("#10-questions").click(function() {
+					$('html, body').animate({
+						scrollTop: $("#10-question").offset().top
+					}, 10)
+				})
+				$("#11-questions").click(function() {
+					$('html, body').animate({
+						scrollTop: $("#11-question").offset().top
+					}, 10)
+				})
+				$("#12-questions").click(function() {
+					$('html, body').animate({
+						scrollTop: $("#12-question").offset().top
+					}, 10)
+				})
+				$("#13-questions").click(function() {
+					$('html, body').animate({
+						scrollTop: $("#13-question").offset().top
+					}, 10)
+				})
+				$("#14-questions").click(function() {
+					$('html, body').animate({
+						scrollTop: $("#14-question").offset().top
+					}, 10)
+				})
+				$("#15-questions").click(function() {
+					$('html, body').animate({
+						scrollTop: $("#15-question").offset().top
+					}, 10)
+				})
+				$("#16-questions").click(function() {
+					$('html, body').animate({
+						scrollTop: $("#16-question").offset().top
+					}, 10)
+				})
+				$("#17-questions").click(function() {
+					$('html, body').animate({
+						scrollTop: $("#17-question").offset().top
+					}, 10)
+				})
+				$("#18-questions").click(function() {
+					$('html, body').animate({
+						scrollTop: $("#18-question").offset().top
+					}, 10)
+				})
+				$("#19-questions").click(function() {
+					$('html, body').animate({
+						scrollTop: $("#19-question").offset().top
+					}, 10)
+				})
+				$("#20-questions").click(function() {
+					$('html, body').animate({
+						scrollTop: $("#20-question").offset().top
+					}, 10)
+				})
+				$("#21-questions").click(function() {
+					$('html, body').animate({
+						scrollTop: $("#21-question").offset().top
+					}, 10)
+				})
+				$("#22-questions").click(function() {
+					$('html, body').animate({
+						scrollTop: $("#22-question").offset().top
+					}, 10)
+				})
+				$("#23-questions").click(function() {
+					$('html, body').animate({
+						scrollTop: $("#23-question").offset().top
+					}, 10)
+				})
+				$("#24-questions").click(function() {
+					$('html, body').animate({
+						scrollTop: $("#24-question").offset().top
+					}, 10)
+				})
+				$("#25-questions").click(function() {
+					$('html, body').animate({
+						scrollTop: $("#25-question").offset().top
+					}, 10)
+				})
+				$("#26-questions").click(function() {
+					$('html, body').animate({
+						scrollTop: $("#26-question").offset().top
+					}, 10)
+				})
+				$("#27-questions").click(function() {
+					$('html, body').animate({
+						scrollTop: $("#27-question").offset().top
+					}, 10)
+				})
+				$("#28-questions").click(function() {
+					$('html, body').animate({
+						scrollTop: $("#28-question").offset().top
+					}, 10)
+				})
+				$("#29-questions").click(function() {
+					$('html, body').animate({
+						scrollTop: $("#29-question").offset().top
+					}, 10)
+				})
+			})
+			$('#clear-search').click(function() {
+				$('#search-id')[0].reset();
+			})
+			$.extend({
+				debounced: function(fn, timeout, invokeAsap, ctx)  {
+					/**
+					 * Custom function to allow us to delay events until after the
+					 * trigger has ended.
+					 *
+					 * Example: $(window).on('resize', $.debounced(function () {...DO SOMETHING...}, 100));
+					 */
+					if (arguments.length === 3 && typeof invokeAsap !== 'boolean') {
+						ctx = invokeAsap;
+						invokeAsap = false;
+					}
+					let timer;
+		
+					return () => {
+						let args = arguments;
+		
+						ctx = ctx || this;
+						invokeAsap && !timer && fn.apply(ctx, args);
+						clearTimeout(timer);
+						timer = setTimeout(() => {
+							invokeAsap || fn.apply(ctx, args);
+							timer = null;
+						}, timeout);
+					};
+				}
+			})
+		
+			var faqSearchInput = $('form.search-form-faq input')
+			var faqQuestions = $('.faq-question')
+			var faqLinks = $('.links-faq-container')
+			var noResultsMessage = $('#faq-search-no-results')
+			var faqSearchHandler = $.debounced(function() {
+		
+				var searchString = faqSearchInput.val().toLowerCase();
+		
+			console.log(searchString)
+		
+				if (searchString == '' || searchString.length < 3) {
+					faqLinks.fadeIn();
+					faqQuestions.fadeIn();
+					noResultsMessage.hide();
+					return false;
+				}
+		
+		
+		
+				faqQuestions.each(function(){
+		
+					$this = $(this);
+		
+					var question = $this.children('span').text().toLowerCase();
+		
+					if (question.includes(searchString)) {
+						$this.hide();
+						$this.fadeIn();
+					}
+					else {
+						$this.hide();
+						faqLinks.hide();
+					}
+				})
+		
+				setTimeout(function() {
+					if (faqQuestions.has(':visible').length) {
+						noResultsMessage.hide();
+					}
+					else {
+						noResultsMessage.fadeIn();
+					}
+				}, 500)
+		
+			}, 200);
+		
+			faqSearchInput.off().on('change keyup', function(e) {
+				e.preventDefault();
+				e.stopImmediatePropagation();
+				setTimeout(function() {
+					faqSearchHandler(e);
+				}, 500)
+			});
+			$('#search-id').on('submit', function(event) {
+				event.preventDefault();
+			})
+		});
+	},
+    jsCTGY() {
+		loadScript("https://cdnjs.cloudflare.com/ajax/libs/Readmore.js/2.2.0/readmore.js", function() {
+			if ($('#long-descrip').height() <= 76) {
+
+			}
+			else {
+				$('#long-descrip').addClass('description-after');
+				$('#long-descrip').readmore({
+					speed: 1000,
+					collapsedHeight: 76,
+					moreLink: '<a class="more-link" href="#">Read More</a>',
+					lessLink: '<a class="less-link" href="#">Show Less</a>',
+					beforeToggle: function(trigger, element, expanded) {
+						if (expanded) {
+							$(element).addClass('description-after')
+						}
+						else {
+							$(element).removeClass('description-after')
+						}
+					}
+				});
+			}
+		})
+		if ($(window).width() <= 960) {
+		loadScript("https://cdnjs.cloudflare.com/ajax/libs/Readmore.js/2.2.0/readmore.js", function() {
+			$('.ctgy-description-long').each(function() {
+				if ($(this).height() <= 60) {
+
+				}
+				else {
+					$(this).addClass('description-after-product');
+					$(this).readmore({
+						speed: 550,
+						collapsedHeight: 60,
+						moreLink: '<a class="more-link show-more" href="#">Read More</a>',
+						lessLink: '<a class="less-link show-less" href="#">Show Less</a>',
+						beforeToggle: function(trigger, element, expanded) {
+							if (expanded) {
+								$(element).addClass('description-after-product')
+							}
+							else {
+								$(element).removeClass('description-after-product')
+							}
+						}
+					});
+				}
+			})
+			$('.long-description').each(function() {
+				if ($(this).height() <= 63) {
+
+				}
+				else {
+					$(this).addClass('description-after-product');
+					$(this).readmore({
+						speed: 550,
+						collapsedHeight: 63,
+						moreLink: '<a class="more-link show-more" href="#">Read More</a>',
+						lessLink: '<a class="less-link show-less" href="#">Show Less</a>',
+						beforeToggle: function(trigger, element, expanded) {
+							if (expanded) {
+								$(element).addClass('description-after-product')
+							}
+							else {
+								$(element).removeClass('description-after-product')
+							}
+						}
+					});
+				}
+			})
+		});
+		}
+		$('.counting').on('click', '.increment', function() {
+			var quantityOfProduct = $(this).parent().find('.input-count');
+			var qty = parseInt(quantityOfProduct.val());
+			quantityOfProduct.val(qty + 1);
+			updateCounter(quantityOfProduct);
+		});
+		$('.counting').on('click', '.decrement', function() {
+			var quantityOfProduct = $(this).parent().find('.input-count');
+			var qty = parseInt(quantityOfProduct.val()) - 1;
+	
+			if (qty >= 1) {
+				quantityOfProduct.val(qty);
+				updateCounter(quantityOfProduct);
+			};
+		});
+		// $('.counting').on('input', '.input-count', function() {
+		// 	updateCounter($(this));
+		// });
+		$('.counting').on('blur', '.input-count', function() {
+			var value = $(this).val();
+			
+			if (value !== "" && !isNaN(value) && parseInt(value) > 0) {
+				
+			} 
+			else {
+				$(this).val(1);
+			}
+		});
+		
+		function updateCounter(quantityOfProduct) {
+			var decrementBtn = quantityOfProduct.siblings('.decrement');
+			var qty = parseInt(quantityOfProduct.val());
+	
+			if (isNaN(qty) || qty < 1) {
+				qty = 1;
+				quantityOfProduct.val(qty);
+			}
+			else {
+				
+			};
+	
+			decrementBtn.prop('disabled', qty === 1);
+		};
+
+		$('[data-hook="btn-add-to-cart"]').click(function(e) {
+			var btnAddToCart = $(this);
+			// console.log(btnAddToCart)
+			var product_code = btnAddToCart.data('product-code');
+			// console.log(product_code)
+			var category_code = btnAddToCart.data('category-code');
+			var qty = parseInt($(this).parent().find('.input-count').val());
+	
+			$('[data-hook="btn-add-to-cart"]').prop("disabled", true);
+			btnAddToCart.text('Processing...');
+			// console.log(qty)
+			ajaxAddToCart(product_code, qty, function() {
+				$('[data-hook="btn-add-to-cart"]').prop("disabled", false);
+				btnAddToCart.text('Add To Cart');
+			});
+		});
+
+
+
+
+		function ajaxAddToCart(Product_Code, Quantity, callback) {
+			//create object with type of request and options, add product to cart
+			var data = {
+			Action: "ADPR",
+			Product_Code,
+			Quantity,
+			};
+
+	
+			//create object with ajax request
+			var miniBasketRequest = $.ajax({
+			method: "POST",
+			data: data,
+			url: "https://miraclesoap.mivatest.com/basket-contents.html",
+			});
+	
+			//method done with function of response from server
+			miniBasketRequest.done(function (response) {
+				$('[data-hook="open-mini-basket"]').html($(response).find('[data-hook="open-mini-basket"]').first().html());
+				$('[data-hook="mini-basket"]').html($(response).find('[data-hook="mini-basket"]').first().html());
+				//open mini basket with click
+				$('[data-hook="open-mini-basket"]')[0].click();
+				//callback
+	
+				callback && callback();
+			});
+			//output error
+			miniBasketRequest.fail(function (jqXHR, textStatus) {
+			//console.log( "Request failed: " + textStatus );
+			});
 		};
 
 
-		/**
-		 * This is a basic "lazy-load" function for complete DOM sections and images
-		 * base of `data-` attributes.
-		 */
-		function observeDeferred() {
-			'use strict';
 
-			const deferredDOMItems = document.querySelectorAll('[data-defer]');
-			const deferredImages = document.querySelectorAll('[data-src]');
-			const config = {
-				root: null, // avoiding 'root' or setting it to 'null' sets it to default value: viewport
-				rootMargin: '0px',
-				threshold: 0.25
+		$('[data-hook="btn-add-to-cart-gift"]').click(function(e) {
+			var btnAddToCart = $(this);
+			var attributes = {};
+			var product_code = btnAddToCart.data('product-code');
+			var emailAttrCode = btnAddToCart.parent().parent().find('.email-attr').attr('name');
+			// console.log(emailAttr)
+			var messageAttrCode = btnAddToCart.parent().parent().find('.message-attr').attr('name');
+			// console.log(emailAttr)
+			var emailAttrVal = btnAddToCart.parent().parent().find('.email-attr-val').attr('name');
+			var messageAttrVal = btnAddToCart.parent().parent().find('.message-attr-val').attr('name');
+			var emailVal = btnAddToCart.parent().parent().find('.email-attr-val').val();
+			var messageVal = btnAddToCart.parent().parent().find('.message-attr-val').val();
+			attributes[emailAttrCode] = 'gc-recipient';
+			attributes[emailAttrVal] = emailVal;
+			attributes[messageAttrCode] = 'gc-message';
+			attributes[messageAttrVal] = messageVal;
+			console.log(attributes)
+			// e.preventDefault();
+			$('[data-hook="btn-add-to-cart"]').prop("disabled", true);
+			$('[data-hook="btn-add-to-cart-gift"]').prop("disabled", true);
+			var qty = parseInt($(this).parent().find('.input-count').val());
+			ajaxAddToCartGift(product_code, qty, attributes, function() {
+				$('[data-hook="btn-add-to-cart"]').prop("disabled", false);
+				$('[data-hook="btn-add-to-cart-gift"]').prop("disabled", false);
+			});
+		});
+
+		function ajaxAddToCartGift(Product_Code, Quantity, attributes, callback) {
+			//create object with type of request and options, add product to cart
+			var data = {
+			Action: "ADPR",
+			Product_Code,
+			Quantity,
 			};
+			if (attributes) {
+                Object.assign(data, data, attributes);
+            }
+	
+			//create object with ajax request
+			var miniBasketRequest = $.ajax({
+			method: "POST",
+			data: data
+			});
+	
+			//method done with function of response from server
+			miniBasketRequest.done(function (response) {
+				$('[data-hook="open-mini-basket"]').html($(response).find('[data-hook="open-mini-basket"]').first().html());
+				$('[data-hook="mini-basket"]').html($(response).find('[data-hook="mini-basket"]').first().html());
+				//open mini basket with click
+				$('[data-hook="open-mini-basket"]')[0].click();
+				callback && callback();
+			});
+			//output error
+			miniBasketRequest.fail(function (jqXHR, textStatus) {
+			//console.log( "Request failed: " + textStatus );
+			});
+		};
+	},
+    jsPROD() {
+		/**
+		 * Initialize the AJAX Add-To-Cart extension
+		 */
+		addToCart.init();
 
-			if ('IntersectionObserver' in window) {
-				let deferredObjectsObserver = new IntersectionObserver(function (DOMItems, self) {
-					DOMItems.forEach(function (DOMItem) {
-						if (DOMItem.isIntersecting) {
-							loadDOMItems(DOMItem.target);
-							// Stop watching and load the deferred object
-							self.unobserve(DOMItem.target);
-						}
-					});
-				}, config);
-				let deferredImagesObserver = new IntersectionObserver(function (images, self) {
-					images.forEach(function (image) {
-						if (image.isIntersecting) {
-							loadImages(image.target);
-							// Stop watching and load the deferred object
-							self.unobserve(image.target);
-						}
-					});
-				}, config);
-
-				deferredDOMItems.forEach(function (deferredDOMItem) {
-					deferredObjectsObserver.observe(deferredDOMItem);
-				});
-				deferredImages.forEach(function (deferredImage) {
-					deferredImagesObserver.observe(deferredImage);
-				});
+		/**
+		 * Initialize the A11y-Tabs extension
+		 */
+		tabbedContent.init();
+	},
+    jsPLST() {
+	},
+    jsSRCH() {
+		$('.counting').on('click', '.increment', function() {
+			var quantityOfProduct = $(this).parent().find('.input-count');
+			var qty = parseInt(quantityOfProduct.val());
+			quantityOfProduct.val(qty + 1);
+			updateCounter(quantityOfProduct);
+		});
+		$('.counting').on('click', '.decrement', function() {
+			var quantityOfProduct = $(this).parent().find('.input-count');
+			var qty = parseInt(quantityOfProduct.val()) - 1;
+	
+			if (qty >= 1) {
+				quantityOfProduct.val(qty);
+				updateCounter(quantityOfProduct);
+			};
+		});
+		// $('.counting').on('input', '.input-count', function() {
+		// 	updateCounter($(this));
+		// });
+		$('.counting').on('blur', '.input-count', function() {
+			var value = $(this).val();
+			
+			if (value !== "" && !isNaN(value) && parseInt(value) > 0) {
+				
+			} 
+			else {
+				$(this).val(1);
+			}
+		});
+		
+		function updateCounter(quantityOfProduct) {
+			var decrementBtn = quantityOfProduct.siblings('.decrement');
+			var qty = parseInt(quantityOfProduct.val());
+	
+			if (isNaN(qty) || qty < 1) {
+				qty = 1;
+				quantityOfProduct.val(qty);
 			}
 			else {
-				Array.from(deferredDOMItems).forEach(function (deferredDOMItem) {
-					return loadDOMItems(deferredDOMItem);
-				});
-				Array.from(deferredImages).forEach(function (deferredImage) {
-					return loadImages(deferredImage);
-				});
-			}
+				
+			};
+	
+			decrementBtn.prop('disabled', qty === 1);
+		};
 
-			function loadDOMItems(deferredObject) {
-				deferredObject.classList.add('t-defer-object--loaded');
-			}
-
-			function loadImages(deferredImage) {
-				const src = deferredImage.getAttribute('data-src');
-
-				if (!src) {
-					return;
-				}
-				deferredImage.classList.add('t-lazy-load-image');
-				deferredImage.src = src;
-			}
-
-		}
-
-		var observeDeferredTimeout;
-
-		window.addEventListener('resize', function () {
-			if (!observeDeferredTimeout) {
-				observeDeferredTimeout = setTimeout(function () {
-					observeDeferredTimeout = null;
-
-					observeDeferred();
-				}, 100);
-			}
-		}, false);
-		observeDeferred();
-
-
-	},
-	jsSFNT: function() {
-		/**
-		 * Create promo image text overlays for every `storefront-promo__item`
-		 */
-		(function () {
-			'use strict';
-
-			let promoItems = document.querySelectorAll('[data-hook="storefront-promo__item"]');
-
-			for (let id = 0; id < promoItems.length; id++) {
-				let promoCaption = document.createElement('figcaption');
-				let promoImage = promoItems[id].querySelector('img');
-				let promoImageAlt = promoImage.getAttribute('alt');
-				let promoLink = promoItems[id].querySelector('a');
-
-				promoCaption.classList.add('t-storefront-promo__caption');
-				promoCaption.textContent = promoImageAlt;
-
-				if (promoLink) {
-					promoLink.append(promoCaption);
-				}
-				else {
-					promoItems[id].append(promoCaption);
-				}
-			}
-		})();
-
-
-		/**
-		 * Create spotlight image text overlays for every `spotlight__figure`
-		 */
-		(function () {
-			'use strict';
-
-			let spotlightItems = document.querySelectorAll('[data-hook="spotlight__figure"]');
-
-			for (let id = 0; id < spotlightItems.length; id++) {
-				let spotlightCaption = document.createElement('figcaption');
-				let spotlightImage = spotlightItems[id].querySelector('img');
-				let spotlightImageAlt = spotlightImage.getAttribute('alt');
-				let spotlightLink = spotlightItems[id].querySelector('a');
-
-				spotlightCaption.classList.add('t-spotlight__figure-text');
-				spotlightCaption.textContent = spotlightImageAlt;
-
-				if (spotlightLink) {
-					spotlightLink.append(spotlightCaption);
-				}
-				else {
-					spotlightItems[id].append(spotlightCaption);
-				}
-			}
-		})();
-
-
-		/**
-		 * Load and initialize the Slick plugin for Featured Products
-		 */
-		$.loadScript(theme_path + 'plugins/slick/slick.min.js', function () {
-			$.hook('featured-products').slick({
-				draggable: false,
-				infinite: false,
-				slidesToScroll: 5,
-				slidesToShow: 5,
-				responsive: [
-					{
-						breakpoint: 1200,
-						settings: {
-							slidesToScroll: 4,
-							slidesToShow: 4
-						}
-					},
-					{
-						breakpoint: 960,
-						settings: {
-							slidesToScroll: 3,
-							slidesToShow: 3
-						}
-					},
-					{
-						breakpoint: 748,
-						settings: {
-							slidesToScroll: 2,
-							slidesToShow: 2
-						}
-					},
-					{
-						breakpoint: 360,
-						settings: {
-							slidesToScroll: 1,
-							slidesToShow: 1
-						}
-					}
-				]
+		$('[data-hook="btn-add-to-cart"]').click(function(e) {
+			var btnAddToCart = $(this);
+			console.log(btnAddToCart)
+			var product_code = btnAddToCart.data('product-code');
+			var category_code = btnAddToCart.data('category-code');
+			var qty = parseInt($(this).parent().find('.input-count').val());
+	
+			$('[data-hook="btn-add-to-cart"]').prop("disabled", true);
+			btnAddToCart.text('Processing...');
+	
+			ajaxAddToCart(product_code, qty, function() {
+				$('[data-hook="btn-add-to-cart"]').prop("disabled", false);
+				btnAddToCart.text('Add To Cart');
 			});
 		});
+
+
+
+
+		function ajaxAddToCart(Product_Code, Quantity, callback) {
+			//create object with type of request and options, add product to cart
+			var data = {
+			Action: "ADPR",
+			Product_Code,
+			Quantity,
+			};
+
+	
+			//create object with ajax request
+			var miniBasketRequest = $.ajax({
+			method: "POST",
+			data: data,
+			url: "https://miraclesoap.mivatest.com/basket-contents.html",
+			});
+	
+			//method done with function of response from server
+			miniBasketRequest.done(function (response) {
+				$('[data-hook="open-mini-basket"]').html($(response).find('[data-hook="open-mini-basket"]').first().html());
+				$('[data-hook="mini-basket"]').html($(response).find('[data-hook="mini-basket"]').first().html());
+				//open mini basket with click
+				$('[data-hook="open-mini-basket"]')[0].click();
+				//callback
+	
+				callback && callback();
+			});
+			//output error
+			miniBasketRequest.fail(function (jqXHR, textStatus) {
+			//console.log( "Request failed: " + textStatus );
+			});
+		};
 	},
-	jsCTGY: function() {
-		var subcategoryNavigation = document.querySelector('[data-hook="subcategory-navigation"]');
-		var subcategoryNavigationBlock = $.hook('subcategory-navigation-block');
-		var subcategoryNavigationSlider = $.hook('subcategory-navigation-slider');
+    jsBASK() {
+		/**
+		 * Estimate Shipping
+		 */
+		(document => {
+			let formElement = _hook('shipping-estimate-form');
 
-		function loadSubcategoryNavigation() {
-			subcategoryNavigationBlock.css('visibility', 'hidden');
-			if (/**document.body.clientWidth >= 960 &&*/ subcategoryNavigationSlider.html() === '') {
-				subcategoryNavigationSlider.append(document.importNode(subcategoryNavigation.getTemplateContent(), true));
+			if (formElement.length > 0) {
+				let formButton = _hook('calculate-shipping-estimate', formElement);
 
-				$.loadScript(theme_path + 'plugins/slick/slick.min.js', function () {
-					subcategoryNavigationSlider.slick({
-						draggable: false,
-						infinite: false,
-						slidesToScroll: 8,
-						slidesToShow: 8,
-						responsive: [
-							{
-								breakpoint: 1200,
-								settings: {
-									slidesToScroll: 6,
-									slidesToShow: 6
-								}
-							},
-							{
-								breakpoint: 960,
-								settings: {
-									slidesToScroll: 4,
-									slidesToShow: 4
-								}
-							},
-							{
-								breakpoint: 959,
-								//settings: 'unslick'
-								settings: {
-									slidesToScroll: 2,
-									slidesToShow: 2
-								}
-							}
-						]
+				function createCalculation() {
+					let processor = document.createElement('iframe');
+
+					processor.id = 'calculate-shipping';
+					processor.name = 'calculate-shipping';
+					processor.style.display = 'none';
+					formElement.before(processor);
+					processor.addEventListener('load', () => {
+						displayResults(processor);
 					});
-				});
+					formElement.submit();
+				}
 
-				subcategoryNavigationSlider.on('destroy', function () {
-					subcategoryNavigationSlider.empty();
-				});
+				function displayResults(source) {
+					let content = source.contentWindow.document.body.innerHTML;
 
-				subcategoryNavigationBlock.css('visibility', 'visible');
-			}
-			subcategoryNavigationBlock.css('visibility', 'visible');
-		}
+					_hook('shipping-estimate-fields', formElement).classList.add('u-hidden');
+					_hook('shipping-estimate-results', formElement).innerHTML = content;
+					_hook('shipping-estimate-recalculate', formElement).classList.remove('u-hidden');
+					formElement.setAttribute('data-status', 'idle');
 
-
-		/**
-		 * Load and initialize the Refinery extension
-		 */
-		var facetsContainer = $.hook('add-refinery');
-		var facetTemplate = document.querySelector('[data-hook="horizontal-refinery"]');
-
-		if (facetTemplate !== null) {
-			var facetTemplateContent = facetTemplate.getTemplateContent();
-		}
-
-		var hasRefinery = $.hook('refinery');
-		var hasRefineryAnnex = $.hook('refinery-annex');
-
-		function loadRefinery() {
-			facetsContainer.css('visibility', 'hidden');
-			if (document.body.clientWidth >= 959 && facetsContainer.html() === '') {
-				facetsContainer.append(document.importNode(facetTemplateContent, true));
-				facetsContainer.css('visibility', 'visible');
-			}
-			else if (document.body.clientWidth < 959) {
-				facetsContainer.empty();
-			}
-			$.loadScript(theme_path + 'extensions/facets/refinery/refinery.js');
-
-		}
-
-		var loadSubcategoryTimeout;
-		var loadRefineryTimeout;
-
-		window.addEventListener('resize', function () {
-			if (!loadSubcategoryTimeout) {
-				loadSubcategoryTimeout = setTimeout(function () {
-					loadSubcategoryTimeout = null;
-
-					subcategoryNavigationBlock.css('visibility', 'hidden');
-					loadSubcategoryNavigation();
-				}, 100);
-			}
-		}, false);
-		window.addEventListener('resize', function () {
-			if (!loadRefineryTimeout) {
-				loadRefineryTimeout = setTimeout(function () {
-					loadRefineryTimeout = null;
-
-					if (hasRefinery) {
-						facetsContainer.css('visibility', 'hidden');
-						loadRefinery();
-					}
-				}, 100);
-			}
-		}, false);
-		loadSubcategoryNavigation();
-
-		if (hasRefinery || hasRefineryAnnex) {
-			loadRefinery();
-		}
-
-		/**
-		 * Accordion Extension
-		 */
-		(function () {
-			'use strict';
-
-			let accordionToggles = document.querySelectorAll('[data-hook="accordion-toggle"]');
-
-			for (let id = 0; id < accordionToggles.length; id++) {
-				accordionToggles[id].addEventListener('click', function (event) {
-					let parent = this.parentElement.closest('li');
-
-					parent.classList.toggle('is-active');
-				});
-			}
-		})();
-
-
-		/**
-		 * Sub-Subcategory/Product Slider
-		 */
-		var subcategoryProductList = $.hook('subcategory-product-list');
-
-		if (subcategoryProductList.length > 0) {
-			$.loadScript(theme_path + 'plugins/slick/slick.min.js', function () {
-				subcategoryProductList.each(function () {
-					var header = $(this).prev($.hook('subcategory-product-list__heading'));
-
-					$(this).slick({
-						appendArrows: header,
-						draggable: false,
-						infinite: false,
-						slidesToScroll: 4,
-						slidesToShow: 4,
-						responsive: [
-							{
-								breakpoint: 768,
-								settings: {
-									appendArrows: header,
-									slidesToScroll: 2,
-									slidesToShow: 2
-								}
-							},
-							{
-								breakpoint: 640,
-								settings: {
-									appendArrows: $(this),
-									slidesToScroll: 2,
-									slidesToShow: 2
-								}
-							}
-						]
+					_hook('shipping-estimate-recalculate', formElement).addEventListener('click', () => {
+						_hook('shipping-estimate-recalculate', formElement).classList.add('u-hidden');
+						_hook('shipping-estimate-results', formElement).innerHTML = '';
+						_hook('shipping-estimate-fields', formElement).classList.remove('u-hidden');
 					});
-				});
-			});
 
-		}
-
-
-	},
-	jsCTLG: function() {
-		themeFunctionality.jsCTGY();
-	},
-	jsPROD: function() {
-		/**
-		 * This function set will update an attributes label when choosing an option from a radio or select element.
-		 */
-		(function () {
-			'use strict';
-
-			let updateSelection = document.querySelectorAll('[data-hook="update-selection"]');
-
-			for (let id = 0; id < updateSelection.length; id++) {
-				let updateSelectionLabel = updateSelection[id].querySelector('[data-hook="update-selection-label"]');
-				let updateRadio = updateSelection[id].querySelectorAll('input[type="radio"]');
-				let updateSelect = updateSelection[id].querySelectorAll('select');
-
-				if (updateRadio.length > 0) {
-					for (let radioID = 0; radioID < updateRadio.length; radioID++) {
-						if (updateRadio[radioID].checked) {
-							updateSelectionLabel.textContent = updateRadio[radioID].value;
-						}
-
-						updateRadio[radioID].addEventListener('change', function (event) {
-							updateSelectionLabel.textContent = this.value;
-						});
-					}
-				}
-				if (updateSelect.length > 0) {
-					for (let selectID = 0; selectID < updateSelect.length; selectID++) {
-						updateSelectionLabel.textContent = updateSelect[selectID].options[updateSelect[selectID].selectedIndex].text;
-
-						updateSelect[selectID].addEventListener('change', function (event) {
-							updateSelectionLabel.textContent = this.options[this.selectedIndex].text;
-						});
-					}
+					setTimeout(
+						() => {
+							source.parentNode.removeChild(source);
+						}, 1
+					);
 				}
 
+				formButton.addEventListener('click', event => {
+					event.preventDefault();
+					createCalculation();
+				}, false);
 			}
-		})();
+		})(document);
+		
+	},
+    jsORDL() {
+		document.addEventListener('click', event => {
+			if (!event.target.hasAttribute('data-disclosure')) return;
 
+			const target = event.target;
+			const targetContent = document.querySelector(`#${target.getAttribute('aria-controls')}`);
+			const sibling = target.parentNode.querySelector('[data-disclosure].u-hidden');
+			const siblingContent = document.querySelector(`#${sibling.getAttribute('aria-controls')}`);
+
+			if (!targetContent) return;
+
+			sibling.setAttribute('aria-expanded', 'true');
+			sibling.classList.remove('u-hidden');
+			siblingContent.classList.add('u-hidden');
+			target.setAttribute('aria-expanded', 'false');
+			target.classList.add('u-hidden');
+			targetContent.classList.remove('u-hidden');
+		});
+	},
+    jsOCST() {
+		themeFunctionality.stateDatalist();
+	},
+    jsOSEL() {
+	},
+    jsOPAY() {
 		/**
-		 * This function toggles the radio when selecting a subscription term.
+		 * Added functionality to help style the default Miva output payment
+		 * fields.
 		 */
-		let canSubscribe = document.querySelector('[data-hook="select-subscription"]');
+		document.querySelectorAll('[data-hook="mvt-input"]').forEach(mvtInput => {
+			let dataHook = mvtInput.getAttribute('data-datahook');
 
-		if (canSubscribe) {
-			canSubscribe.addEventListener('click', function (event) {
-				if (event.target !== event.currentTarget) {
-					event.currentTarget.click();
-				}
-			});
-		}
-
-		/**
-		 * Product Imagery
-		 * This set of functions control the creation and operation of the product image gallery carousels.
-		 */
-		let productThumbnails = document.querySelector('[data-hook="product-thumbnails"]');
-		let debouncedThumbnailSlider = $.debounced(function () {
-			if ($(productThumbnails).hasClass('slick-initialized')) {
-				$(productThumbnails).css('opacity', 0).removeClass('slick-slider slick-vertical slick-initialized');
+			if (dataHook) {
+				mvtInput.querySelector('input').setAttribute('data-hook', dataHook);
 			}
-
-			$(productThumbnails).on('init', function (event, slick) {
-				$(event.target).css('opacity', 0);
-				setTimeout(function () {
-					$(event.target).css('opacity', 1);
-				}, 50);
-			});
-
-			$(productThumbnails).not('.slick-initialized').slick({
-				draggable: false,
-				infinite: false,
-				slidesToScroll: 5,
-				slidesToShow: 5,
-				vertical: true,
-				verticalSwiping: true,
-				responsive: [
-					{
-						breakpoint: 768,
-						settings: {
-							slidesToScroll: 4,
-							slidesToShow: 4,
-							vertical: false,
-							verticalSwiping: false
-						}
-					}
-				]
-			});
-		}, 250);
-
-
-		/**
-		 * Update Display When Attribute Machine Fires
-		 */
-		MivaEvents.SubscribeToEvent('variant_changed', function () {
 		});
 
-		if (productThumbnails.innerHTML !== '') {
-			$.loadScript(theme_path + 'plugins/slick/slick.min.js', debouncedThumbnailSlider);
-			$(document).on('ImageMachine_Generate_Thumbnail', debouncedThumbnailSlider);
-		}
+		document.querySelectorAll('[data-hook="mvt-select"]').forEach(mvtSelect => {
+			mvtSelect.querySelectorAll('select').forEach(select => {
+				let wrapDiv = document.createElement('div');
 
-		let productImage = $.hook('product-image');
+				wrapDiv.classList.add('c-form-select');
+				select.parentNode.insertBefore(wrapDiv, select);
+				wrapDiv.appendChild(select);
 
-		if (productImage.length > 0) {
-			$.loadScript(theme_path + 'plugins/slick/slick.min.js', function () {
-				$.hook('product-image').on('click', function (event) {
-					let goTo = this.getAttribute('data-index');
-					let activePhotoGallery = $.hook('active-main_image').find($.hook('photo-gallery'));
-
-					activePhotoGallery.slick({
-						draggable: false,
-						infinite: false,
-						slidesToScroll: 1,
-						slidesToShow: 1
-					});
-					activePhotoGallery.slick('slickGoTo', goTo, true);
-				});
+				if (wrapDiv.nextSibling.nodeType === 3) {
+					wrapDiv.nextSibling.remove();
+				}
 			});
-		}
-
-
-		/**
-		 * Load and initialize the AJAX Add to Cart extension
-		 */
-		$.loadScript(theme_path + 'extensions/product-layout/ajax-add-to-cart.js');
-
+		});
 
 		/**
-		 * Load and initialize the Slick plugin for Related Products
+		 * Credit Card Detection
 		 */
-		let relatedProductList = $.hook('related-products');
+		(() => {
+			let creditCardInput = document.querySelector('[data-hook="detect-card"]');
 
-		if (relatedProductList.length > 0) {
-			$.loadScript(theme_path + 'plugins/slick/slick.min.js', function () {
-				relatedProductList.each(function () {
-					var header = $(this).prev($.hook('related-product-list__heading'));
+			if (creditCardInput !== null) {
+				['input', 'paste'].forEach(event => {
+					creditCardInput.addEventListener(event, function () {
+						let cardInput = this;
 
-					$(this).slick({
-						appendArrows: header,
-						draggable: false,
-						infinite: false,
-						slidesToScroll: 5,
-						slidesToShow: 5,
-						responsive: [
-							{
-								breakpoint: 1200,
-								settings: {
-									appendArrows: header,
-									slidesToScroll: 4,
-									slidesToShow: 4
-								}
-							},
-							{
-								breakpoint: 960,
-								settings: {
-									appendArrows: header,
-									slidesToScroll: 3,
-									slidesToShow: 3
-								}
-							},
-							{
-								breakpoint: 768,
-								settings: {
-									appendArrows: header,
-									slidesToScroll: 2,
-									slidesToShow: 2
-								}
-							},
-							{
-								breakpoint: 640,
-								settings: {
-									appendArrows: $(this),
-									slidesToScroll: 1,
-									slidesToShow: 1
-								}
+						if (isNaN(this.value)) {
+							this.classList.add('has-error');
+						}
+
+						paymentMethod.detect(this, paymentDetected => {
+							if (paymentDetected && supportedPaymentMethods.findPaymentMethod(paymentDetected.name)) {
+								cardInput.classList.remove('has-error');
+								_hook('payment-method-display').textContent = paymentDetected.display;
+								_hook('payment-method').value = supportedPaymentMethods.findPaymentMethod(paymentDetected.name);
 							}
-						]
+							else {
+								cardInput.classList.add('has-error');
+							}
+						});
+
 					});
 				});
-			});
-		}
-
-
-		/**
-		 * This is the Show/Hide functionality for the Show More links in the
-		 * product description section.
-		 */
-		(function () {
-			'use strict';
-
-			function vw(v) {
-				let w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-				return (v * w) / 100;
-			}
-
-			let showMoreSections = document.querySelectorAll('[data-hook="show-more"]');
-
-			function peekaboo (reset) {
-				if (showMoreSections.length > 0) {
-					if (reset) {
-						document.querySelectorAll('[data-hook="show-more-toggle"]').forEach(function (toggle) {
-							toggle.parentNode.removeChild(toggle);
-						});
-						return;
-					}
-
-					showMoreSections.forEach(function (showMore) {
-						if (showMore.clientHeight > vw(30)) {
-							let showMoreToggle = document.createElement('button');
-							let showContent = '<span class="t-show-more__toggle-text">See More <span class="u-icon-chevron-down u-font-small"></span></span>';
-							let lessContent = '<span class="t-show-more__toggle-text">See Less <span class="u-icon-chevron-up u-font-small"></span></span>';
-
-							showMoreToggle.innerHTML = showContent;
-							showMoreToggle.classList.add('t-show-more__toggle');
-							showMoreToggle.setAttribute('data-hook', 'show-more-toggle');
-							showMore.classList.add('t-show-more');
-							showMore.appendChild(showMoreToggle);
-
-							showMoreToggle.addEventListener('click', function (clickEvent) {
-								clickEvent.preventDefault();
-								showMore.classList.toggle('t-show-more--active');
-								if (showMoreToggle.innerHTML === showContent) {
-									showMoreToggle.innerHTML = lessContent;
-								}
-								else {
-									showMoreToggle.innerHTML = showContent;
-								}
-							});
-						}
-
-					});
-				}
-			}
-			peekaboo();
-
-			let peekabooTimeout;
-
-			window.addEventListener('resize', function () {
-				peekaboo(true);
-				if (peekabooTimeout) {
-					window.cancelAnimationFrame(peekabooTimeout);
-				}
-
-				peekabooTimeout = window.requestAnimationFrame(function () {
-					peekaboo();
-				});
-			}, false);
-
-		}());
-
-	},
-	jsPATR: function() {
-		/**
-		 * This function set will update an attributes label when choosing an option from a radio or select element.
-		 */
-		(function () {
-			'use strict';
-
-			let updateSelection = document.querySelectorAll('[data-hook="update-selection"]');
-
-			for (let id = 0; id < updateSelection.length; id++) {
-				let updateSelectionLabel = updateSelection[id].querySelector('[data-hook="update-selection-label"]');
-				let updateRadio = updateSelection[id].querySelectorAll('input[type="radio"]');
-				let updateSelect = updateSelection[id].querySelectorAll('select');
-
-				if (updateRadio.length > 0) {
-					for (let radioID = 0; radioID < updateRadio.length; radioID++) {
-						if (updateRadio[radioID].checked) {
-							updateSelectionLabel.textContent = updateRadio[radioID].value;
-						}
-
-						updateRadio[radioID].addEventListener('change', function (event) {
-							updateSelectionLabel.textContent = this.value;
-						});
-					}
-				}
-				if (updateSelect.length > 0) {
-					for (let selectID = 0; selectID < updateSelect.length; selectID++) {
-						updateSelectionLabel.textContent = updateSelect[selectID].options[updateSelect[selectID].selectedIndex].text;
-
-						updateSelect[selectID].addEventListener('change', function (event) {
-							updateSelectionLabel.textContent = this.options[this.selectedIndex].text;
-						});
-					}
-				}
-
 			}
 		})();
+	},
+    jsINVC() {
+		const toggle = _hook('toggle-login-options');
 
-		let canSubscribe = document.querySelector('[data-hook="select-subscription"]');
+		if (toggle.length !== 0) {
+			const defaultCheck = toggle.querySelector('[data-toggle-login-check]');
+			const wrap = toggle.querySelector('[data-toggle-login-email-wrap]');
+			const emailInput = wrap.querySelector('[data-toggle-login-email]');
 
-		if (canSubscribe) {
-			canSubscribe.addEventListener('click', function (event) {
-				if (event.target !== event.currentTarget) {
-					event.currentTarget.click();
+			defaultCheck.addEventListener('change', event => {
+				if (event.target.checked) {
+					wrap.hidden = true;
+					emailInput.setAttribute('disabled', '');
+				}
+				else {
+					wrap.hidden = false;
+					emailInput.removeAttribute('disabled');
+					emailInput.focus();
 				}
 			});
 		}
-	},
-	jsPLST: function() {
-		themeFunctionality.jsCTGY();
-	},
-	jsSRCH: function() {
-		themeFunctionality.jsCTGY();
-	},
-	jsBASK: function() {
-		/**
-		 * Load and initialize the Quantify extension
-		 */
-		$.loadScript(theme_path + 'extensions/quantify/quantify.js');
 
-		/**
-		 * Enable the shipping estimate functionality.
-		 */
-		mivaJS.estimateShipping('basket');
-	},
-	jsORDL: function() {
-	},
-	jsOCST: function() {
-	},
-	jsOSEL: function() {
-	},
-	jsOPAY: function() {
-	},
-	jsINVC: function() {
-	},
-	jsACAD: function() {
-		$('#showShippingDetails').click(function () {
-			console.log("Hello");
-           		$('#shippingAndBillingDetails').toggleClass('hide_details ')
-        	}) 
-	},
-	jsACLN: function() {
-		/**
-		 * This set of functions makes for a better overflow scrolling navigation section.
-		 * @type {Element}
-		 */
-		const $navList = document.querySelector('[data-hook="account-navigation__list"]');
-		const $shadowStart = document.querySelector('[data-hook="account-navigation__shadow--start"]');
-		const $shadowEnd = document.querySelector('[data-hook="account-navigation__shadow--end"]');
+		_hook('print-invoice').addEventListener('click', element => {
+			element.preventDefault();
+			window.print();
+		});
 
-		function handleShadowVisibility() {
-			const maxScrollStartReached = $navList.scrollLeft <= 0;
-			const maxScrollEndReached = $navList.scrollLeft >= $navList.scrollWidth - $navList.offsetWidth;
-
-			toggleShadow($shadowStart, maxScrollStartReached);
-			toggleShadow($shadowEnd, maxScrollEndReached);
-		}
-
-		function toggleShadow($el, maxScrollReached) {
-			const shadowIsVisible = $el.classList.contains('is-visible');
-			const showShadow = !maxScrollReached && !shadowIsVisible;
-			const hideShadow = maxScrollReached && shadowIsVisible;
-
-			if (showShadow) {
-				window.requestAnimationFrame(function () {
-					$el.classList.add('is-visible');
-				});
+		$(document).ready(function() {
+			var giftBlock = $(this).find('.send-gift-block');
+			if (giftBlock.length > 1) {
+				giftBlock.each(function(index, element) {
+					var email = $(element).find('.send-gift-block-email').data('email');
+					var message = $(element).find('.send-gift-block-message').data('message');
+					var code = $(element).find('.send-gift-block-code').data('code');
+					// console.log(email)
+					// console.log(message)
+					var data = {
+						Action: "CERT",
+						emailsend: email,
+						messagesend: message,
+						codesend: code
+						};
+			
+						$.ajax({
+						method: "POST",
+						data: data,
+						url: "https://miraclesoap.mivatest.com/gift-certificate-recipient.html",
+						});
+				})
+			} else {
+				var email = giftBlock.find('.send-gift-block-email').data('email');
+				var message = giftBlock.find('.send-gift-block-message').data('message');
+				var code = giftBlock.find('.send-gift-block-code').data('code');
+				// console.log(email)
+				// console.log(message)
+				var data = {
+					Action: "CERT",
+					emailsend: email,
+					messagesend: message,
+					codesend: code
+					};
+		
+					$.ajax({
+					method: "POST",
+					data: data,
+					url: "https://miraclesoap.mivatest.com/gift-certificate-recipient.html",
+					});
 			}
-			else if (hideShadow) {
-				window.requestAnimationFrame(function () {
-					$el.classList.remove('is-visible');
-				});
-			}
-		}
-
-		if ($navList !== null) {
-			$navList.addEventListener('scroll', function (scrollEvent) {
-				handleShadowVisibility(scrollEvent);
-			});
-
-			handleShadowVisibility();
-		}
-
+		})
 	},
-	jsABAL: function() {
-		themeFunctionality.jsACLN();
+    jsLOGN() {
 	},
-	jsACRT: function() {
-		themeFunctionality.jsACLN();
+    jsACAD() {
+		themeFunctionality.stateDatalist();
 	},
-	jsCABK: function() {
-		themeFunctionality.jsACLN();
+    jsACED() {
+		themeFunctionality.stateDatalist();
 	},
-	jsCADA: function() {
-		themeFunctionality.jsACLN();
+    jsCABK() {
 	},
-	jsCADE: function() {
-		themeFunctionality.jsACLN();
+    jsCADA() {
+		themeFunctionality.stateDatalist();
 	},
-	jsCEML: function() {
-		themeFunctionality.jsACLN();
+    jsCADE() {
+		themeFunctionality.stateDatalist();
 	},
-	jsCPCA: function() {
-		themeFunctionality.jsACLN();
+    jsAFCL() {
 	},
-	jsCPCD: function() {
-		themeFunctionality.jsACLN();
+    jsAFAD() {
+		themeFunctionality.stateDatalist();
 	},
-	jsCPCE: function() {
-		themeFunctionality.jsACLN();
+    jsAFED() {
 	},
-	jsCPRO: function() {
-		themeFunctionality.jsACLN();
+    jsORHL() {
 	},
-	jsCPWD: function() {
-		themeFunctionality.jsACLN();
+    jsORDS() {
+		_hook('print-invoice').addEventListener('click', element => {
+			element.preventDefault();
+			window.print();
+		});
 	},
-	jsCSBE: function() {
-		themeFunctionality.jsACLN();
-	},
-	jsCSTR: function() {
-		themeFunctionality.jsACLN();
-	},
-	jsCSUB: function() {
-		themeFunctionality.jsACLN();
-	},
-	jsORDH: function() {
-		themeFunctionality.jsACLN();
-	},
-	jsORDS: function() {
-		themeFunctionality.jsACLN();
-	},
-	jsRGFT: function() {
-		themeFunctionality.jsACLN();
-	},
-	jsWISH: function() {
-		themeFunctionality.jsACLN();
-	},
-	jsWLAD: function() {
-		themeFunctionality.jsACLN();
-	},
-	jsWLED: function() {
-		themeFunctionality.jsACLN();
-	},
-	jsWLST: function() {
-		themeFunctionality.jsACLN();
-	},
-	jsWPCK: function() {
-		themeFunctionality.jsACLN();
+    jsCTUS() {
 	}
 };
+
+
+(() => {
+	String.prototype.toCamelCase = function (cap1st) {
+        return ((cap1st ? '-' : '') + this).replace(/-+([^-])/g, (a, b) => b.toUpperCase());
+	};
+
+	let pageID = document.body.id.toCamelCase();
+
+	/**
+	 * Initialize Global Site Functions
+	 */
+	themeFunctionality.global();
+
+	/**
+	 * Initialize Extensions Functions
+	 */
+	themeFunctionality.init();
+
+	/**
+	 * Initialize Page Specific Functions
+	 */
+	if (themeFunctionality[pageID]) {
+		themeFunctionality[pageID]();
+	}
+
+})();

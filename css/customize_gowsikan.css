@@ -162,7 +162,7 @@
 	/* [2] */
 	line-height: calc(2.5em - 2px);
 	/* [2] */
-	background-color: #fff;
+	background-color: white;
 	border: 1px solid #c0c0c0;
 	border-radius: 0.125em;
 	-webkit-appearance: none;
@@ -515,7 +515,7 @@
 }
 
 #sidebar-content .contact_us{
-	background: url(/images/login.gif) no-repeat top;
+	background: url(/mm5/images/login.gif) no-repeat top;
 	width: 165px;
 	height: 200px;
 	padding-top: 5px;
@@ -523,7 +523,7 @@
 }
 
 #sidebar-content .account-login{
-	background: url(/images/login.gif) no-repeat top;
+	background: url(/mm5/images/login.gif) no-repeat top;
 	width: 165px;
 	height: 125px;
 	padding-top: 5px;
@@ -531,14 +531,14 @@
 }
 
 #sidebar-content .prod-history-img {
-	background: url(/images/prodhistorybox.gif) no-repeat top;
+	background: url(/mm5/images/prodhistorybox.gif) no-repeat top;
 	width: 165px;
 	height: 354px;
 	padding-bottom: 22px;
 }
 
 #sidebar-content .newsletter form{
-  background: url(/images/news-signup-small.gif) no-repeat top;
+  background: url(/mm5/images/news-signup-small.gif) no-repeat top;
 	width: 165px;
 	height: 231px;
 	padding-bottom: 15px;
@@ -571,7 +571,7 @@
 }
 
 #sidebar-content .printable-form {
-	background: url(/images/print-order-form.gif) no-repeat top;
+	background: url(/mm5/images/print-order-form.gif) no-repeat top;
 	width: 165px;
 	height: 42px;
 	padding-bottom: 20px;
@@ -616,7 +616,7 @@
 
 .CADA #cada_form{
   border: 1px solid #c0c0c0;
-  background: url(/images/bluefade_v.jpg) repeat-x;
+  background: url(/mm5/images/bluefade_v.jpg) repeat-x;
   box-sizing: 	border-box;
   height: auto;
   display: block;
@@ -625,7 +625,7 @@
 
 .CADE #cade_form{
   border: 1px solid #c0c0c0;
-  background: url(/images/bluefade_v.jpg) repeat-x;
+  background: url(/mm5/images/bluefade_v.jpg) repeat-x;
   box-sizing: border-box;
   height: auto;
   display: block;
@@ -635,7 +635,7 @@
 
 .CTUS #ctus_form{
   border: 1px solid #c0c0c0;
-  background: url(/images/bluefade_v.jpg) repeat-x;
+  background: url(/mm5/images/bluefade_v.jpg) repeat-x;
   box-sizing: 	border-box;
   height: auto;
   display: block;

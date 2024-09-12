@@ -1,112 +1,367 @@
-<div class="expanded">
-	</div><div class="clear"></div>
-	<mvt:foreach iterator="product" array="category_listing:products">
-	<div class="product-item">
-
-			<div class="product-details clearfix">
-				<div class="product-thumbnail">
-					<mvt:if expr="NOT ISNULL l.settings:product:thumbnail"><p><img src="&mvte:product:thumbnail;" alt="&mvte:product:name;" /><mvt:else><a class="thumbnail-not-available" href="&mvte:product:link;" title="&mvte:product:name;"></mvt:if></p>
-				</div>
-				<div class="product-name"><p>&mvt:product:name;</p></div>
-				<div class="product-price">
-					<mvt:if expr="l.settings:product:formatted_price NE l.settings:product:formatted_base_price">					
-						<span>Price: <strong>&mvt:product:formatted_price;</strong></span> 
-						<span>MSRP: <s>&mvt:product:formatted_base_price;</s></span>
-					<mvt:else>
-						<span>Price:<strong>&mvt:product:formatted_price;</strong></span>
-					</mvt:if>
-
-				</div>
-
-
-				<mvt:if expr="l.settings:product:inv_active">&mvt:product:inv_long;<br></mvt:if>
-				<div class="product-quantity">Quantity in Basket:
-					<mvt:if expr="l.settings:product:quantity EQ 0">
-					<span class="italic">none</span>
-					<mvt:else>
-					<strong>&mvt:product:quantity;</strong>
-					</mvt:if>
-			<mvt:if expr="l.settings:product:inv_level NE 'out'">
-			<div class="purchase-buttons">
-				<form name="add" method="post" action="&mvte:urls:CTGY:auto;">
-				<div id="swatches" class="swatches"></div>
-				<div class="clear"></div>
-				<input type="hidden" name="Old_Screen" value="&mvte:global:Screen;" />
-				<input type="hidden" name="Old_Search" value="&mvte:global:Search;" />
-				<input type="hidden" name="Attributes" value="Yes" />
-				<input type="hidden" name="Action" value="ADPR" />
-				<input type="hidden" name="Product_Code" value="&mvte:product:code;" />
-				<input type="hidden" name="Category_Code" value="&mvte:global:category_code;" />
-				<input type="hidden" name="Offset" value="&mvte:global:Offset;" />
-				<input type="hidden" name="AllOffset" value="&mvte:global:AllOffset;" />
-				<input type="hidden" name="CatListingOffset" value="&mvte:global:CatListingOffset;" />
-				<input type="hidden" name="RelatedOffset" value="&mvte:global:RelatedOffset;" />
-				<input type="hidden" name="SearchOffset" value="&mvte:global:SearchOffset;" />
-				<div class="product-attributes"><mvt:item name="product_attributes" param="product:id" /></div>
-	    				<div class="purchase-buttons-1">
-						Quantity: <input type="text" name="Quantity" value="1" class="product-quantity-input textfield" />
-						<mvt:if expr="l.settings:product:inv_level NE 'out'">
-							<span>
-								<mvt:item name="buttons" param="AddToBasket" />
-							</span>
-						</mvt:if>
-							<input type="button" value="Checkout" onclick="window.location = '&mvtj:urls:BASK:auto;';" class="button" />
-					</div>
-			</form>
-				
-			</div>
+<mvt:if expr="l.settings:category_listing:products_on_page_count GT 1">
+	<mvt:assign name="g.facet_listings" value="''"/>
+	<mvt:foreach iterator="facet" array="facets:facets">
+		<mvt:foreach iterator="facet_value" array="facet:values">
+			<mvt:if expr="l.settings:facet_value:selected">
+				<input type="hidden" name="&mvte:facet:code;" value="&mvte:facet_value:value;"/>
+				<mvt:assign name="g.facet_listings" value="'&' $ l.settings::facet:code $ '=' $ l.settings::facet_value:value"/>
 			</mvt:if>
-			</div>
-			</div>
-			
-	</div>
+		</mvt:foreach>
 	</mvt:foreach>
-	<div class="clear"></div>
-	<mvt:if expr="NOT l.settings:category_listing:page_disp_count GT 0">
-		<mvt:if expr="g.CatListingOffset OR g.CatListingNextOffset">
-		<div class="next-previous">
-			<mvt:if expr="g.CatListingOffset GT 0">
-			<div class="previous-button">
-				<form method="post" action="&mvte:urls:_self:auto;">
-				<input type="hidden" name="Category_Code" value="&mvte:global:Category_Code;" />
-				<input type="hidden" name="Product_Code" value="&mvte:global:Product_Code;" />
-				<input type="hidden" name="Search" value="&mvte:global:Search;" />
-				<input type="hidden" name="Per_Page" value="&mvte:global:Per_Page;" />
-				<input type="hidden" name="Sort_By" value="&mvte:global:Sort_By;" />
-				<input type="hidden" name="Offset" value = "&mvte:global:CatListingPrevOffset;" />
-				<input type="hidden" name="AllOffset" value = "&mvte:global:AllOffset;" />
-				<input type="hidden" name="CatListingOffset" value = "&mvte:global:CatListingPrevOffset;" />
-				<input type="hidden" name="RelatedOffset" value = "&mvte:global:RelatedOffset;" />
-				<input type="hidden" name="SearchOffset" value = "&mvte:global:SearchOffset;" />
-				<mvt:item name="buttons" param="Previous" />
-				</form>
-			</div>
-			</mvt:if>
-		
-			<mvt:if expr="g.CatListingNextOffset GT 0">
-			<div class="next-button">
-				<form method="post" action="&mvte:urls:_self:auto;">
-				<input type="hidden" name="Category_Code" value="&mvte:global:Category_Code;" />
-				<input type="hidden" name="Product_Code" value="&mvte:global:Product_Code;" />
-				<input type="hidden" name="Search" value="&mvte:global:Search;" />
-				<input type="hidden" name="Per_Page" value="&mvte:global:Per_Page;" />
-				<input type="hidden" name="Sort_By" value="&mvte:global:Sort_By;" />
-				<input type="hidden" name="Offset" value = "&mvte:global:CatListingNextOffset;" />
-				<input type="hidden" name="AllOffset" value = "&mvte:global:AllOffset;" />
-				<input type="hidden" name="CatListingOffset" value = "&mvte:global:CatListingNextOffset;" />
-				<input type="hidden" name="RelatedOffset" value = "&mvte:global:RelatedOffset;" />
-				<input type="hidden" name="SearchOffset" value = "&mvte:global:SearchOffset;" />
-				<mvt:item name="buttons" param="Next" />
-				</form>
-			</div>
+	<mvt:comment> <section class="o-layout--align-bottom o-layout--justify-between o-layout--wrap u-flex--l u-hidden">
+		<p class="prod-count">&mvte:category_listing:total_prod_count; Items</p>
+		<div class="x-display-list-filtering">
+			<form class="x-display-list-filtering__per-page" method="get" action="&mvte:urls:_self:auto_noparams;">
+				<fieldset>
+					<legend>Number of Products to Show</legend>
+					<mvt:if expr="tolower( l.settings:category_listing:mode ) EQ 'ctgy' AND toupper( g.Screen ) NE 'CTGY'">
+						<input type="hidden" name="Category_Code" value="&mvte:global:Category_Code;" />
+					<mvt:elseif expr="tolower( l.settings:category_listing:mode ) EQ 'relp' AND toupper( g.Screen ) NE 'PROD'">
+						<input type="hidden" name="Product_Code" value="&mvte:global:Product_Code;" />
+					</mvt:if>
+					<mvt:item name="urls" param="hidden_params:_self:auto" />
+					<input type="hidden" name="Search" value="&mvte:global:Search;" />
+					<input type="hidden" name="Sort_By" value="&mvte:global:Sort_By;" />
+					<mvt:foreach iterator="facet" array="facets:facets">
+						<mvt:foreach iterator="facet_value" array="facet:values">
+							<mvt:if expr="l.settings:facet_value:selected">
+								<input type="hidden" name="&mvte:facet:code;" value="&mvte:facet_value:value;" />
+							</mvt:if>
+						</mvt:foreach>
+					</mvt:foreach>
+					<div class="c-form-list">
+						<div class="c-form-list__item">
+							<label class="c-form-label u-text-bold" for="l-per_page">View</label>
+							<div class="c-form-select">
+								<select id="l-per_page" class="c-form-select__dropdown" name="Per_Page" onchange="MMProdList_UpdateQuery( this ); return true;">
+									<mvt:if expr="g.Per_Page EQ 12">
+										<option value="12" selected="selected">12 Items/Page</option>
+									<mvt:else>
+										<option value="12">12 Items/Page</option>
+									</mvt:if>
+									<mvt:if expr="g.Per_Page EQ 24">
+										<option value="24" selected="selected">24 Items/Page</option>
+									<mvt:else>
+										<option value="24">24 Items/Page</option>
+									</mvt:if>
+									<mvt:if expr="g.Per_Page EQ 48">
+										<option value="48" selected="selected">48 Items/Page</option>
+									<mvt:else>
+										<option value="48">48 Items/Page</option>
+									</mvt:if>
+									<mvt:if expr="g.Per_Page EQ -1">
+										<option value="-1" selected="selected">All Items</option>
+									<mvt:else>
+										<option value="-1">All Items</option>
+									</mvt:if>
+								</select>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+			</form>
+			<!-- end .x-display-list-filtering__per-page -->
+			<form class="x-display-list-filtering__sort-by" method="get" action="&mvte:urls:_self:auto_noparams;">
+				<fieldset>
+					<legend>Sort Products By</legend>
+					<mvt:if expr="tolower( l.settings:category_listing:mode ) EQ 'ctgy' AND toupper( g.Screen ) NE 'CTGY'">
+						<input type="hidden" name="Category_Code" value="&mvte:global:Category_Code;">
+					<mvt:elseif expr="tolower( l.settings:category_listing:mode ) EQ 'relp' AND toupper( g.Screen ) NE 'PROD'">
+						<input type="hidden" name="Product_Code" value="&mvte:global:Product_Code;">
+					</mvt:if>
+					<mvt:item name="urls" param="hidden_params:_self:auto"/>
+					<input type="hidden" name="Search" value="&mvte:global:Search;"/>
+					<input type="hidden" name="Per_Page" value="&mvte:global:Per_Page;"/>
+					<mvt:foreach iterator="facet" array="facets:facets">
+						<mvt:foreach iterator="facet_value" array="facet:values">
+							<mvt:if expr="l.settings:facet_value:selected">
+								<input type="hidden" name="&mvte:facet:code;" value="&mvte:facet_value:value;">
+							</mvt:if>
+						</mvt:foreach>
+					</mvt:foreach>
+					<div class="c-form-list">
+						<div class="c-form-list__item">
+							<label class="c-form-label u-text-bold" for="l-sort_by">Sort By</label>
+							<div class="c-form-select">
+								<select id="l-sort_by" class="c-form-select__dropdown" name="Sort_By" onchange="MMProdList_UpdateQuery( this ); return true;">
+									<mvt:if expr="ISNULL g.Sort_By">
+										<option value="disp_order" selected>Featured</option>
+									<mvt:else>
+										<option value="disp_order">Featured</option>
+									</mvt:if>
+									<mvt:if expr="g.Sort_By EQ 'bestsellers'">
+										<option value="bestsellers" selected>Best Selling</option>
+									<mvt:else>
+										<option value="bestsellers">Best Selling</option>
+									</mvt:if>
+									<mvt:if expr="g.Sort_By EQ 'price_asc'">
+										<option value="price_asc" selected>Price (Low to High)</option>
+									<mvt:else>
+										<option value="price_asc">Price (Low to High)</option>
+									</mvt:if>
+									<mvt:if expr="g.Sort_By EQ 'price_desc'">
+										<option value="price_desc" selected>Price (High to Low)</option>
+									<mvt:else>
+										<option value="price_desc">Price (High to Low)</option>
+									</mvt:if>
+									<mvt:if expr="g.Sort_By EQ 'newest'">
+										<option value="newest" selected>Newest Items</option>
+									<mvt:else>
+										<option value="newest">Newest Items</option>
+									</mvt:if>
+								</select>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+			</form>
+			<!-- end .x-display-list-filtering__sort-by -->
+		</div>
+		<!-- end .x-display-list-filtering -->
+	</section> </mvt:comment>
+	<br>
+</mvt:if>
+<mvt:foreach array="cattree_categories" iterator="category_children">
+		<mvt:if expr="l.settings:category_children:parent_id EQ l.settings:category:id">
+			<mvt:assign name="l.null" value="miva_array_insert(l.settings:subcategories, l.settings:category_children, -1)" />
+		</mvt:if>
+	</mvt:foreach>
+	<mvt:assign name="l.settings:subcategory_count" value="miva_array_elements(l.settings:subcategories)" />
+	<mvt:if expr="l.settings:subcategories GT 0">
+		<div class="u-width-13--l info-of-category main-ctgy">
+			<h1 class="c-heading-charlie t-category-name main-category"><span class="sub-name__miracle">Miracle II </span>Main Categories</h1>
+		</div>
+		<style>
+			.info-of-category {
+				margin-top: 20px;
+			}
+		</style>
+		<style>
+			@media screen and (min-width: 960px) {
+				.main-ctgy {
+					padding-bottom: 0;
+				}
+				.main-category {
+					margin-bottom: 30px;
+				}
+			}
+		</style>
+	<mvt:else>
+		<mvt:item name="customfields" param="Read_Category_Code(l.settings:category:code, 'description', l.settings:category:description)" />
+		<mvt:item name="customfields" param="Read_Category_Code(l.settings:category:code, 'long', l.settings:category:long)" />
+		<div class="u-width-13--l info-of-category">
+			<h1 class="c-heading-charlie t-category-name"><span class="sub-name__miracle">Miracle II </span>&mvt:category:name;</h1>
+			<mvt:if expr="l.settings:category:long">
+
+				<div class="descrip-main" style="margin-bottom: 25px;">
+					<p style="margin-bottom: 10px;" class="t-category-name ctgy-description">&mvt:category:description;</p>
+				<div role="region" aria-labelledby="productDescriptionTitle" id="long-descrip" class="t-category-name ctgy-description-long">&mvt:category:long;</div>
+					
+				</div>
+			<mvt:elseif expr="l.settings:category:code EQ 'all_products'">
+				<div class="descrip-main">
+					<p class="t-category-name ctgy-description">&mvt:category:description;</p>
+					<br>
+				</div>
+			<mvt:else>
+				<div class="descrip-main" style="margin-bottom: 25px;">
+					<p class="t-category-name ctgy-description">&mvt:category:description;</p>
+					
+				</div>
 			</mvt:if>
 		</div>
-		</mvt:if>
 	</mvt:if>
-<mvt:if expr="l.settings:page:code EQ 'CTGY'  AND l.settings:category:code NOT ISNULL ">
-<div class="product-declimer">
-<a href="/disclaimer.htm">Product Disclaimer</a>
-</div>
+<mvt:foreach array="cattree_categories" iterator="category_children">
+	<mvt:if expr="l.settings:category_children:parent_id EQ l.settings:category:id">
+		<mvt:assign name="l.null" value="miva_array_insert(l.settings:subcategories, l.settings:category_children, -1)" />
+	</mvt:if>
 
+</mvt:foreach>
+<mvt:assign name="l.settings:subcategory_count" value="miva_array_elements(l.settings:subcategories)" />
+<mvt:if expr="l.settings:subcategories GT 0">
+	<section class="subcategory-section">
+		<mvt:foreach iterator="subcategory" array="cattree_categories">
+			<mvt:if expr="l.settings:subcategory:name EQ 'Miracle II Products'">
+			<mvt:else>
+				<div class="subcategory-container">
+					<div class="subcategory-image">
+						<a href="&mvt:subcategory:link;"><img src="&mvte:subcategory:image;" alt="&mvte:subcategory:name;" loading="lazy"></a>
+					</div>
+					<mvt:item name="customfields" param="Read_Category_Code(l.settings:subcategory:code, 'description', l.settings:subcategory:descriptions)" />
+					<a href="&mvt:subcategory:link;" class="subcategory-name">&mvt:subcategory:name;</a>
+					<p class="subcategory-descrip">&mvt:subcategory:descriptions;</p>
+					<div>
+						<a href="&mvt:subcategory:link;" class="c-button subcategory-link">Explore</a>
+					</div>
+				</div>
+			</mvt:if>
+		</mvt:foreach>
+	</section>
+<mvt:else>
+<section class="main-products">
+	<mvt:foreach iterator="product" array="category_listing:products">
+		<mvt:comment> <div class="x-product-list__item">
+			<figure class="x-product-list__figure">
+				<picture class="x-product-list__picture">
+					<img class="x-product-list__image" src="&mvte:product:imagetypes:main;" alt="&mvte:product:name;" loading="lazy">
+				</picture>
+				<figcaption class="x-product-list__figure-caption">
+					<a class="x-product-list__link">
+						<span class="x-product-list__name">&mvt:product:name;</span>
+					</a>
+					<mvt:if expr="l.settings:product:base_price GT l.settings:product:price">
+						<span class="x-product-list__price_set">
+							<span class="x-product-list__price u-text-bold color-price">&mvt:product:formatted_price;</span>
+							<span class="x-product-list__price u-text-medium color-price-base"><s>&mvt:product:formatted_base_price;</s></span>
+							<button aria-label="add to cart" class="c-button c-button--full add-to-cart" data-hook="btn-add-to-cart" data-product-code="&mvt:product:code;">Add To Cart</button>
+						</span>
+					<mvt:else>
+						<span class="x-product-list__price_set">
+							<span class="x-product-list__price color-price">&mvt:product:formatted_price;</span>
+							<button aria-label="add to cart" class="c-button c-button--full add-to-cart" data-hook="btn-add-to-cart" data-product-code="&mvt:product:code;">Add To Cart</button>
+						</span>
+					</mvt:if>
+					<mvt:item name="readytheme" param="contentsection( 'mvaffirm_configuration' )" />
+				</figcaption>
+			</figure>
+		</div> </mvt:comment>
+
+		<div class="container-product">
+				<mvt:if expr="l.settings:product:code EQ '1050'">
+					<div class="circle ctgy-list">
+						<img style="transform: scale(50%);" src="&mvte:product:imagetypes:main;" alt="&mvte:product:name;" loading="lazy">
+					</div>
+				<mvt:elseif expr="'gift' CIN l.settings:product:name">
+					<div class="circle ctgy-list">
+						<img style="padding-top: 30%;" src="&mvte:product:imagetypes:main;" alt="&mvte:product:name;" loading="lazy">
+					</div>
+				<mvt:else>
+					<div class="circle ctgy-list">
+						<img src="&mvte:product:imagetypes:main;" alt="&mvte:product:name;" loading="lazy">
+					</div>
+				</mvt:if>
+
+				<div class="info-product">
+					<div class="product-name">
+						<p class="product-name__name">&mvt:product:name;</p>
+					</div>
+
+					<div class="long-description">
+						<p>&mvt:product:descrip;</p>
+					</div>
+					<div class="button-product__add-to-cart">
+						<mvt:if expr="'gift' CIN l.settings:product:code">
+							<div style="padding-bottom: 0;" class="product-price">
+								<span class="x-product-list__price u-text-bold color-price">&mvt:product:formatted_price;</span>
+								<span class="x-product-list__price u-text-medium color-price-base"><s>&mvt:product:formatted_base_price;</s></span>
+							</div>
+						<mvt:else>
+							<div class="product-price">
+								<span class="x-product-list__price u-text-bold color-price">&mvt:product:formatted_price;</span>
+								<span class="x-product-list__price u-text-medium color-price-base"><s>&mvt:product:formatted_base_price;</s></span>
+							</div>
+						</mvt:if>
+						<mvt:if expr="'gift' CIN l.settings:product:code">
+							<form>
+								<fieldset>
+									<p style="margin-bottom: 0;" class="email-attr" name="Product_Attributes[1]:code">Recipient's Email</p>
+									<input style="max-width: 250px; width: 250px; padding: 5px 10px;" class="c-form-input email-attr-val" name="Product_Attributes[1]:value" type="text" data-attribute-code="gc-recipient" placeholder="Recipient's Email">
+									<p style="margin-bottom: 0;" class="message-attr" name="Product_Attributes[2]:code">Gift Meassage</p>
+									<textarea style="max-width: 550px; padding: 5px 10px;" class="c-form-input message-attr-val" name="Product_Attributes[2]:value" data-attribute-code="gc-message" rows="7" cols="39" placeholder="Add your message here..."></textarea>
+								</fieldset>
+							</form>
+						</mvt:if>
+						<mvt:if expr="l.settings:product:inv_active EQ 1">
+        					<mvt:if expr="l.settings:product:inv_available EQ 0">
+								<div>
+									<p class="out-of-stock-text">Out of stock</p>
+								</div>
+							<mvt:else>
+								<div class="addToCart-counting-block">
+									<div class="counting">
+										<button aria-label="decrement" name="decrement" class="but-count l-min decrement"><i class="fa-solid fa-minus"></i></button>
+                						<label for="input number">
+                    						<input aria-label="input number" name="input number" class="input-count" value="1">
+                						</label>
+                						<button aria-label="increment" name="decrement" class="but-count r-pls increment"><i class="fa-solid fa-plus"></i></button>
+									</div>
+									<mvt:if expr="'gift' CIN l.settings:product:code">
+										<button aria-label="add to cart" class="c-button c-button--full add-to-cart" data-hook="btn-add-to-cart" data-product-code="&mvt:product:code;">Add To Cart</button>
+									<mvt:else>
+										<button aria-label="add to cart" class="c-button c-button--full add-to-cart" data-hook="btn-add-to-cart" data-product-code="&mvt:product:code;">Add To Cart</button>
+									</mvt:if>
+								</div>
+   							</mvt:if>
+						<mvt:else>
+							<div class="addToCart-counting-block">
+								<div class="counting">
+									<button aria-label="decrement" name="decrement" class="but-count l-min decrement"><i class="fa-solid fa-minus"></i></button>
+                					<label for="input number">
+                    					<input aria-label="input number" name="input number" class="input-count" value="1">
+                					</label>
+                					<button aria-label="increment" name="decrement" class="but-count r-pls increment"><i class="fa-solid fa-plus"></i></button>
+								</div>
+								<mvt:if expr="'gift' CIN l.settings:product:code">
+									<button aria-label="add to cart" class="c-button c-button--full add-to-cart" data-hook="btn-add-to-cart-gift" data-product-code="&mvt:product:code;">Add To Cart</button>
+								<mvt:else>
+									<button aria-label="add to cart" class="c-button c-button--full add-to-cart" data-hook="btn-add-to-cart" data-product-code="&mvt:product:code;">Add To Cart</button>
+								</mvt:if>
+							</div>
+    					</mvt:if>
+						
+					</div>
+				</div>
+			</div>
+	</mvt:foreach>
+</section>
 </mvt:if>
-</div>
+<!-- end .x-product-list -->
+
+<mvt:if expr="l.settings:category_listing:page_links:last_page GT 1">
+	<nav class="x-pagination x-pagination--centered" aria-label="Pagination">
+		<ul class="x-pagination__list">
+			<mvt:if expr="l.settings:category_listing:page_links:current_page NE 1">
+				<mvt:assign name="l.settings:prev_page" value="l.settings:category_listing:page_links:current_page - 1"/>
+				<li class="x-pagination__item">
+					<a class="c-button c-button--secondary x-pagination__link" href="&mvte:urls:_self:auto_sep;&mvte:category_listing:page_links:prev_link_params;" aria-label="Go to page &mvte:prev_page;.">
+						<span class="u-icon-chevron-left" aria-hidden="true"></span>
+					</a>
+				</li>
+			<mvt:else>
+				<li class="x-pagination__item">
+					<span class="c-button c-button--secondary x-pagination__link">
+						<span class="u-icon-chevron-left" aria-hidden="true"></span>
+					</span>
+				</li>
+			</mvt:if>
+			<li class="x-pagination__item o-layout--grow">
+				<div class="c-form-select">
+					<select class="c-form-select__dropdown" aria-label="Go to page" onchange="window.location.href=this.options[ this.selectedIndex ].value">
+						<mvt:foreach iterator="pages" array="category_listing:page_links:pages">
+							<mvt:if expr="l.settings:category_listing:page_links:current_page EQ l.settings:pages:page_num">
+								<option value="&mvte:urls:_self:auto_sep;&mvte:pages:link_params;" aria-current="page" selected>Page &mvte:pages:page_num; of &mvte:category_listing:page_links:last_page;</option>
+							<mvt:else>
+								<option value="&mvte:urls:_self:auto_sep;&mvte:pages:link_params;">Page &mvte:pages:page_num; of &mvte:category_listing:page_links:last_page;</option>
+							</mvt:if>
+						</mvt:foreach>
+					</select>
+				</div>
+			</li>
+			<mvt:if expr="l.settings:category_listing:page_links:current_page NE l.settings:category_listing:page_links:last_page">
+				<mvt:assign name="l.settings:next_page" value="l.settings:category_listing:page_links:current_page + 1"/>
+				<li class="x-pagination__item">
+					<a class="c-button c-button--secondary x-pagination__link" href="&mvte:urls:_self:auto_sep;&mvte:category_listing:page_links:next_link_params;" aria-label="Go to page &mvte:next_page;.">
+						<span class="u-icon-chevron-right" aria-hidden="true"></span>
+					</a>
+				</li>
+			<mvt:else>
+				<li class="x-pagination__item">
+					<span class="c-button c-button--secondary x-pagination__link">
+						<span class="u-icon-chevron-right" aria-hidden="true"></span>
+					</span>
+				</li>
+			</mvt:if>
+		</ul>
+	</nav>
+	<!-- end .x-pagination -->
+</mvt:if>

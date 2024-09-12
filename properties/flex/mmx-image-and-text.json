@@ -37,7 +37,6 @@
                 {
                     "code": "color",
                     "placeholder": "#000000, rgba(0,0,0,0), hsl(0,0,0)",
-                    "preview_property_selector": ":shadow [part~=\"content\"]",
                     "prompt": "Color",
                     "style": "color",
                     "type": "color"
@@ -82,7 +81,15 @@
                 "value": "left"
             },
             "body": {
-                "source": "markdown",
+                "textsettings": {
+                    "fields": {
+                        "normal": {
+                            "body_style": {
+                                "value": "paragraph-s"
+                            }
+                        }
+                    }
+                },
                 "value": "Etiam pharetra nunc at sapien dictum, a accumsan mauris viverra. Nam finibus, erat et fringilla fermentum, sem elit porttitor nunc, sed congue urna urna id nibh. Integer nec dignissim quam. Cras vestibulum enim eu tempus commodo. Nullam quis facilisis augue, eget elementum ante. Integer vel maximus justo."
             },
             "button": {
@@ -155,10 +162,10 @@
         }
     },
     "depends": {
-        "mmx-base": "10.10.00",
-        "mmx-button": "10.10.00",
-        "mmx-hero": "10.10.00",
-        "mmx-text": "10.10.00"
+        "mmx-base": "=10.09.01",
+        "mmx-button": "=10.09.01",
+        "mmx-hero": "=10.09.01",
+        "mmx-text": "=10.09.01"
     },
     "initialization_template_disabled": 0,
     "initialization_template_filename": "686_flex-initialization-template-mmx-image-and-text.mvc",
@@ -167,13 +174,10 @@
     "managed": 1,
     "name": "Image and Text",
     "preview": "<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"1600\" height=\"560\" viewBox=\"0 0 1600 560\">\n  <defs>\n    <clipPath id=\"clip-path\">\n      <rect id=\"Rectangle_3173\" data-name=\"Rectangle 3173\" width=\"200\" height=\"200\" fill=\"#bbbec3\"/>\n    </clipPath>\n  </defs>\n  <g id=\"Image_Text_Side_by_Side\" data-name=\"Image Text Side by Side\" transform=\"translate(0 -4070)\">\n    <g id=\"Image_and_Text_Side_by_Side\" data-name=\"Image and Text Side by Side\" transform=\"translate(0 3272)\">\n      <rect id=\"Rectangle_3221\" data-name=\"Rectangle 3221\" width=\"610\" height=\"480\" rx=\"16\" transform=\"translate(800 838)\" fill=\"#cfd2d6\"/>\n      <g id=\"Group_6139\" data-name=\"Group 6139\" transform=\"translate(-422 668)\">\n        <text id=\"Image_Text_Heading\" data-name=\"Image/Text Heading\" transform=\"translate(612 335)\" fill=\"#494a53\" font-size=\"40\" font-family=\"Helvetica-Bold, Helvetica\" font-weight=\"700\"><tspan x=\"0\" y=\"0\">Image/Text Heading</tspan></text>\n        <rect id=\"Rectangle_3491\" data-name=\"Rectangle 3491\" width=\"450\" height=\"10\" rx=\"5\" transform=\"translate(612 377)\" fill=\"#969da8\"/>\n        <rect id=\"Rectangle_3492\" data-name=\"Rectangle 3492\" width=\"416\" height=\"10\" rx=\"5\" transform=\"translate(612 399)\" fill=\"#969da8\"/>\n        <rect id=\"Rectangle_3493\" data-name=\"Rectangle 3493\" width=\"240\" height=\"10\" rx=\"5\" transform=\"translate(612 421)\" fill=\"#969da8\"/>\n        <g id=\"Group_6577\" data-name=\"Group 6577\" transform=\"translate(612 455)\">\n          <g id=\"Primary_Button_CTA\" data-name=\"Primary Button CTA\">\n            <rect id=\"Rectangle_3062\" data-name=\"Rectangle 3062\" width=\"120\" height=\"48\" rx=\"4\" fill=\"#494a53\"/>\n          </g>\n          <rect id=\"Rectangle_3476\" data-name=\"Rectangle 3476\" width=\"64\" height=\"10\" rx=\"5\" transform=\"translate(28 19)\" fill=\"#fff\"/>\n        </g>\n      </g>\n      <g id=\"Group_6576\" data-name=\"Group 6576\" transform=\"translate(1005 978)\">\n        <g id=\"Group_6082\" data-name=\"Group 6082\" clip-path=\"url(#clip-path)\">\n          <path id=\"Path_5614\" data-name=\"Path 5614\" d=\"M185.24,0H14.507A14.691,14.691,0,0,0,0,14.566V185.457A14.638,14.638,0,0,0,14.52,200l170.921-.051A14.686,14.686,0,0,0,200,185.384V14.544A14.784,14.784,0,0,0,185.24,0M14.545,192.251a6.981,6.981,0,0,1-6.97-6.939V176.1l49.5-49.55,65.673,65.7Zm177.573-6.436a6.977,6.977,0,0,1-6.994,6.411H133.435L83.951,142.674l47.891-47.891,60.292,60.306Zm.047-42.024L134.58,86.506a3.839,3.839,0,0,0-5.4,0l-50.6,50.551L60,118.493a3.792,3.792,0,0,0-5.346,0L7.575,165.334V16.523l-.248-.165.227-2.478A6.9,6.9,0,0,1,14.577,7.6H185.385a6.748,6.748,0,0,1,6.777,6.561l0,.131Z\" fill=\"#bbbec3\"/>\n          <path id=\"Path_5615\" data-name=\"Path 5615\" d=\"M66.448,28.164h-.042A28.6,28.6,0,0,0,37.827,56.817l0,1.342A28.64,28.64,0,1,0,66.448,28.164m.563,50.79c-.211.006-.423.008-.634.008A22.607,22.607,0,0,1,43.8,56.932V56.9c-.008-.389-.007-.777,0-1.136a22.619,22.619,0,1,1,23.21,23.184\" transform=\"translate(7.282 5.433)\" fill=\"#bbbec3\"/>\n        </g>\n      </g>\n    </g>\n    <rect id=\"Rectangle_3505\" data-name=\"Rectangle 3505\" width=\"1600\" height=\"560\" transform=\"translate(0 4070)\" fill=\"none\"/>\n  </g>\n</svg>\n",
-    "preview_component_selector": "[data-page-code=\"%page_code%\"][data-flex-component=\"%component_code%\"][data-flex-item=\"%element_code%\"]",
     "properties": [
         {
             "code": "link",
-            "preview_property_selector": ":shadow [part~=\"wrapper\"]",
             "prompt": "Link",
-            "supports_new_tab": 1,
             "type": "link"
         },
         {
@@ -192,14 +196,12 @@
                             "value": "left"
                         }
                     ],
-                    "preview_property_selector": ":scope > [slot=\"image\"]",
                     "prompt": "Image Position",
                     "type": "selector"
                 },
                 {
                     "breaks": 9,
                     "code": "content_width",
-                    "preview_property_selector": ":shadow [part~=\"content\"]",
                     "prompt": "Column Width Distribution",
                     "type": "distributedslider"
                 }
@@ -212,7 +214,6 @@
             "properties": [
                 {
                     "code": "img",
-                    "preview_property_selector": ":scope > [slot=\"image\"]",
                     "prompt": "Image",
                     "responsive_images": [
                         {
@@ -246,7 +247,6 @@
                             "value": "l"
                         }
                     ],
-                    "preview_property_selector": ":scope > [slot=\"image\"]",
                     "prompt": "Image Height",
                     "type": "select"
                 }
@@ -277,13 +277,11 @@
                             "value": "right"
                         }
                     ],
-                    "preview_property_selector": ":shadow [part~=\"content\"]",
                     "prompt": "Text Alignment",
                     "type": "selector"
                 },
                 {
                     "code": "heading",
-                    "preview_property_selector": "[slot=\"heading\"]",
                     "prompt": "Heading Text",
                     "textsettings": {
                         "fields": [
@@ -540,7 +538,6 @@
                 },
                 {
                     "code": "subheading",
-                    "preview_property_selector": "[slot=\"subheading\"]",
                     "prompt": "Subheading Text",
                     "textsettings": {
                         "fields": [
@@ -756,8 +753,6 @@
                 },
                 {
                     "code": "body",
-                    "markdown": 1,
-                    "preview_property_selector": "[slot=\"body\"]",
                     "prompt": "Body Text",
                     "textsettings": {
                         "fields": [
@@ -978,7 +973,6 @@
                     "properties": [
                         {
                             "code": "button_text",
-                            "preview_property_selector": "[slot=\"button\"]",
                             "prompt": "Button Text",
                             "textsettings": {
                                 "fields": [
@@ -1064,5 +1058,5 @@
     "type": "component",
     "upgrade_template_disabled": 1,
     "upgrade_template_filename": "flex-upgrade-template-mmx-image-and-text.mvc",
-    "version": "10.10.00"
+    "version": "10.09.01"
 }

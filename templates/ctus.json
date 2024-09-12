@@ -9,7 +9,7 @@
         "template_filename": "ctus-customer.mvc"
     },
     "footer_sequence": {
-        "title": "Sequence"
+        "title": "Page Builder Footer"
     },
     "hdft": {
         "footer": {
@@ -22,7 +22,7 @@
         }
     },
     "header_sequence": {
-        "title": "Sequence"
+        "title": "Page Builder Header"
     },
     "inline_css": {
         "template_filename": "ctus-inline_css.mvc"
@@ -42,6 +42,29 @@
         "surlprefix": "https://miraclesoap.mivatest.com/",
         "url_delim": "/",
         "urlprefix": "http://miraclesoap.mivatest.com/"
+    },
+    "sequence": {
+        "sequence": [
+            {
+                "dt_end": 0,
+                "dt_start": 0,
+                "enabled": 1,
+                "id": "db5e5b0285e17e4a10463a4a84bcdeed",
+                "item": "flex",
+                "name": "Text Area",
+                "param": "text-editor"
+            },
+            {
+                "dt_end": 0,
+                "dt_start": 0,
+                "enabled": 1,
+                "id": "0876389d4b012733879a3b2259949e97",
+                "item": "flex",
+                "name": "Contact Form",
+                "param": "contact-form"
+            }
+        ],
+        "title": "Sequence"
     },
     "sidebar": {
         "template_filename": "ctus-sidebar.mvc"

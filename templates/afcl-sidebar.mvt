@@ -29,4 +29,3 @@
 						<mvt:comment><div class="forgot-password"><a href="javascript:document.getElementById( 'logn' ).elements[ 'Action' ].value = 'AFPW'; document.getElementById( 'logn' ).submit();">Forgot password?</a></div></mvt:comment>
 					</div>
 					</form>
-

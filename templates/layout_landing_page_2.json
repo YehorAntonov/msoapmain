@@ -4,6 +4,10 @@
             "component_code": "mmx-featured-product",
             "item_code": "featured-product",
             "settings": {
+                "_flex": {
+                    "flex_version": 10.1,
+                    "settings_version": "10.10.00"
+                },
                 "advanced": {
                     "product": {
                         "button": {
@@ -88,6 +92,10 @@
             "component_code": "mmx-hero",
             "item_code": "hero",
             "settings": {
+                "_flex": {
+                    "flex_version": 10.1,
+                    "settings_version": "10.10.00"
+                },
                 "advanced": {
                     "content_theme": {
                         "value": "light"
@@ -118,15 +126,7 @@
                         "value": "center"
                     },
                     "body": {
-                        "textsettings": {
-                            "fields": {
-                                "normal": {
-                                    "body_style": {
-                                        "value": "paragraph-l"
-                                    }
-                                }
-                            }
-                        },
+                        "source": "markdown",
                         "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
                     },
                     "button": {
@@ -192,6 +192,10 @@
             "component_code": "mmx-image-and-text",
             "item_code": "image-and-text",
             "settings": {
+                "_flex": {
+                    "flex_version": 10.1,
+                    "settings_version": "10.10.00"
+                },
                 "advanced": {
                     "content_theme": {
                         "value": "light"
@@ -207,15 +211,7 @@
                         "value": "left"
                     },
                     "body": {
-                        "textsettings": {
-                            "fields": {
-                                "normal": {
-                                    "body_style": {
-                                        "value": "paragraph-s"
-                                    }
-                                }
-                            }
-                        },
+                        "source": "markdown",
                         "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam condimentum ex et nunc interdum, eu porttitor ipsum facilisis. Proin pellentesque sapien a ultricies ultricies."
                     },
                     "button": {
@@ -291,6 +287,10 @@
             "component_code": "mmx-text-banner",
             "item_code": "text-banner",
             "settings": {
+                "_flex": {
+                    "flex_version": 10.1,
+                    "settings_version": "10.10.00"
+                },
                 "advanced": {
                     "content_theme": {
                         "value": "light"
@@ -309,15 +309,7 @@
                         "value": "center"
                     },
                     "body": {
-                        "textsettings": {
-                            "fields": {
-                                "normal": {
-                                    "body_style": {
-                                        "value": "paragraph-s"
-                                    }
-                                }
-                            }
-                        },
+                        "source": "markdown",
                         "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam condimentum ex et nunc."
                     },
                     "button": {
@@ -366,11 +358,20 @@
             "component_code": "mmx-image-across",
             "item_code": "two-across",
             "settings": {
+                "_flex": {
+                    "flex_version": 10.1,
+                    "settings_version": "10.10.00"
+                },
                 "advanced": {
                     "content_theme": {
                         "value": "light"
                     },
                     "desktop": {
+                        "background_color": {
+                            "settings": {
+                                "enabled": 0
+                            }
+                        },
                         "column_count": {
                             "value": "auto"
                         },
@@ -379,6 +380,11 @@
                         }
                     },
                     "mobile": {
+                        "background_color": {
+                            "settings": {
+                                "enabled": 0
+                            }
+                        },
                         "overflow_behavior": {
                             "value": "scroll"
                         }
@@ -387,11 +393,6 @@
                 "content_styles": {
                     "align": {
                         "value": "left"
-                    },
-                    "body_text_styles": {
-                        "body_style": {
-                            "value": "paragraph-s"
-                        }
                     },
                     "button_styles": {
                         "button_size": {
@@ -436,6 +437,7 @@
                                 },
                                 "text": {
                                     "body": {
+                                        "source": "markdown",
                                         "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam condimentum ex et nunc interdum, eu porttitor ipsum facilisis. Proin pellentesque sapien a ultricies."
                                     },
                                     "button": {
@@ -462,6 +464,7 @@
                                 },
                                 "text": {
                                     "body": {
+                                        "source": "markdown",
                                         "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam condimentum ex et nunc interdum, eu porttitor ipsum facilisis. Proin pellentesque sapien a ultricies."
                                     },
                                     "button": {
@@ -487,6 +490,10 @@
             "component_code": "mmx-video",
             "item_code": "video",
             "settings": {
+                "_flex": {
+                    "flex_version": 10.1,
+                    "settings_version": "10.10.00"
+                },
                 "advanced": {
                     "content_theme": {
                         "value": "light"
@@ -543,6 +550,9 @@
                 "content": {
                     "align": {
                         "value": "center"
+                    },
+                    "body": {
+                        "source": "markdown"
                     },
                     "content_location": {
                         "value": "above"
@@ -602,7 +612,7 @@
                 "dt_end": 0,
                 "dt_start": 0,
                 "enabled": 1,
-                "id": "740835b03b1b5d726fbfd86c7fc10084",
+                "id": "9bc46918c7ecbacd4a175568dfa14436",
                 "item": "flex",
                 "name": "Hero",
                 "param": "hero"
@@ -611,7 +621,7 @@
                 "dt_end": 0,
                 "dt_start": 0,
                 "enabled": 1,
-                "id": "b7ed3b1fd05db3afcd24e25a9a0d0c0e",
+                "id": "79f8ab70cb9c17ff157e55ce3ac213b4",
                 "item": "flex",
                 "name": "Two Across",
                 "param": "two-across"
@@ -620,7 +630,7 @@
                 "dt_end": 0,
                 "dt_start": 0,
                 "enabled": 1,
-                "id": "1b1acc96c2a02d604e726b16b66d4fea",
+                "id": "e365192e8e6e32984f7f3482f9333f81",
                 "item": "flex",
                 "name": "Text Banner",
                 "param": "text-banner"
@@ -629,7 +639,7 @@
                 "dt_end": 0,
                 "dt_start": 0,
                 "enabled": 1,
-                "id": "7ee6360578b14e10866fe7df4cbc32ac",
+                "id": "3efe254a653e134b6dce8c7ae5c6a374",
                 "item": "flex",
                 "name": "Featured Product",
                 "param": "featured-product"
@@ -638,7 +648,7 @@
                 "dt_end": 0,
                 "dt_start": 0,
                 "enabled": 1,
-                "id": "021c291f956d33e3dd2c72fd522e6930",
+                "id": "67657db58cd41389b3c5db6d9f2ccb85",
                 "item": "flex",
                 "name": "Video",
                 "param": "video"
@@ -647,7 +657,7 @@
                 "dt_end": 0,
                 "dt_start": 0,
                 "enabled": 1,
-                "id": "0eaa0c6db84b7b13e5e8d85a55a8a597",
+                "id": "781ab26dd07269598b44324545a511a5",
                 "item": "flex",
                 "name": "Image and Text",
                 "param": "image-and-text"

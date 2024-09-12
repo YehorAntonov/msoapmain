@@ -2,7 +2,7 @@
     "items": [
         {
             "active": 1,
-            "id": "e5e336601258cda03cf06e38a90f4124",
+            "id": "6da66334676a0473318a0711080d505e",
             "link": "<a href=\"https://www.miraclesoap.com/privacy-policy.html\" target=\"_self\">Privacy Statement</a>",
             "link_dest": "PRPO",
             "link_targ": "_self",
@@ -12,27 +12,27 @@
         },
         {
             "active": 1,
-            "id": "fe31ae8947d78884e5ff8b3c2d357b54",
+            "id": "a4fb84ac043872612c933d44657acc97",
             "items": [
                 {
                     "active": 1,
-                    "id": "7da80bf692691e7c4b54539d2121e7bd",
-                    "link": "<a href=\"https://www.miraclesoap.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=Sub-cat-1\" target=\"_self\">Subcategory 1</a>",
+                    "id": "13b9f45a0b2a96d07462662e301988dc",
+                    "link": "<a href=\"https://www.miraclesoap.com/sub-cat-1.html\" target=\"_self\">Subcategory 1</a>",
                     "link_dest": "Sub-cat-1",
                     "link_targ": "_self",
                     "link_type": "C",
                     "name": "Subcategory 1",
-                    "url": "https://www.miraclesoap.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=Sub-cat-1"
+                    "url": "https://www.miraclesoap.com/sub-cat-1.html"
                 },
                 {
                     "active": 1,
-                    "id": "c230f3253663ef4c434f737cd1719b8f",
-                    "link": "<a href=\"https://www.miraclesoap.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=Sub-cat-2\" target=\"_self\">Subcategory 2</a>",
+                    "id": "6c0807631b8afd30c772439bb0688b92",
+                    "link": "<a href=\"https://www.miraclesoap.com/sub-cat-2.html\" target=\"_self\">Subcategory 2</a>",
                     "link_dest": "Sub-cat-2",
                     "link_targ": "_self",
                     "link_type": "C",
                     "name": "Subcategory 2",
-                    "url": "https://www.miraclesoap.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=Sub-cat-2"
+                    "url": "https://www.miraclesoap.com/sub-cat-2.html"
                 }
             ],
             "link": "<a href=\"https://www.miraclesoap.com/shipping-and-return-policy.html\" target=\"_self\">Shipping and Return Policies</a>",

@@ -3,7 +3,7 @@
     "items": [
         {
             "active": 1,
-            "id": "14fb6bc832c83c8dd9e6bf3291f30d79",
+            "id": "62408bd20119827749d08ad8b41c4af6",
             "link": "<a href=\"https://www.miraclesoap.com/about-us.html\" target=\"_self\">About Us</a>",
             "link_dest": "ABUS",
             "link_targ": "_self",
@@ -13,71 +13,27 @@
         },
         {
             "active": 1,
-            "id": "666e7610c5c6704a7ee0330129e29d96",
-            "items": [
-                {
-                    "active": 1,
-                    "id": "2fd7cfe3652066739373e949f39f5521",
-                    "link": "<a href=\"https://www.miraclesoap.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=Sub-cat-1\" target=\"_self\">Subcategory 1</a>",
-                    "link_dest": "Sub-cat-1",
-                    "link_targ": "_self",
-                    "link_type": "C",
-                    "name": "Subcategory 1",
-                    "url": "https://www.miraclesoap.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=Sub-cat-1"
-                },
-                {
-                    "active": 1,
-                    "id": "bab2cb091e97f540c718b73dd380021b",
-                    "link": "<a href=\"https://www.miraclesoap.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=Sub-cat-2\" target=\"_self\">Subcategory 2</a>",
-                    "link_dest": "Sub-cat-2",
-                    "link_targ": "_self",
-                    "link_type": "C",
-                    "name": "Subcategory 2",
-                    "url": "https://www.miraclesoap.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=Sub-cat-2"
-                }
-            ],
-            "link": "<a href=\"https://www.miraclesoap.com/contact-us.html\" target=\"_self\">Contact Us</a>",
+            "id": "161a7bb8a76a182c813ce052ab816ea5",
+            "link": "<a href=\"https://www.miraclesoap.com/contact-us.html\" target=\"_self\">Contact</a>",
             "link_dest": "CTUS",
             "link_targ": "_self",
             "link_type": "G",
-            "name": "Contact Us",
+            "name": "Contact",
             "url": "https://www.miraclesoap.com/contact-us.html"
         },
         {
             "active": 1,
-            "id": "f69dd81d3bf92849f95830e835645ebe",
-            "items": [
-                {
-                    "active": 1,
-                    "id": "a8d93d5b037582205001ac7f5e20106f",
-                    "link": "<a href=\"https://www.miraclesoap.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=Sub-cat-3\" target=\"_self\">Subcategory 3</a>",
-                    "link_dest": "Sub-cat-3",
-                    "link_targ": "_self",
-                    "link_type": "C",
-                    "name": "Subcategory 3",
-                    "url": "https://www.miraclesoap.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=Sub-cat-3"
-                },
-                {
-                    "active": 1,
-                    "id": "6b44e15fd1ec37fa6cdc257aab08e5fb",
-                    "link": "<a href=\"https://www.miraclesoap.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=Sub-cat-4\" target=\"_self\">Subcategory 4</a>",
-                    "link_dest": "Sub-cat-4",
-                    "link_targ": "_self",
-                    "link_type": "C",
-                    "name": "Subcategory 4",
-                    "url": "https://www.miraclesoap.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=Sub-cat-4"
-                }
-            ],
-            "link": "<a href=\"https://www.miraclesoap.com/faqs.html\" target=\"_self\">Frequently Asked Questions</a>",
+            "id": "a91781b64c8456d5606e5b0ae07d22a9",
+            "link": "<a href=\"https://www.miraclesoap.com/faqs.html\" target=\"_self\">FAQs</a>",
             "link_dest": "FAQS",
             "link_targ": "_self",
             "link_type": "G",
-            "name": "Frequently Asked Questions",
+            "name": "FAQs",
             "url": "https://www.miraclesoap.com/faqs.html"
         },
         {
             "active": 1,
-            "id": "7043dc5c1631812b26c3daaafea1e780",
+            "id": "55b9f2470d39eed02d683d41249223b2",
             "link": "<a href=\"https://www.miraclesoap.com/privacy-policy.html\" target=\"_self\">Privacy Policy</a>",
             "link_dest": "PRPO",
             "link_targ": "_self",
@@ -87,13 +43,73 @@
         },
         {
             "active": 1,
-            "id": "0cf7a621b1a27789c3733d5da3d183ed",
-            "link": "<a href=\"https://www.miraclesoap.com/shipping-and-return-policy.html\" target=\"_self\">Shipping &amp; Return Policy</a>",
+            "id": "d5505161dd7f4488b9df3e53f2283651",
+            "link": "<a href=\"https://www.miraclesoap.com/shipping-and-return-policy.html\" target=\"_self\">Shipping Policy</a>",
             "link_dest": "SARP",
             "link_targ": "_self",
             "link_type": "G",
-            "name": "Shipping & Return Policy",
+            "name": "Shipping Policy",
             "url": "https://www.miraclesoap.com/shipping-and-return-policy.html"
+        },
+        {
+            "active": 1,
+            "id": "65c86a9767c3d1815dca75d5b312fe93",
+            "link": "<a href=\"https://www.miraclesoap.com/mm5/merchant.mvc?Screen=disclaimer-page\" target=\"_self\">Disclaimer</a>",
+            "link_dest": "disclaimer-page",
+            "link_targ": "_self",
+            "link_type": "G",
+            "name": "Disclaimer",
+            "url": "https://www.miraclesoap.com/mm5/merchant.mvc?Screen=disclaimer-page"
+        },
+        {
+            "active": 1,
+            "id": "d9ffea729fab97f737069e367414f55f",
+            "link": "<a href=\"https://www.miraclesoap.com/mm5/merchant.mvc?Screen=SCPL\" target=\"_self\">Security Policy</a>",
+            "link_dest": "SCPL",
+            "link_targ": "_self",
+            "link_type": "G",
+            "name": "Security Policy",
+            "url": "https://www.miraclesoap.com/mm5/merchant.mvc?Screen=SCPL"
+        },
+        {
+            "active": 1,
+            "id": "4f0551996ce7e0d07300a6e8d3d5a943",
+            "link": "<a href=\"https://www.miraclesoap.com/mm5/merchant.mvc?Screen=product-history\" target=\"_self\">Product History</a>",
+            "link_dest": "product-history",
+            "link_targ": "_self",
+            "link_type": "G",
+            "name": "Product History",
+            "url": "https://www.miraclesoap.com/mm5/merchant.mvc?Screen=product-history"
+        },
+        {
+            "active": 1,
+            "id": "13e15bb3504c1dbc71dfcd3d3c454ec7",
+            "link": "<a href=\"https://www.miraclesoap.com/mm5/merchant.mvc?Screen=ALPM\" target=\"_self\">Affiliate Program</a>",
+            "link_dest": "ALPM",
+            "link_targ": "_self",
+            "link_type": "G",
+            "name": "Affiliate Program",
+            "url": "https://www.miraclesoap.com/mm5/merchant.mvc?Screen=ALPM"
+        },
+        {
+            "active": 1,
+            "id": "ceaa748a0e60eb0365c5e5444c4cd8de",
+            "link": "<a href=\"https://www.miraclesoap.com/mm5/merchant.mvc?Screen=testimonials\" target=\"_self\">Testimonials</a>",
+            "link_dest": "testimonials",
+            "link_targ": "_self",
+            "link_type": "G",
+            "name": "Testimonials",
+            "url": "https://www.miraclesoap.com/mm5/merchant.mvc?Screen=testimonials"
+        },
+        {
+            "active": 1,
+            "id": "d79f8934583c7e4b23716e6c56645ea8",
+            "link": "<a href=\"https://www.miraclesoap.com/mm5/merchant.mvc?Screen=Partners\" target=\"_self\">Partners</a>",
+            "link_dest": "Partners",
+            "link_targ": "_self",
+            "link_type": "G",
+            "name": "Partners",
+            "url": "https://www.miraclesoap.com/mm5/merchant.mvc?Screen=Partners"
         }
     ],
     "layout": "S",

@@ -1,8 +1,8 @@
 {
     "items": [
         {
-            "active": 1,
-            "id": "11fca19ea54e9da6a2203b49e1fe0948",
+            "active": 0,
+            "id": "6a19dc4092055f9c6f26b7b1988e2daf",
             "link": "<a href=\"https://www.miraclesoap.com/about-us.html\" target=\"_self\">About Us</a>",
             "link_dest": "ABUS",
             "link_targ": "_self",
@@ -12,17 +12,17 @@
         },
         {
             "active": 1,
-            "id": "60dd055667af748468bc2fd223866a27",
-            "link": "<a href=\"https://www.miraclesoap.com/customer-account.html\" target=\"_self\">Account</a>",
+            "id": "3b4181ad6e28987b6b94a785640c33df",
+            "link": "<a href=\"https://www.miraclesoap.com/customer-account.html\" target=\"_self\">Your Account</a>",
             "link_dest": "ACLN",
             "link_targ": "_self",
             "link_type": "G",
-            "name": "Account",
+            "name": "Your Account",
             "url": "https://www.miraclesoap.com/customer-account.html"
         },
         {
             "active": 1,
-            "id": "6715298c8dfb8eee39a7a45d5d35799c",
+            "id": "ae2894ca1f97a3bef9c33cf71fcd9492",
             "link": "<a href=\"https://www.miraclesoap.com/contact-us.html\" target=\"_self\">Contact Us</a>",
             "link_dest": "CTUS",
             "link_targ": "_self",
@@ -31,8 +31,8 @@
             "url": "https://www.miraclesoap.com/contact-us.html"
         },
         {
-            "active": 1,
-            "id": "2b53a488c316a8e013044b8f6230fc13",
+            "active": 0,
+            "id": "c7dad012bcbc0a1916a50bc7e6623635",
             "link": "<a href=\"https://www.miraclesoap.com/faqs.html\" target=\"_self\">FAQS</a>",
             "link_dest": "FAQS",
             "link_targ": "_self",
@@ -41,8 +41,8 @@
             "url": "https://www.miraclesoap.com/faqs.html"
         },
         {
-            "active": 1,
-            "id": "a45da375d64852d52296ac7e2779e07c",
+            "active": 0,
+            "id": "2ded95dfd2d80f69912766f8e718abae",
             "link": "<a href=\"https://www.miraclesoap.com/order-history-list.html\" target=\"_self\">Order Status</a>",
             "link_dest": "ORDH",
             "link_targ": "_self",
@@ -51,8 +51,8 @@
             "url": "https://www.miraclesoap.com/order-history-list.html"
         },
         {
-            "active": 1,
-            "id": "c69bff15de4238b8498d0f68fb0f6960",
+            "active": 0,
+            "id": "19cad6256c3d8df2140e4f0b0feeea8c",
             "link": "<a href=\"https://www.miraclesoap.com/wish-lists.html\" target=\"_self\">Wish Lists</a>",
             "link_dest": "WLST",
             "link_targ": "_self",
@@ -61,8 +61,8 @@
             "url": "https://www.miraclesoap.com/wish-lists.html"
         },
         {
-            "active": 1,
-            "id": "feca603a8f4f5c67c59f03365ed08e0c",
+            "active": 0,
+            "id": "2c91f95705eff7be54aefeb88ecd7156",
             "link": "<a href=\"https://www.miraclesoap.com/privacy-policy.html\" target=\"_self\">Privacy Policy</a>",
             "link_dest": "PRPO",
             "link_targ": "_self",
@@ -72,23 +72,43 @@
         },
         {
             "active": 1,
-            "id": "b0edecfbb750a12c2d34008ccdc875a7",
-            "link": "<a href=\"https://www.miraclesoap.com/shipping-and-return-policy.html\" target=\"_self\">Shipping &amp;amp; Returns</a>",
+            "id": "25951f981606af7b02b3781c16de6fd2",
+            "link": "<a href=\"https://www.miraclesoap.com/shipping-and-return-policy.html\" target=\"_self\">Shipping Policy</a>",
             "link_dest": "SARP",
             "link_targ": "_self",
             "link_type": "G",
-            "name": "Shipping &amp; Returns",
+            "name": "Shipping Policy",
             "url": "https://www.miraclesoap.com/shipping-and-return-policy.html"
         },
         {
-            "active": 1,
-            "id": "61aa5b72d76b6939ff7ff96b9b793f90",
+            "active": 0,
+            "id": "8ea768253820505317fb2162823940d5",
             "link": "<a href=\"https://www.miraclesoap.com/sitemap.html\" target=\"_self\">Site Map</a>",
             "link_dest": "SMAP",
             "link_targ": "_self",
             "link_type": "G",
             "name": "Site Map",
             "url": "https://www.miraclesoap.com/sitemap.html"
+        },
+        {
+            "active": 1,
+            "id": "56fe79e4ad8b770dc1e0d112f2b17870",
+            "link": "<a href=\"https://www.miraclesoap.com/mm5/merchant.mvc?Screen=ALPM\" target=\"_self\">Affiliate Program</a>",
+            "link_dest": "ALPM",
+            "link_targ": "_self",
+            "link_type": "G",
+            "name": "Affiliate Program",
+            "url": "https://www.miraclesoap.com/mm5/merchant.mvc?Screen=ALPM"
+        },
+        {
+            "active": 1,
+            "id": "2cf410994ddbb0bb79a6a34a8f0e254a",
+            "link": "<a href=\"https://www.miraclesoap.com/mm5/merchant.mvc?Screen=Partners\" target=\"_self\">Partners</a>",
+            "link_dest": "Partners",
+            "link_targ": "_self",
+            "link_type": "G",
+            "name": "Partners",
+            "url": "https://www.miraclesoap.com/mm5/merchant.mvc?Screen=Partners"
         }
     ],
     "layout": "S",

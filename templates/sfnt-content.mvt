@@ -1,5 +1,5 @@
 <div id="sidebar">
-  <div id="leftintro"><img src="../images/aboutboxnew.gif" width="165" height="400"></div>
+  <div id="leftintro"><img src="images/aboutboxnew.gif" width="165" height="400"></div>
   <div id="infotext">
     <h5 class="copy">ABOUT MIRACLE II</h5>
     <p>Miracle II products soothe the mind, body and the spirit. The contents are
@@ -7,9 +7,9 @@
     <p>Select one of our fine products to learn more about the benefits, or read
       some inspiring customer testimonials.
     </p>
-    <img src="images/footerdivider-h.gif" width="47" height="2"><img src="../images/1x1.gif" width="2"><img
-      src="../images/footerdivider-h.gif" width="47" height="2"><img src="../images/1x1.gif" width="2"><img
-      src="../images/footerdivider-h.gif" width="47" height="2"><br>
+    <img src="images/footerdivider-h.gif" width="47" height="2"><img src="images/1x1.gif" width="2"><img
+      src="images/footerdivider-h.gif" width="47" height="2"><img src="images/1x1.gif" width="2"><img
+      src="images/footerdivider-h.gif" width="47" height="2"><br>
     <h5 class="copy">Miracle II Newsletter</h5>
 
     <p>Catch up on inspiring
@@ -20,11 +20,11 @@
       Click Here to visit our newsletter site.</a>
   </div>
   <div class="pay-banners">
-    <img src="../images/creditcards_sm.gif" alt="payment methods" border="0">
+    <img src="images/creditcards_sm.gif" alt="payment methods" border="0">
   </div>
 </div>
 <div id="main">
-  <img src="../images/1x1.gif" width="3" height="1">
+  <img src="images/1x1.gif" width="3" height="1">
 
   <div itemscope itemtype="https://schema.org/LocalBusiness" class="info-holder" style="margin-bottom: 25px; width: 470px !important; display: flex !important; justify-content: space-between !important;">
     <span itemprop="name" class="blue-style" style="font-family: Verdana, Arial, Helvetica, sans-serif; padding-left: 26px; font-size: 17px !important; font-weight: bold; color: #00748e !important;">Miracle II Family of Products</span>
@@ -32,12 +32,12 @@
   </div>
 
   <a href="https://&mvt:global:domain:name;/mprod.html">
-    <img src="/images/normal.jpg" alt="Feature" name="Feature" width="488" height="224" border="0" id="Feature">
+    <img src="/mm5/images/normal.jpg" alt="Feature" name="Feature" width="488" height="224" border="0" id="Feature">
   </a><br>
-  <img src="../images/1x1.gif" width="6" height="1">
-  <img src="../images/1x1.gif" width="4" height="1">
+  <img src="images/1x1.gif" width="6" height="1">
+  <img src="images/1x1.gif" width="4" height="1">
   <a href="/express-lane.html">
-    <img src="/images/PTPH/index.jpg" class="image-margin" border="0">
+    <img src="/mm5/images/PTPH/index.jpg" class="image-margin" border="0">
   </a>
-  <img src="../images/1x1.gif" width="6" height="1">
+  <img src="images/1x1.gif" width="6" height="1">
 </div>

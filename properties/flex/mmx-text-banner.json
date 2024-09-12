@@ -69,7 +69,15 @@
                 "value": "center"
             },
             "body": {
-                "source": "markdown",
+                "textsettings": {
+                    "fields": {
+                        "normal": {
+                            "body_style": {
+                                "value": "paragraph-s"
+                            }
+                        }
+                    }
+                },
                 "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam condimentum ex et nunc interdum, eu porttitor. Praesent eget justo lectus."
             },
             "button": {
@@ -114,10 +122,10 @@
         }
     },
     "depends": {
-        "mmx-base": "10.10.00",
-        "mmx-button": "10.10.00",
-        "mmx-hero": "10.10.00",
-        "mmx-text": "10.10.00"
+        "mmx-base": "=10.09.01",
+        "mmx-button": "=10.09.01",
+        "mmx-hero": "=10.09.01",
+        "mmx-text": "=10.09.01"
     },
     "initialization_template_disabled": 0,
     "initialization_template_filename": "690_flex-initialization-template-mmx-text-banner.mvc",
@@ -126,7 +134,6 @@
     "managed": 1,
     "name": "Text Banner",
     "preview": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"1600\" height=\"224\" viewBox=\"0 0 1600 224\">\n  <g id=\"Text_Banner\" data-name=\"Text Banner\" transform=\"translate(0 -4630)\">\n    <g id=\"Text_Banner-2\" data-name=\"Text Banner\" transform=\"translate(0 3242)\">\n      <rect id=\"Rectangle_3233\" data-name=\"Rectangle 3233\" width=\"1440\" height=\"144\" rx=\"16\" transform=\"translate(80 1428)\" fill=\"#cfd2d6\"/>\n      <g id=\"Group_6146\" data-name=\"Group 6146\" transform=\"translate(227 -141)\">\n        <text id=\"Text_Banner_Heading\" data-name=\"Text Banner Heading\" transform=\"translate(65 1648)\" fill=\"#494a53\" font-size=\"32\" font-family=\"Helvetica-Bold, Helvetica\" font-weight=\"700\"><tspan x=\"0\" y=\"0\">Text Banner Heading</tspan></text>\n        <g id=\"Group_6578\" data-name=\"Group 6578\" transform=\"translate(961 1617)\">\n          <g id=\"Primary_Button_CTA\" data-name=\"Primary Button CTA\">\n            <rect id=\"Rectangle_3062\" data-name=\"Rectangle 3062\" width=\"120\" height=\"48\" rx=\"4\" fill=\"#494a53\"/>\n          </g>\n          <rect id=\"Rectangle_3476\" data-name=\"Rectangle 3476\" width=\"64\" height=\"10\" rx=\"5\" transform=\"translate(28 19)\" fill=\"#fff\"/>\n        </g>\n        <rect id=\"Rectangle_3494\" data-name=\"Rectangle 3494\" width=\"450\" height=\"10\" rx=\"5\" transform=\"translate(451 1621)\" fill=\"#969da8\"/>\n        <rect id=\"Rectangle_3495\" data-name=\"Rectangle 3495\" width=\"416\" height=\"10\" rx=\"5\" transform=\"translate(451 1643)\" fill=\"#969da8\"/>\n      </g>\n    </g>\n    <rect id=\"Rectangle_3506\" data-name=\"Rectangle 3506\" width=\"1600\" height=\"224\" transform=\"translate(0 4630)\" fill=\"none\"/>\n  </g>\n</svg>\n",
-    "preview_component_selector": "[data-page-code=\"%page_code%\"][data-flex-component=\"%component_code%\"][data-flex-item=\"%element_code%\"]",
     "properties": [
         {
             "code": "text_layout",
@@ -140,7 +147,6 @@
                     "value": "vertical-banner"
                 }
             ],
-            "preview_property_selector": ":shadow [part~=\"wrapper\"]",
             "prompt": "Text Layout",
             "type": "selector"
         },
@@ -160,7 +166,6 @@
                     "value": "l"
                 }
             ],
-            "preview_property_selector": ":shadow [part~=\"wrapper\"]",
             "prompt": "Banner Size",
             "type": "select"
         },
@@ -187,13 +192,11 @@
                             "value": "right"
                         }
                     ],
-                    "preview_property_selector": ":shadow [part~=\"content\"]",
                     "prompt": "Text Alignment",
                     "type": "selector"
                 },
                 {
                     "code": "heading",
-                    "preview_property_selector": "[slot=\"heading\"]",
                     "prompt": "Heading Text",
                     "textsettings": {
                         "fields": [
@@ -450,8 +453,6 @@
                 },
                 {
                     "code": "body",
-                    "markdown": 1,
-                    "preview_property_selector": "[slot=\"body\"]",
                     "prompt": "Body Text",
                     "textsettings": {
                         "fields": [
@@ -672,7 +673,6 @@
                     "properties": [
                         {
                             "code": "button_text",
-                            "preview_property_selector": "[slot=\"button\"]",
                             "prompt": "Button Text",
                             "textsettings": {
                                 "fields": [
@@ -744,9 +744,7 @@
                         },
                         {
                             "code": "button_link",
-                            "preview_property_selector": "[slot=\"button\"]",
                             "prompt": "Button Link",
-                            "supports_new_tab": 1,
                             "type": "link"
                         }
                     ],
@@ -789,5 +787,5 @@
     "type": "component",
     "upgrade_template_disabled": 1,
     "upgrade_template_filename": "flex-upgrade-template-mmx-text-banner.mvc",
-    "version": "10.10.00"
+    "version": "10.09.01"
 }

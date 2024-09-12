@@ -1,0 +1,55 @@
+{
+    "flex": {
+        "mmx_texteditor": {
+            "component_code": "mmx-text-editor",
+            "item_code": "mmx_texteditor",
+            "settings": {
+                "_flex": {
+                    "flex_version": 10.1,
+                    "settings_version": "10.10.00"
+                },
+                "content": {
+                    "value": "<p>Yes, MiracleSoap.com can assist you in becoming a Miracle II Distributor. If you are in the US or international, we have a program to feet you needs. We look forward to working with you.</p>\r\n<br>\r\n<p>Please contact us at your convenience.</p>\r\n<br>\r\n<p>Toll free: <a href=\"tel:+18888957675\">1-888-895-SOAP (7675)</a></p>"
+                }
+            }
+        }
+    },
+    "hdft": {
+        "footer": {
+            "template_filename": "partners-footer.mvc"
+        },
+        "header": {
+            "template_filename": "partners-header.mvc"
+        }
+    },
+    "seo_settings": {
+        "cat_lit": "category",
+        "cat_lit_choice": "category",
+        "plit_in_bc": 1,
+        "prod_lit": "product",
+        "prod_lit_choice": "product",
+        "sc_always": 0,
+        "sf_active": 0,
+        "sl_active": 0,
+        "sm_active": 1,
+        "suffix": "html",
+        "suffix_choice": "html",
+        "surlprefix": "https://www.miraclesoap.com/",
+        "url_delim": "/",
+        "urlprefix": "https://www.miraclesoap.com/"
+    },
+    "sequence": {
+        "sequence": [
+            {
+                "dt_end": 0,
+                "dt_start": 0,
+                "enabled": 1,
+                "id": "8385090dc4e43493675443b2ad619170",
+                "item": "flex",
+                "name": "Partners",
+                "param": "mmx_texteditor"
+            }
+        ],
+        "title": "Sequence"
+    }
+}

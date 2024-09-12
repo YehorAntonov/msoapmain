@@ -254,7 +254,7 @@ If  to Affiliate: At the address Affiliate provides in its  online Affiliate acc
 <input type="hidden" name="Action" value="AFAD" />
 <label for="agree">*By checking the following checkbox, I certify that I have read and agree to the Terms and Conditions specified in the above Statement.</label>
 <input name="agree" value="yes" type="checkbox"><p></p>
-<p style="padding-top:15px;" align="center"><input src="/images/createaccount.gif" alt="Create Account" type="image"></p>
+<p style="padding-top:15px;" align="center"><input src="/mm5/images/createaccount.gif" alt="Create Account" type="image"></p>
 </form>
 <p></p>
 </td>

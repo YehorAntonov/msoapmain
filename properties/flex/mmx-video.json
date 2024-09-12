@@ -93,7 +93,6 @@
                         {
                             "code": "color",
                             "placeholder": "#000000, rgba(0,0,0,0), hsl(0,0,0)",
-                            "preview_property_selector": ":shadow [part~=\"content\"]",
                             "prompt": "Color",
                             "style": "color",
                             "type": "color"
@@ -105,7 +104,6 @@
                     "code": "overlay_opacity",
                     "label": "%",
                     "precision": -1,
-                    "preview_property_selector": ":scope > [slot=\"image\"]",
                     "prompt": "Video Shader Overlay",
                     "range_high": 100,
                     "range_low": 0,
@@ -127,7 +125,6 @@
                         {
                             "code": "color",
                             "placeholder": "#000000, rgba(0,0,0,0), hsl(0,0,0)",
-                            "preview_property_selector": ":shadow [part~=\"content\"]",
                             "prompt": "Color",
                             "style": "color",
                             "type": "color"
@@ -223,7 +220,15 @@
                 "value": "center"
             },
             "body": {
-                "source": "markdown",
+                "textsettings": {
+                    "fields": {
+                        "normal": {
+                            "body_style": {
+                                "value": "paragraph-s"
+                            }
+                        }
+                    }
+                },
                 "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
             },
             "button": {
@@ -290,10 +295,10 @@
         }
     },
     "depends": {
-        "mmx-base": "10.10.00",
-        "mmx-button": "10.10.00",
-        "mmx-hero": "10.10.00",
-        "mmx-text": "10.10.00"
+        "mmx-base": "=10.09.01",
+        "mmx-button": "=10.09.01",
+        "mmx-hero": "=10.09.01",
+        "mmx-text": "=10.09.01"
     },
     "initialization_template_disabled": 0,
     "initialization_template_filename": "696_flex-initialization-template-mmx-video.mvc",
@@ -302,7 +307,6 @@
     "managed": 1,
     "name": "Video",
     "preview": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"1600\" height=\"660\" viewBox=\"0 0 1600 660\">\n  <g id=\"Video\" transform=\"translate(0 -4854)\">\n    <g id=\"Video-2\" data-name=\"Video\" transform=\"translate(0 -685)\">\n      <rect id=\"Rectangle_3193\" data-name=\"Rectangle 3193\" width=\"1440\" height=\"580\" rx=\"16\" transform=\"translate(80 5579)\" fill=\"#cfd2d6\"/>\n      <path id=\"np_1569867_000000\" d=\"M23,18A17.028,17.028,0,0,0,6,35V65A17.028,17.028,0,0,0,23,82H77A17.028,17.028,0,0,0,94,65V35A17.028,17.028,0,0,0,77,18Zm0,6H77A10.912,10.912,0,0,1,88,35V65A10.912,10.912,0,0,1,77,76H23A10.912,10.912,0,0,1,12,65V35A10.912,10.912,0,0,1,23,24ZM43,37V63L65,50Z\" transform=\"translate(750 5819)\" fill=\"#494a53\"/>\n    </g>\n    <rect id=\"Rectangle_3507\" data-name=\"Rectangle 3507\" width=\"1600\" height=\"660\" transform=\"translate(0 4854)\" fill=\"none\"/>\n  </g>\n</svg>\n",
-    "preview_component_selector": "[data-page-code=\"%page_code%\"][data-flex-component=\"%component_code%\"][data-flex-item=\"%element_code%\"]",
     "properties": [
         {
             "code": "video",
@@ -371,7 +375,6 @@
                             "value": "center-right"
                         }
                     ],
-                    "preview_property_selector": ":shadow [part~=\"content\"]",
                     "prompt": "Content Placement",
                     "type": "selector"
                 },
@@ -394,13 +397,11 @@
                             "value": "right"
                         }
                     ],
-                    "preview_property_selector": ":shadow [part~=\"content\"]",
                     "prompt": "Text Alignment",
                     "type": "selector"
                 },
                 {
                     "code": "heading",
-                    "preview_property_selector": "[slot=\"heading\"]",
                     "prompt": "Heading Text",
                     "textsettings": {
                         "fields": [
@@ -657,7 +658,6 @@
                 },
                 {
                     "code": "subheading",
-                    "preview_property_selector": "[slot=\"subheading\"]",
                     "prompt": "Subheading Text",
                     "textsettings": {
                         "fields": [
@@ -873,8 +873,6 @@
                 },
                 {
                     "code": "body",
-                    "markdown": 1,
-                    "preview_property_selector": "[slot=\"body\"]",
                     "prompt": "Body Text",
                     "textsettings": {
                         "fields": [
@@ -1095,7 +1093,6 @@
                     "properties": [
                         {
                             "code": "button_text",
-                            "preview_property_selector": "[slot=\"button\"]",
                             "prompt": "Button Text",
                             "textsettings": {
                                 "fields": [
@@ -1167,9 +1164,7 @@
                         },
                         {
                             "code": "button_link",
-                            "preview_property_selector": "[slot=\"button\"]",
                             "prompt": "Button Link",
-                            "supports_new_tab": 1,
                             "type": "link"
                         }
                     ],
@@ -1188,5 +1183,5 @@
     "type": "component",
     "upgrade_template_disabled": 1,
     "upgrade_template_filename": "flex-upgrade-template-mmx-video.mvc",
-    "version": "10.10.00"
+    "version": "10.09.01"
 }

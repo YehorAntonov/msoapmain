@@ -2634,6 +2634,13 @@ details {
 		justify-content: center;
 		align-items: center;
 	}
+	.volume-pricing {
+		display: block;
+		padding-left: 0 !important;
+	}
+	.product-price {
+		text-align: center !important;
+	}
 }
 @media screen and (max-width: 960px) {
 	.info-product {
@@ -3465,4 +3472,9 @@ body {
 }
 .disbaled-gift-count:disabled {
 	cursor: not-allowed;
+}
+.volume-pricing {
+	font-weight: 500;
+	color: red;
+	padding-left: 3%;
 }

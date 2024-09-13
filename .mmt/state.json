@@ -1,7 +1,7 @@
 {
     "version": 1,
     "changeset": {
-        "id": 2372,
+        "id": 2373,
         "username": null,
         "notes": "test"
     },
@@ -3156,7 +3156,7 @@
         },
         "templates/opay.mvt": {
             "template_filename": "opay.mvc",
-            "hash": "65dff636a82e78289357366ad4f1b2dad032ad3d2be917edd8eb67b7256c0e73"
+            "hash": "f74b73ae378372773de30467424c6bcfb286eaac0ffc47ec67b21723300b04a1"
         },
         "templates/opay.json": {
             "template_filename": "opay.mvc",
@@ -6134,7 +6134,7 @@
         },
         "css/theme.css": {
             "cssresource_code": "theme",
-            "hash": "31ab14802d59171a5f72a5102e9796b65f03e604af47128f47fd3914a0a78bea"
+            "hash": "cdb80a45d82f6b38023fbc42052e6fc03ce49b62e8164781855b852275d3c1e8"
         },
         "css/theme-styles.json": {
             "cssresource_code": "theme-styles",

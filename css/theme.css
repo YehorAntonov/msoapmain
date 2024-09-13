@@ -3107,7 +3107,7 @@ details {
 	}
 	.info-of-category {
 		/* margin-left: 4.3%; */
-		margin-top: 0;
+		margin-top: 20px;
 		padding: 0 45px 10px 45px;
 	}
 	.t-global-account-toggle {

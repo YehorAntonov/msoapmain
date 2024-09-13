@@ -1,46 +1,51 @@
-<table width="100%" border="0" cellspacing="1" cellpadding="1">
-   <tr><td nowrap><b>Order Number:</b>&nbsp;</td><td width="80%">&mvt:order:id;</td></tr>
-   <tr><td><b>Placed:</b>&nbsp;</td><td width="80%">&mvt:order:date; &mvt:order:time;</td></tr>
-  </table>&nbsp;<br>
-  <table width="100%" border="0" cellspacing="0" cellpadding="2">
-   <tr class="hili">
-    <th align="left" nowrap>&nbsp;Code&nbsp;</th>
-    <th align="left" nowrap>&nbsp;</th>
-    <th width="60%" align="left">&nbsp;Name&nbsp;</th>
-    <th align="right" nowrap>&nbsp;Quantity&nbsp;</th>
-    <th align="right" nowrap>&nbsp;Price/Ea.&nbsp;</th>
-    <th align="right" nowrap>&nbsp;Total&nbsp;</th>
+<table style="width: 100%; border-collapse: collapse;">
+   <tr>
+   <th style="padding: 15px 0; border-top: 1px solid lightgrey;" align="left">Image</th>
+    <th style="padding: 15px 0; border-top: 1px solid lightgrey; padding-left: 10px;" align="left">Item</th>
+    <th style="padding: 15px 0; border-top: 1px solid lightgrey; min-width: 70px;" align="center">Qty</th>
+    <th style="padding: 15px 0; border-top: 1px solid lightgrey; min-width: 150px;" align="center">Price</th>
+    <th style="padding: 15px 0; border-top: 1px solid lightgrey;" align="right">Total</th>
    </tr>
 
 <mvt:foreach iterator="item" array="order:groups">
-  <tr class="prodLn0">
-    <td align="left" nowrap>&nbsp;&mvt:item:code;&nbsp;</td>    
-    <td align="left" nowrap>&nbsp;<mvt:if expr="ISNULL l.settings:item:imagetypes:main">&nbsp;<mvt:else><img src="&mvte:item:imagetypes:main;" alt="&mvte:item:name;" border="0"></mvt:if>&nbsp;</td>
-    <td width="60%" align="left">&nbsp;&mvt:item:name;<span class="attr"></span>&nbsp;</td>
-    <td align="right" nowrap>&nbsp;&mvte:item:quantity;&nbsp;</td>
-    <td align="right" nowrap>&nbsp;&mvt:item:formatted_price;&nbsp;</td>
-    <td align="right" nowrap>&nbsp;&mvt:item:formatted_subtotal;&nbsp;</td>
+  <tr>
+    <td style="padding: 0; border-top: 1px solid lightgrey;" align="left">
+      <div>
+         <mvt:if expr="ISNULL l.settings:item:imagetypes:main">
+         <mvt:else>
+            <img style="object-fit: contain; width: 60px; height: 60px;" src="&mvte:global:basehref;&mvte:item:imagetypes:Main;" alt="&mvte:item:name;" border="0">
+         </mvt:if>
+      </div>
+   </td>
+   <td style="padding: 15px 0; border-top: 1px solid lightgrey; padding-left: 10px;">
+      <p style="font-weight: bold;">&mvt:item:name;</p>
+      <mvt:comment> <p>&mvt:item:code;</p> </mvt:comment>
+      <mvt:foreach iterator="option" array="item:options">
+         <mvt:if expr="l.settings:option:attr_code EQ 'giftcert'">
+            <p style="font-size: 11px;">Gift Code: &mvt:option:data;</p>
+         <mvt:else>
+            <p style="font-size: 11px;">&mvt:option:attr_prompt;: &mvt:option:data;</p>
+         </mvt:if>
+      </mvt:foreach>
+    </td>
+    <td style="padding: 0; border-top: 1px solid lightgrey;" align="center">&mvte:item:quantity;</td>
+    <td style="padding: 0; border-top: 1px solid lightgrey;" align="center">&mvt:item:formatted_price;</td>
+    <td style="padding: 0; border-top: 1px solid lightgrey;" align="right">&mvt:item:formatted_subtotal;</td>
   </tr>
 </mvt:foreach>
 
-   <tr class="hili">
-    <th align="left" nowrap>&nbsp;</th>
-    <th align="left" nowrap>&nbsp;</th>
-    <th width="60%" align="left">&nbsp;Subtotal:&nbsp;</th>
-    <th align="right" nowrap>&nbsp;2&nbsp;</th>
-    <th align="right" nowrap>&nbsp;</th>
-    <th align="right" nowrap>&nbsp;&mvt:order:formatted_subtotal;&nbsp;</th>
+   <tr>
+   <td style="padding: 30px 0 0 0; border-top: 1px solid lightgrey;" align="left">&nbsp;</td>
+    <td style="padding: 30px 0 0 0; border-top: 1px solid lightgrey;" align="left">&nbsp;</td>
+    <th style="padding: 30px 0 0 0; border-top: 1px solid lightgrey;" align="right">Sales Tax</th>
+    <td style="padding: 30px 0 0 0; border-top: 1px solid lightgrey;" align="right">&nbsp;</td>
+    <td style="padding: 30px 0 0 0; border-top: 1px solid lightgrey;" align="right">$0.00</td>
    </tr>
-<mvt:foreach iterator="charge" array="order:charges">   
-     <tr><td align="right" colspan="5">&nbsp;&mvt:charge:descrip;:&nbsp;</td><td align="right" nowrap>&nbsp;&mvt:charge:formatted_disp_amt;&nbsp;</td></tr>
-</mvt:foreach>   
-   
-   <tr class="hili">
-    <th align="left" nowrap>&nbsp;</th>
-    <th align="left" nowrap>&nbsp;</th>
-    <th width="60%" align="left">&nbsp;TOTAL:&nbsp;</th>
-    <th align="right" nowrap>&nbsp;&nbsp;</th>
-    <th align="right" nowrap>&nbsp;</th>
-    <th align="right" nowrap>&nbsp;&mvt:order:formatted_total;&nbsp;</th>
+   <tr>
+   <td style="padding: 0 0 30px 0; border-bottom: 1px solid lightgrey;" align="left">&nbsp;</td>
+    <td style="padding: 0 0 30px 0; border-bottom: 1px solid lightgrey;" align="left">&nbsp;</td>
+    <th style="padding: 0 0 30px 0; color: black; border-bottom: 1px solid lightgrey;" align="right">Total:</th>
+    <td style="padding: 0 0 30px 0; border-bottom: 1px solid lightgrey;" align="right">&nbsp;</td>
+    <td style="padding: 0 0 30px 0; color: black; border-bottom: 1px solid lightgrey;" align="right">&mvt:order:formatted_total;</td>
    </tr>
   </table>

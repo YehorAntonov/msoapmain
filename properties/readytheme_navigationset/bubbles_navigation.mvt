@@ -73,18 +73,18 @@
 	}
 	#product-history {
 		position: relative;
-		top: -100px;
+		top: -90px;
 		left: -14px;
 		font-size: 25px;
 		transform: scale(0.85);
 	}
-	#history {
+	/* #history {
 		position: relative;
 		top: -115px;
 		left: -14px;
 		font-size: 25px;
 		transform: scale(0.85);
-	}
+	} */
 	#testimonials {
 		position: relative;
 		top: -87px;
@@ -116,10 +116,10 @@
 		const circleType4 = new CircleType(document.getElementById('testimonials'));
 		const circleType5 = new CircleType(document.getElementById('faqs'));
 		const circleType6 = new CircleType(document.getElementById('contact'));
-		const circleType3 = new CircleType(document.getElementById('history'));
+		// const circleType3 = new CircleType(document.getElementById('history'));
 		circleType.radius(125);
 		circleType2.radius(125);
-		circleType3.radius(125);
+		// circleType3.radius(125);
 		circleType4.radius(190);
 		circleType5.radius(125);
 		circleType6.radius(125);
@@ -151,9 +151,9 @@
 			</svg>
 			<a aria-label="product-history" class="product__history" style="transform: scale(1);" id="product-history" href="&mvte:navigationitem:url;">&mvt:navigationitem:name;</a>
 
-			<mvt:foreach iterator="navigationitem2" array="navigationitem:items">
+			<mvt:comment> <mvt:foreach iterator="navigationitem2" array="navigationitem:items">
 				<a aria-label="product-history" class="product__history" style="transform: scale(1);" id="history" href="&mvte:navigationitem2:url;">&mvt:navigationitem2:name;</a>
-			</mvt:foreach>
+			</mvt:foreach> </mvt:comment>
 
 		</div>
 		

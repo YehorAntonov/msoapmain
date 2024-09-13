@@ -3463,3 +3463,6 @@ body {
 .attribute-name {
 	font-size: 14px;
 }
+.disbaled-gift-count:disabled {
+	cursor: not-allowed;
+}

@@ -51,7 +51,7 @@
 				</section>
 			</mvt:if> </mvt:comment>
 
-			<section class="o-layout">
+			<mvt:comment> <section class="o-layout">
 				<div class="o-layout__item">
 					<mvt:item name="hdft" param="header" />
 				</div>
@@ -61,7 +61,7 @@
 				<div class="o-layout__item">
 					<mvt:item name="prod_ctgy_hdft" param="ctgy_header" />
 				</div>
-			</section>
+			</section> </mvt:comment>
 
 			<mvt:item name="category_listing" />
 			

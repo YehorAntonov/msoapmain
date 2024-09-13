@@ -60,7 +60,7 @@
 								</div>
 							<mvt:else>
 								<mvt:foreach array="shippingmethods" iterator="method">
-									<mvt:if expr="l.settings:method:name EQ 'Free Shipping'">
+									<mvt:comment> <mvt:if expr="l.settings:method:name EQ 'Free Shipping'">
 										<mvt:if expr="l.settings:global_minibasket:total GE 50">
 											<div class="c-form-list__item c-form-list__item--full t-shipping-method">
 												<label class="c-form-checkbox c-form-checkbox--radio">
@@ -80,7 +80,7 @@
 												</label>
 											</div>
 										</mvt:if>
-									<mvt:elseif expr="NOT ('free' CIN l.settings:method:name)">
+									<mvt:elseif expr="NOT ('free' CIN l.settings:method:name)"> </mvt:comment>
 										<div class="c-form-list__item c-form-list__item--full t-shipping-method">
 											<label class="c-form-checkbox c-form-checkbox--radio">
 												<input class="c-form-checkbox__input" type="radio" name="ShippingMethod" value="&mvte:method:module;:&mvte:method:code" checked>
@@ -98,7 +98,7 @@
 												</span>
 											</label>
 										</div>
-									</mvt:if>
+									<mvt:comment> </mvt:if> </mvt:comment>
 								</mvt:foreach>
 							</mvt:if>
 						</div>
@@ -130,7 +130,17 @@
 												<mvt:else>
 													<input class="c-form-checkbox__input" type="radio" name="PaymentMethod" value="&mvte:method:module;:&mvte:method:code;" checked>
 												</mvt:if>
-												<span class="c-form-checkbox__caption">&mvt:method:name;</span>
+												<span class="c-form-checkbox__caption"><mvt:if expr="l.settings:method:name EQ 'Visa'">
+													<img src="graphics/00000002/1/visa-payment-system-img.png" alt="Payment system">
+												<mvt:elseif expr="l.settings:method:name EQ 'MasterCard'">
+													<img src="graphics/00000002/1/master-card-payment-system-img.png" alt="Payment system">
+												<mvt:elseif expr="l.settings:method:name EQ 'Discover'">
+													<img src="graphics/00000002/1/discover-payment-system-img.png" alt="Payment system" loading="lazy">
+												<mvt:elseif expr="l.settings:method:name EQ 'American Express'">
+													<img src="graphics/00000002/1/amex-payment-system-img.png" alt="Payment system">
+												<mvt:elseif expr="l.settings:method:name EQ 'PayPal'">
+													<img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_37x23.jpg" width="38" height="24" border="0" alt="PayPal Logo">
+												</mvt:if>&nbsp;&mvt:method:name;</span>
 											</label>
 										<mvt:else>
 											<label class="c-form-checkbox c-form-checkbox--radio">
@@ -141,7 +151,17 @@
 												<mvt:else>
 													<input class="c-form-checkbox__input" type="radio" name="PaymentMethod" value="&mvte:method:module;:&mvte:method:code;">
 												</mvt:if>
-												<span class="c-form-checkbox__caption">&mvt:method:name;</span>
+												<span class="c-form-checkbox__caption"><mvt:if expr="l.settings:method:name EQ 'Visa'">
+													<img src="graphics/00000002/1/visa-payment-system-img.png" alt="Payment system">
+												<mvt:elseif expr="l.settings:method:name EQ 'MasterCard'">
+													<img src="graphics/00000002/1/master-card-payment-system-img.png" alt="Payment system">
+												<mvt:elseif expr="l.settings:method:name EQ 'Discover'">
+													<img src="graphics/00000002/1/discover-payment-system-img.png" alt="Payment system" loading="lazy">
+												<mvt:elseif expr="l.settings:method:name EQ 'American Express'">
+													<img src="graphics/00000002/1/amex-payment-system-img.png" alt="Payment system">
+												<mvt:elseif expr="l.settings:method:name EQ 'PayPal'">
+													<img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_37x23.jpg" width="38" height="24" border="0" alt="PayPal Logo">
+												</mvt:if>&nbsp;&mvt:method:name;</span>
 											</label>
 										</mvt:if>
 									</div>

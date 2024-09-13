@@ -1,7 +1,7 @@
 {
     "version": 1,
     "changeset": {
-        "id": 2333,
+        "id": 2340,
         "username": null,
         "notes": "test"
     },
@@ -608,7 +608,7 @@
         },
         "templates/cattree.mvt": {
             "template_filename": "cattree.mvc",
-            "hash": "224f40561193f0251f57a44143d8445254c6c701a13b513264de144d9bab30b7"
+            "hash": "3e8de086f36a829b1849f4c4cfb1401682a10a7de65966392222b94e4e720e5a"
         },
         "templates/cattree.json": {
             "template_filename": "cattree.mvc",
@@ -1180,7 +1180,7 @@
         },
         "templates/ctgy-category_listing.mvt": {
             "template_filename": "ctgy-category_listing.mvc",
-            "hash": "e1f6911610b6cac1d06a9a26a9b4b628ed434255777b902e42f3ce8fba6592cd"
+            "hash": "a898325fbeb3e7df17b2669498c88dee4e6b6d2319eeaa133aaca906a6391f7b"
         },
         "templates/ctgy-footer.mvt": {
             "template_filename": "ctgy-footer.mvc",
@@ -5758,7 +5758,7 @@
         },
         "js/theme.js": {
             "jsresource_code": "theme",
-            "hash": "ddff2729e7f9d6e1c5e3f613265320d5653bcf4e7e95c5f36ae15fd6831c573f"
+            "hash": "d5307f3193238dfde2ee6d8f50f1bd1d4cd24f5f117bf5c276ca92cb8331adb3"
         },
         "css/additional.json": {
             "cssresource_code": "additional",

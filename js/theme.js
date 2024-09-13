@@ -134,7 +134,7 @@ const themeFunctionality = {
 			var miniBasketRequest = $.ajax({
 			method: "POST",
 			data: data,
-			url: "https://miraclesoap.mivatest.com/basket-contents.html",
+			url: "https://www.miraclesoap.com/basket-contents.html",
 			});
 	
 			//method done with function of response from server
@@ -891,7 +891,7 @@ const themeFunctionality = {
 			var miniBasketRequest = $.ajax({
 			method: "POST",
 			data: data,
-			url: "https://miraclesoap.mivatest.com/basket-contents.html",
+			url: "https://www.miraclesoap.com/basket-contents.html",
 			});
 	
 			//method done with function of response from server
@@ -1060,7 +1060,7 @@ const themeFunctionality = {
 			var miniBasketRequest = $.ajax({
 			method: "POST",
 			data: data,
-			url: "https://miraclesoap.mivatest.com/basket-contents.html",
+			url: "https://www.miraclesoap.com/basket-contents.html",
 			});
 	
 			//method done with function of response from server
@@ -1258,7 +1258,7 @@ const themeFunctionality = {
 						$.ajax({
 						method: "POST",
 						data: data,
-						url: "https://miraclesoap.mivatest.com/gift-certificate-recipient.html",
+						url: "https://www.miraclesoap.com/gift-certificate-recipient.html",
 						});
 				})
 			} else {
@@ -1277,7 +1277,7 @@ const themeFunctionality = {
 					$.ajax({
 					method: "POST",
 					data: data,
-					url: "https://miraclesoap.mivatest.com/gift-certificate-recipient.html",
+					url: "https://www.miraclesoap.com/gift-certificate-recipient.html",
 					});
 			}
 		})

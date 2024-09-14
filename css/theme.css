@@ -3077,7 +3077,7 @@ details {
 	border-radius: 10px;
 	margin-bottom: 25px;
 	padding: 15px;
-	margin-top: 25px;
+	/* margin-top: 25px; */
 }
 .info-of-category .c-heading-charlie  {
 	font-family: var(--primary-font-family);
@@ -3107,7 +3107,7 @@ details {
 	}
 	.info-of-category {
 		/* margin-left: 4.3%; */
-		margin-top: 20px;
+		/* margin-top: 20px; */
 		padding: 0 45px 10px 45px;
 	}
 	.t-global-account-toggle {

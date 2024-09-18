@@ -1,7 +1,7 @@
 {
     "version": 1,
     "changeset": {
-        "id": 2387,
+        "id": 2391,
         "username": null,
         "notes": "test"
     },
@@ -2424,7 +2424,7 @@
         },
         "templates/email_orderconf_customer.mvt": {
             "template_filename": "email_orderconf_customer.mvc",
-            "hash": "240d0837e747821ff8301c3289b35643a430cb29105ad4e55bb3811571baa649"
+            "hash": "18d6a9cca2ab108290b4e71e2fb4f0c9e5d5e39262a520527b0e769afee8cd6d"
         },
         "templates/email_orderconf_customer.json": {
             "template_filename": "email_orderconf_customer.mvc",
@@ -3732,7 +3732,7 @@
         },
         "templates/sfnt.mvt": {
             "template_filename": "sfnt.mvc",
-            "hash": "0db6a0d9f9bb317d982227547d0a3bd7e4d336dbe3daff7dfca0a205357793cd"
+            "hash": "fc5a61fb308d4c2c182fbc0029599877abd755d1692300562d28d357f7e83930"
         },
         "templates/sfnt.json": {
             "template_filename": "sfnt.mvc",
@@ -6134,7 +6134,7 @@
         },
         "css/theme.css": {
             "cssresource_code": "theme",
-            "hash": "558d73b5e713958556e155f12e387301c6ec4bd7b17c9b5dfd698a0f078ee0b6"
+            "hash": "d8f6a8d298f64adbee7e24df11ff27520f8f988e9b5920d140ffe66f9a06cacb"
         },
         "css/theme-styles.json": {
             "cssresource_code": "theme-styles",

@@ -121,9 +121,14 @@
 	</section> </mvt:comment>
 	<mvt:comment> <br> </mvt:comment>
 </mvt:if>
-<mvt:foreach array="cattree_categories" iterator="category_children">
-		<mvt:if expr="l.settings:category_children:parent_id EQ l.settings:category:id">
-			<mvt:assign name="l.null" value="miva_array_insert(l.settings:subcategories, l.settings:category_children, -1)" />
+<mvt:item name="ry_toolbelt" param="category_children|'mprod'" />
+<mvt:item name="ry_toolbelt" param="Category_Load|g.found|'mprod'|category_main" />
+<mvt:if expr="ISNULL l.settings:category:id">
+	<mvt:assign name="l.settings:category:id" value="l.settings:category_main:id" />
+</mvt:if>
+<mvt:foreach array="category_children" iterator="category_childrens">
+		<mvt:if expr="l.settings:category_childrens:parent_id EQ l.settings:category:id">
+			<mvt:assign name="l.null" value="miva_array_insert(l.settings:subcategories, l.settings:category_childrens, -1)" />
 		</mvt:if>
 	</mvt:foreach>
 	<mvt:assign name="l.settings:subcategory_count" value="miva_array_elements(l.settings:subcategories)" />
@@ -132,8 +137,10 @@
 			<h1 class="c-heading-charlie t-category-name main-category"><span class="sub-name__miracle">Miracle II </span>Main Categories</h1>
 		</div>
 		<style>
-			.info-of-category {
-				margin-top: 20px;
+			@media screen and (max-width: 960px) {
+				.info-of-category {
+					margin-top: 25px;
+				}
 			}
 		</style>
 		<style>
@@ -171,26 +178,27 @@
 			</mvt:if>
 		</div>
 	</mvt:if>
-<mvt:foreach array="cattree_categories" iterator="category_children">
-	<mvt:if expr="l.settings:category_children:parent_id EQ l.settings:category:id">
-		<mvt:assign name="l.null" value="miva_array_insert(l.settings:subcategories, l.settings:category_children, -1)" />
+<mvt:foreach array="category_children" iterator="category_childrens">
+	<mvt:if expr="l.settings:category_childrens:parent_id EQ l.settings:category:id">
+		<mvt:assign name="l.null" value="miva_array_insert(l.settings:subcategories, l.settings:category_childrens, -1)" />
 	</mvt:if>
 
 </mvt:foreach>
 <mvt:assign name="l.settings:subcategory_count" value="miva_array_elements(l.settings:subcategories)" />
 <mvt:if expr="l.settings:subcategories GT 0">
 	<section class="subcategory-section">
-		<mvt:foreach iterator="subcategory" array="cattree_categories">
-
+		<mvt:foreach iterator="subcategory" array="category_children">
+			<mvt:do file="g.Module_Root $ '/modules/component/cmp-cssui-cattitle.mvc'" name="l.success" value="CSSUI_CatTitle_Load(l.settings:subcategory:id, l.settings:loaded_category)" />
+			<mvt:do file="g.Module_Feature_URI_DB" name="l.success" value="URI_Load_Category_Canonical(l.settings:subcategory:id, l.settings:subcat)" />
 			<div class="subcategory-container">
 				<div class="subcategory-image">
-					<a href="&mvt:subcategory:link;"><img src="&mvte:subcategory:image;" alt="&mvte:subcategory:name;" loading="lazy"></a>
+					<a href="&mvt:subcat:uri;"><img src="&mvte:loaded_category:image;" alt="&mvte:subcategory:name;" loading="lazy"></a>
 				</div>
 				<mvt:item name="customfields" param="Read_Category_Code(l.settings:subcategory:code, 'description', l.settings:subcategory:descriptions)" />
-				<a href="&mvt:subcategory:link;" class="subcategory-name">&mvt:subcategory:name;</a>
+				<a href="&mvt:subcat:uri;" class="subcategory-name">&mvt:subcategory:name;</a>
 				<p class="subcategory-descrip">&mvt:subcategory:descriptions;</p>
 				<div>
-					<a href="&mvt:subcategory:link;" class="c-button subcategory-link">Explore</a>
+					<a href="&mvt:subcat:uri;" class="c-button subcategory-link">Explore</a>
 				</div>
 			</div>
 		</mvt:foreach>

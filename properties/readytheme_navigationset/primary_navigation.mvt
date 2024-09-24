@@ -10,8 +10,11 @@
 		</header>
 		<div class="mobile-cattree">
 			<p class="x-category-tree__heading mobile-title-ctgy">Our Products</p>
-			<mvt:foreach array="cattree_categories" iterator="cattree_category">
-				<a class="c-navigation__link" href="&mvte:cattree_category:link;">&mvt:cattree_category:name;</a>
+			<mvt:item name="ry_toolbelt" param="category_children|'mprod'" />
+			<mvt:foreach iterator="cattree_category" array="category_children">
+			<mvt:comment> <mvt:foreach array="cattree_categories" iterator="cattree_category"> </mvt:comment>
+				<mvt:do file="g.Module_Feature_URI_DB" name="l.success" value="URI_Load_Category_Canonical(l.settings:cattree_category:id, l.settings:subcat)" />
+				<a class="c-navigation__link" href="&mvte:subcat:uri;">&mvt:cattree_category:name;</a>
 			</mvt:foreach>
 		</div>
 		<div class="x-transfigure-navigation__content">

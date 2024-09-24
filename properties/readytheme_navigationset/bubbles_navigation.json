@@ -3,23 +3,11 @@
         {
             "active": 1,
             "id": "8eee42b431aa633b92f000fe4cc05e33",
-            "items": [
-                {
-                    "active": 1,
-                    "id": "cd399b93b65a0a288fe6415d7eb6220b",
-                    "link": "<a href=\"https://www.miraclesoap.com/mm5/merchant.mvc?Screen=product-history\" target=\"_self\">History</a>",
-                    "link_dest": "product-history",
-                    "link_targ": "_self",
-                    "link_type": "G",
-                    "name": "History",
-                    "url": "https://www.miraclesoap.com/mm5/merchant.mvc?Screen=product-history"
-                }
-            ],
-            "link": "<a href=\"https://www.miraclesoap.com/mm5/merchant.mvc?Screen=product-history\" target=\"_self\">Product</a>",
+            "link": "<a href=\"https://www.miraclesoap.com/mm5/merchant.mvc?Screen=product-history\" target=\"_self\">History</a>",
             "link_dest": "product-history",
             "link_targ": "_self",
             "link_type": "G",
-            "name": "Product",
+            "name": "History",
             "url": "https://www.miraclesoap.com/mm5/merchant.mvc?Screen=product-history"
         },
         {

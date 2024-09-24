@@ -2862,7 +2862,7 @@ details {
 	color: #006194;
 }
 .names-static {
-	margin-top: 15px;
+	margin-top: -25px;
 }
 @media screen and (min-width: 1600px) {
 	.names-static {
@@ -3022,7 +3022,7 @@ details {
 }
 @media screen and (min-width: 961px) {
 	.product-list-container {
-		margin-top: -20px;
+		/* margin-top: -20px; */
 	}
 	.main-logo {
 		margin-top: -5px;
@@ -3142,6 +3142,9 @@ details {
 	}
 }
 @media screen and (max-width: 960px) {
+	.info-of-category {
+		margin-top: 25px;
+	}
 	.affilate-program {
 		border-right: 1px solid #259484;
 		border-top: 1px solid #259484;

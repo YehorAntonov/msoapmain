@@ -60,11 +60,14 @@
 
 
 		<div class="grid-products-container">
-		<mvt:foreach iterator="category" array="cattree_categories">
+		<mvt:item name="ry_toolbelt" param="category_children|'mprod'" />
+		<mvt:foreach iterator="category" array="category_children">
+		<mvt:comment> <mvt:foreach iterator="category" array="cattree_categories"> </mvt:comment>
+			<mvt:do file="g.Module_Feature_URI_DB" name="l.success" value="URI_Load_Category_Canonical(l.settings:category:id, l.settings:subcat)" />
 			<mvt:do file="g.Module_Root $ '/modules/component/cmp-cssui-cattitle.mvc'" name="l.success" value="CSSUI_CatTitle_Load(l.settings:category:id, l.settings:loaded_category)" />
 			<mvt:item name="customfields" param="Read_Category_Code(l.settings:category:code, 'description', l.settings:category:description)" />
 			<div>
-				<a href="&mvt:category:link;">
+				<a href="&mvt:subcat:uri;">
 					<div class="grid-products-item">
 					<img alt="product item" src="&mvte:loaded_category:image;">
 					<p class="product-name home-names">&mvt:category:name;</p>
@@ -89,41 +92,44 @@
 		</div>
 
 		<div class="main-categories">
-			<mvt:foreach iterator="category" array="cattree_categories">
-			<mvt:do file="g.Module_Root $ '/modules/component/cmp-cssui-cattitle.mvc'" name="l.success" value="CSSUI_CatTitle_Load(l.settings:category:id, l.settings:loaded_category)" />
-			<mvt:item name="customfields" param="Read_Category_Code(l.settings:category:code, 'long', l.settings:category:long)" />
-			<mvt:item name="customfields" param="Read_Category_Code(l.settings:category:code, 'description_for', l.settings:category:description_for)" />
-			
-			<div class="container-category">
-				<mvt:if expr="l.settings:category:code EQ 'laundryball'">
-					<div class="circle laundaryball-cat">
-						<a href="&mvt:category:link;"><img alt="main image" src="&mvte:loaded_category:image;"></a>
-					</div>
-				<mvt:elseif expr="l.settings:category:code EQ 'valupack' OR l.settings:category:code EQ 'paks'">
-					<div class="circle valuepack-cat">
-						<a href="&mvt:category:link;"><img alt="main image" src="&mvte:loaded_category:image;"></a>
-					</div>
-				<mvt:else>
-					<div class="circle">
-						<a href="&mvt:category:link;"><img alt="main image" src="&mvte:loaded_category:image;"></a>
-					</div>
-				</mvt:if>
+			<mvt:item name="ry_toolbelt" param="category_children|'mprod'" />
+			<mvt:foreach iterator="category" array="category_children">
+				<mvt:comment> <mvt:foreach iterator="category" array="cattree_categories"> </mvt:comment>
+				<mvt:do file="g.Module_Feature_URI_DB" name="l.success" value="URI_Load_Category_Canonical(l.settings:category:id, l.settings:subcat)" />
+				<mvt:do file="g.Module_Root $ '/modules/component/cmp-cssui-cattitle.mvc'" name="l.success" value="CSSUI_CatTitle_Load(l.settings:category:id, l.settings:loaded_category)" />
+				<mvt:item name="customfields" param="Read_Category_Code(l.settings:category:code, 'long', l.settings:category:long)" />
+				<mvt:item name="customfields" param="Read_Category_Code(l.settings:category:code, 'description_for', l.settings:category:description_for)" />
+				
+				<div class="container-category">
+					<mvt:if expr="l.settings:category:code EQ 'laundryball'">
+						<div class="circle laundaryball-cat">
+							<a href="&mvt:subcat:uri;"><img alt="main image" src="&mvte:loaded_category:image;"></a>
+						</div>
+					<mvt:elseif expr="l.settings:category:code EQ 'valupack' OR l.settings:category:code EQ 'paks'">
+						<div class="circle valuepack-cat">
+							<a href="&mvt:subcat:uri;"><img alt="main image" src="&mvte:loaded_category:image;"></a>
+						</div>
+					<mvt:else>
+						<div class="circle">
+							<a href="&mvt:subcat:uri;"><img alt="main image" src="&mvte:loaded_category:image;"></a>
+						</div>
+					</mvt:if>
 
-				<div class="info-category">
-					<div class="category-name">
-						<a href="&mvt:category:link;" class="category-name__name">&mvt:category:name;</a>
-						<p class="category-name__for">&mvt:category:description_for;</p>
-					</div>
+					<div class="info-category">
+						<div class="category-name">
+							<a href="&mvt:subcat:uri;" class="category-name__name">&mvt:category:name;</a>
+							<p class="category-name__for">&mvt:category:description_for;</p>
+						</div>
 
-					<div role="region" aria-labelledby="categoryDescriptionTitle" class="long-description">
-						<p>&mvt:category:long;</p>
-					</div>
-					<div class="link-category">
-						<a aria-label="link on category" class="" href="&mvt:category:link;">Learn More</a>
+						<div role="region" aria-labelledby="categoryDescriptionTitle" class="long-description">
+							<p>&mvt:category:long;</p>
+						</div>
+						<div class="link-category">
+							<a aria-label="link on category" class="" href="&mvt:subcat:uri;">Learn More</a>
+						</div>
 					</div>
 				</div>
-			</div>
-		</mvt:foreach>
+			</mvt:foreach>
 		</div>
 	</div>
 	<div class="other-banner-main">

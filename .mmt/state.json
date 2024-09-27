@@ -1,8 +1,8 @@
 {
     "version": 1,
     "changeset": {
-        "id": 2467,
-        "username": "yehor",
+        "id": 2469,
+        "username": null,
         "notes": "test"
     },
     "files": {
@@ -3732,7 +3732,7 @@
         },
         "templates/sfnt.mvt": {
             "template_filename": "sfnt.mvc",
-            "hash": "c28b2527a94611eae0bd3230f2d7419d4f895228e9196783bba570ba85a70b25"
+            "hash": "8e49772bc3635464b1b7603c5dd56580c35bc28ff9d7e65433b48c56e13daad6"
         },
         "templates/sfnt.json": {
             "template_filename": "sfnt.mvc",
@@ -5296,7 +5296,7 @@
             "property_group": "",
             "property_type": "readytheme_navigationset",
             "property_code": "static_navigation",
-            "hash": "682d5810029980e4fdd679f89f1bfaa85547f445ce736312b984dac490c1ef96"
+            "hash": "1d63aeaff005fb5bf2b76b3e3a451305b59d7afe8d0e1f8b7ace459ac369de43"
         },
         "properties/readytheme_navigationset/static_navigation.json": {
             "property_group": "",

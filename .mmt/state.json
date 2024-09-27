@@ -1,9 +1,9 @@
 {
     "version": 1,
     "changeset": {
-        "id": 2465,
+        "id": 2467,
         "username": "yehor",
-        "notes": "Category 'thai' updated"
+        "notes": "test"
     },
     "files": {
         "templates/680_flex-initialization-template-mmx-hero.mvt": {
@@ -368,7 +368,7 @@
         },
         "templates/alpm.mvt": {
             "template_filename": "alpm.mvc",
-            "hash": "c2795ce28c7e0e5c1f221ee3baf0d8d0d772ba1d383b143ea1442c36cc876652"
+            "hash": "3a290ee7577e94cf311badad84bf449b8b735002fa4857c00120330f801f1d8a"
         },
         "templates/alpm.json": {
             "template_filename": "alpm.mvc",
@@ -3576,7 +3576,7 @@
         },
         "templates/product-history.json": {
             "template_filename": "product-history.mvc",
-            "hash": "7b6d35d250c76cb18f562e6a206b864ef13eabe38c5c0b9729d4553afc5661fb"
+            "hash": "9246172a19e325d48bd56ec05548fed392100aabdc8e69a42cc413578981f238"
         },
         "templates/product_list_additional_data.mvt": {
             "template_filename": "product_list_additional_data.mvc",
